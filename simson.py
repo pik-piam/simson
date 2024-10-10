@@ -3,13 +3,13 @@ import yaml
 
 from sodym import MFASystem
 
-from simson.plastics.plastic_model import PlasticModel
+from simson.plastics.plastics_model import PlasticsModel
 from simson.common.common_cfg import CommonCfg
 from simson.steel.steel_model import SteelModel
 
 
 allowed_models = {
-    'plastics': PlasticModel,
+    'plastics': PlasticsModel,
     'steel': SteelModel,
 }
 configurations = {

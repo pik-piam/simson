@@ -9,17 +9,17 @@ from simson.common.data_transformations import extrapolate_stock, prepare_stock_
 from simson.common.common_cfg import CommonCfg
 from simson.common.inflow_driven_mfa import InflowDrivenHistoricMFA
 from simson.common.custom_data_reader import CustomDataReader
-from simson.common.custom_visualization import CustomDataVisualizer
+from simson.common.custom_export import CustomDataExporter
 from .stock_driven_plastics import PlasticsMFASystem
 
 
-class PlasticModel:
+class PlasticsModel:
 
     def __init__(self, cfg: CommonCfg):
         self.cfg = cfg
         self.definition = self.set_up_definition()
         self.data_reader = CustomDataReader(input_data_path=self.cfg.input_data_path)
-        self.data_writer = CustomDataVisualizer(
+        self.data_writer = CustomDataExporter(
             **dict(self.cfg.visualization), output_path=self.cfg.output_path,
             display_names=self.display_names
         )

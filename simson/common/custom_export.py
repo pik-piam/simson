@@ -1,29 +1,33 @@
 import logging
 import os
-
 from matplotlib import pyplot as plt
+from pydantic import BaseModel as PydanticBaseModel
 import plotly.graph_objects as go
 
 from sodym import MFASystem
-from sodym.export.data_writer import DataWriter
-from sodym.export.helper import ArrayPlotter
+from sodym.export.data_writer import export_mfa_flows_to_csv, export_mfa_stocks_to_csv, export_mfa_to_pickle
+from sodym.export.array_plotter import PlotlyArrayPlotter
+from sodym.export.sankey import PlotlySankeyPlotter
 
 
-class CustomDataVisualizer(DataWriter):
+class CustomDataExporter(PydanticBaseModel):
 
     output_path: str
     do_save_figs: bool = True
     do_show_figs: bool = True
+    display_names: dict = {}
     do_export: dict = {'pickle': True, 'csv': True}
     production: dict = {'do_visualize': True}
     stock: dict = {'do_visualize': True}
+    sankey: dict = {'do_visualize': True}
 
     def export_mfa(self, mfa: MFASystem):
         if self.do_export['pickle']:
-            self.export_mfa_to_pickle(mfa=mfa, export_path=self.export_path('mfa.pickle'))
+            export_mfa_to_pickle(mfa=mfa, export_path=self.export_path('mfa.pickle'))
         if self.do_export['csv']:
             dir_out = os.path.join(self.export_path(), 'flows')
-            self.export_mfa_flows_to_csv(mfa=mfa, export_directory=dir_out)
+            export_mfa_flows_to_csv(mfa=mfa, export_directory=dir_out)
+            export_mfa_stocks_to_csv(mfa=mfa, export_directory=dir_out)
 
     def export_path(self, filename: str = None):
         path_tuple = (self.output_path, 'export')
@@ -53,25 +57,31 @@ class CustomDataVisualizer(DataWriter):
             logging.info('Stock visualization functionality unavailable')
             #self.visualize_stock()
         if self.sankey['do_visualize']:
-            fig = self.visualize_sankey(mfa=mfa)
+            plotter = PlotlySankeyPlotter(
+                mfa=mfa,
+                display_names = self.display_names,
+                **self.sankey)
+            fig = plotter.plot()
             self._show_and_save_plotly(fig, name="sankey")
 
     def visualize_production(self, mfa: MFASystem):
-        ap_modeled = ArrayPlotter(
+        ap_modeled = PlotlyArrayPlotter(
             array=mfa.stocks['in_use'].inflow['World'].sum_nda_over(('m', 'e')),
             intra_line_dim='Time',
             subplot_dim='Good',
-            label_in='Modeled'
+            line_label='Modeled',
+            display_names=self.display_names
         )
-        fig, ax = ap_modeled.plot()
-        ap_historic = ArrayPlotter(
+        fig = ap_modeled.plot()
+        ap_historic = PlotlyArrayPlotter(
             array = mfa.parameters['production']['World'],
             intra_line_dim='Historic Time',
             subplot_dim='Good',
-            label_in='Historic Production',
-            fig_ax=(fig, ax),
+            line_label='Historic Production',
+            fig=fig,
             xlabel='Year',
-            ylabel='Production [t]'
+            ylabel='Production [t]',
+            display_names=self.display_names
         )
         save_path = os.path.join(self.output_path, 'figures', 'production.png') if self.do_save_figs else None
         ap_historic.plot(save_path=save_path, do_show=self.do_show_figs)
@@ -93,21 +103,23 @@ class CustomDataVisualizer(DataWriter):
             x_array_hist = historic_gdppc['World']
             xlabel = 'GDP per capita [USD]'
 
-        ap_modeled = ArrayPlotter(
+        ap_modeled = PlotlyArrayPlotter(
             array=stocks_plot,
             intra_line_dim='Time',
             x_array=x_array,
             subplot_dim='Good',
-            label_in='Modeled')
-        fig, ax = ap_modeled.plot()
-        ap_historic = ArrayPlotter(
+            line_label='Modeled',
+            display_names=self.display_names)
+        fig = ap_modeled.plot()
+        ap_historic = PlotlyArrayPlotter(
             array=historic_stocks_plot,
             intra_line_dim='Historic Time',
             x_array=x_array_hist,
             subplot_dim='Good',
-            label_in='Historic',
-            fig_ax=(fig, ax),
+            line_label='Historic',
+            fig=fig,
             xlabel=xlabel,
-            ylabel='Stock [t]')
+            ylabel='Stock [t]',
+            display_names=self.display_names)
         save_path = os.path.join(self.output_path, 'figures', 'stock.png') if self.do_save_figs else None
         ap_historic.plot(save_path=save_path, do_show=self.do_show_figs)

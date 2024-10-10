@@ -4,7 +4,6 @@ from numpy.linalg import inv
 from sodym import MFASystem
 
 from simson.common.inflow_driven_mfa import InflowDrivenHistoricMFA
-from simson.common.common_cfg import CommonCfg
 
 class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
 
@@ -20,8 +19,6 @@ class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
     def compute_historic_flows(self):
         prm = self.parameters
         flw = self.flows
-        stk = self.stocks
-        scp = self.scalar_parameters
 
         aux = {
             'net_intermediate_trade': self.get_new_array(dim_letters=('h','r','i')),
