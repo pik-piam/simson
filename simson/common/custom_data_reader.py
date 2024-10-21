@@ -10,6 +10,7 @@ class CustomDataReader(ExampleDataReader):
     dimension_map = {
         'Time': 'time_in_years',
         'Historic Time': 'historic_years',
+        'Contemporary Time': 'contemporary_years',
         'Element': 'elements',
         'Region': 'regions',
         'Material': 'materials',

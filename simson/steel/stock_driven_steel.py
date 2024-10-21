@@ -22,16 +22,19 @@ class StockDrivenSteelMFASystem(MFASystem):
         # It is important to initialize them to define their dimensions. See the NamedDimArray documentation for details.
         # could also be single variables instead of dict, but this way the code looks more uniform
         aux = {
-            'total_fabrication': self.get_new_array(dim_letters=('t', 'r', 'g')),
-            'production': self.get_new_array(dim_letters=('t', 'r', 'i')),
-            'forming_outflow': self.get_new_array(dim_letters=('t', 'r')),
-            'scrap_in_production': self.get_new_array(dim_letters=('t', 'r')),
-            'available_scrap': self.get_new_array(dim_letters=('t', 'r')),
-            'eaf_share_production': self.get_new_array(dim_letters=('t', 'r')),
-            'production_inflow': self.get_new_array(dim_letters=('t', 'r')),
-            'max_scrap_production': self.get_new_array(dim_letters=('t', 'r')),
-            'scrap_share_production': self.get_new_array(dim_letters=('t', 'r')),
-            'bof_production_inflow': self.get_new_array(dim_letters=('t', 'r')),
+            'net_indirect_trade' : self.get_new_array(dim_letters=('t', 'e', 'r', 'g')),
+            'net_direct_trade' : self.get_new_array(dim_letters=('t', 'e', 'r', 'i')),
+            'net_scrap_trade' : self.get_new_array(dim_letters=('t', 'e', 'r', 'g')),
+            'total_fabrication': self.get_new_array(dim_letters=('t', 'e', 'r', 'g')),
+            'production': self.get_new_array(dim_letters=('t', 'e', 'r', 'i')),
+            'forming_outflow': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'scrap_in_production': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'available_scrap': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'eaf_share_production': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'production_inflow': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'max_scrap_production': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'scrap_share_production': self.get_new_array(dim_letters=('t', 'e', 'r')),
+            'bof_production_inflow': self.get_new_array(dim_letters=('t', 'e', 'r')),
         }
 
         # Slicing on the left-hand side of the assignment (foo[...] = bar) is used to assign only the values of the flows, not the NamedDimArray object managing the dimensions.
@@ -40,31 +43,45 @@ class StockDrivenSteelMFASystem(MFASystem):
 
         # Pre-use
 
-        flw['fabrication => use'][...]                  = stk['use'].inflow
+
+        flw['sysenv => use']['Fe'][...]                 = prm['indirect_imports']
+        flw['use => sysenv']['Fe'][...]                 = prm['indirect_exports']
+
+        aux['net_indirect_trade'][...]                  = flw['sysenv => use']                  -   flw['use => sysenv']
+        flw['fabrication => use']['Fe'][...]            = stk['use'].inflow                     -   aux['net_indirect_trade']['Fe']
+
         aux['total_fabrication'][...]                   = flw['fabrication => use']             /   prm['fabrication_yield']
-        flw['fabrication => fabrication_buffer'][...]   = aux['total_fabrication']              -   flw['fabrication => use']
+        flw['fabrication => scrap_market'][...]         = aux['total_fabrication']              -   flw['fabrication => use']
         flw['ip_market => fabrication'][...]            = aux['total_fabrication']              *   prm['good_to_intermediate_distribution']
-        flw['forming => ip_market'][...]                = flw['ip_market => fabrication']
+
+        flw['sysenv => ip_market']['Fe'][...]           = prm['direct_imports']
+        flw['ip_market => sysenv']['Fe'][...]           = prm['direct_exports']
+        aux['net_direct_trade'][...]                    = flw['sysenv => ip_market']            -   flw['ip_market => sysenv']
+
+        flw['forming => ip_market'][...]                = flw['ip_market => fabrication']       -   aux['net_direct_trade']
         aux['production'][...]                          = flw['forming => ip_market']           /   prm['forming_yield']
         aux['forming_outflow'][...]                     = aux['production']                     -   flw['forming => ip_market']
         flw['forming => sysenv'][...]                   = aux['forming_outflow']                *   scp['forming_losses']
-        flw['forming => fabrication_buffer'][...]       = aux['forming_outflow']                -   flw['forming => sysenv']
+        flw['forming => scrap_market'][...]             = aux['forming_outflow']                -   flw['forming => sysenv']
 
         # Post-use
 
-        flw['use => outflow_buffer'][...]               = stk['use'].outflow
-        flw['outflow_buffer => eol_market'][...]        = flw['use => outflow_buffer']          *   prm['recovery_rate']
-        flw['outflow_buffer => obsolete'][...]          = flw['use => outflow_buffer']          -   flw['outflow_buffer => eol_market']
-        flw['eol_market => recycling'][...]             = flw['outflow_buffer => eol_market']
+        flw['use => eol_market']['Fe'][...]        = stk['use'].outflow         *   prm['recovery_rate']
+        flw['use => obsolete']['Fe'][...]          = stk['use'].outflow         -   flw['use => eol_market']['Fe']
+
+        flw['sysenv => eol_market']['Fe'][...]          = prm['scrap_imports']
+        flw['eol_market => sysenv']['Fe'][...]          = prm['scrap_exports']
+        aux['net_scrap_trade'][...]                     = flw['sysenv => eol_market']           -   flw['eol_market => sysenv']
+
+        flw['eol_market => recycling'][...]             = flw['use => eol_market']              +   aux['net_scrap_trade']
         flw['recycling => scrap_market'][...]           = flw['eol_market => recycling']
-        flw['fabrication_buffer => scrap_market'][...]  = flw['forming => fabrication_buffer']  +   flw['fabrication => fabrication_buffer']
 
 
         # PRODUCTION
 
         aux['production_inflow'][...]                   = aux['production']                     /   scp['production_yield']
         aux['max_scrap_production'][...]                = aux['production_inflow']              *   scp['max_scrap_share_base_model']
-        aux['available_scrap'][...]                     = flw['recycling => scrap_market']      +   flw['fabrication_buffer => scrap_market']
+        aux['available_scrap'][...]                     = flw['recycling => scrap_market']      +   flw['forming => scrap_market']          +   flw['fabrication => scrap_market']
         aux['scrap_in_production'][...]                 = aux['available_scrap'].minimum(aux['max_scrap_production'])  # using NumPy Minimum functionality
         flw['scrap_market => excess_scrap'][...]        = aux['available_scrap']                -   aux['scrap_in_production']
         #  TODO include copper like this:aux['scrap_share_production']['Fe'][...]        = aux['scrap_in_production']['Fe']      /   aux['production_inflow']['Fe']
@@ -89,18 +106,9 @@ class StockDrivenSteelMFASystem(MFASystem):
 
         # in-use stock is already computed in compute_in_use_stock
 
-        stk['obsolete'].inflow[...] = flw['outflow_buffer => obsolete']
+        stk['obsolete'].inflow[...] = flw['use => obsolete']
         stk['obsolete'].compute()
 
         stk['excess_scrap'].inflow[...] = flw['scrap_market => excess_scrap']
         stk['excess_scrap'].compute()
 
-        # TODO: Delay buffers?
-
-        stk['outflow_buffer'].inflow[...] = flw['use => outflow_buffer']
-        stk['outflow_buffer'].outflow[...] = flw['outflow_buffer => eol_market'] + flw['outflow_buffer => obsolete']
-        stk['outflow_buffer'].compute()
-
-        stk['fabrication_buffer'].inflow[...] = flw['forming => fabrication_buffer'] + flw['fabrication => fabrication_buffer']
-        stk['fabrication_buffer'].outflow[...] = flw['fabrication_buffer => scrap_market']
-        stk['fabrication_buffer'].compute()

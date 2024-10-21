@@ -20,6 +20,23 @@ class Extrapolation(BaseModel):
         pass
 
 
+class LinearExtrapolation(Extrapolation):
+
+
+
+    def predict(self):
+        divisor = np.maximum(self.extrapolate_from, 1e-10)[:self.n_historic]
+        share = self.data_to_extrapolate / divisor
+        scale_factor = (0.3 * share[-1] +
+                        0.25 * share[-2] +
+                        0.2 * share[-3] +
+                        0.15 * share[-4] +
+                        0.1 * share[-5])
+        prediction = self.extrapolate_from * scale_factor
+
+        return prediction
+
+
 class SigmoidalExtrapolation(Extrapolation):
 
     def initial_guess(self):
@@ -37,8 +54,14 @@ class SigmoidalExtrapolation(Extrapolation):
 
 
 class ExponentialExtrapolation(Extrapolation):
-    initial_guess: np.ndarray = np.array([400, 1])  # these values work well for stock predictions
-    # in the steel model, but should be passed on initialisation for other usecases.
+
+    def initial_guess(self):
+        current_level = self.data_to_extrapolate[-1]
+        current_extrapolator = self.extrapolate_from[self.n_historic - 1]
+        initial_saturation_level = 2. * current_level if current_level != 0.0 else 1.0
+        initial_stretch_factor = - np.log(1 -  current_level / initial_saturation_level) / current_extrapolator
+
+        return np.array([initial_saturation_level, initial_stretch_factor])
 
     def fitting_function(self, prms):
         return (
@@ -46,6 +69,7 @@ class ExponentialExtrapolation(Extrapolation):
         ) - self.data_to_extrapolate
 
     def predict(self):
-        prms_out = least_squares(self.fitting_function, x0=self.initial_guess, gtol=1.e-12)
+        prms_out = least_squares(self.fitting_function, x0=self.initial_guess(), gtol=1.e-12)
         prediction = (prms_out.x[0] * (1 - np.exp(-prms_out.x[1] * self.extrapolate_from)))
+
         return prediction

@@ -43,7 +43,7 @@ class PlasticModel:
         historic_stock = create_dynamic_stock(
             name='in_use',
             process=self.processes['use'],
-            ldf_type=self.cfg.model_customization.ldf_type,
+            ldf_type=self.cfg.customization.ldf_type,
             inflow=historic_inflow,
             lifetime_mean=self.parameters['lifetime_mean'],
             lifetime_std=self.parameters['lifetime_std'],
@@ -79,11 +79,11 @@ class PlasticModel:
     def create_future_stock_from_historic(self, historic_in_use_stock):
         in_use_stock = extrapolate_stock(
             historic_in_use_stock, dims=self.dims, parameters=self.parameters,
-            curve_strategy=self.cfg.model_customization.curve_strategy,
+            curve_strategy=self.cfg.customization.curve_strategy,
         )
         dsm = create_dynamic_stock(
             name='in_use', process=self.processes['use'],
-            ldf_type=self.cfg.model_customization.ldf_type,
+            ldf_type=self.cfg.customization.ldf_type,
             stock=in_use_stock, lifetime_mean=self.parameters['lifetime_mean'],
             lifetime_std=self.parameters['lifetime_std'],
         )

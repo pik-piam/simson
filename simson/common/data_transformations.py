@@ -6,7 +6,7 @@ from sodym import (
     DimensionSet, NamedDimArray, Process, Parameter
 )
 
-from .data_extrapolations import SigmoidalExtrapolation, ExponentialExtrapolation
+from .data_extrapolations import SigmoidalExtrapolation, ExponentialExtrapolation, LinearExtrapolation
 
 
 def get_new_array(dims: DimensionSet, **kwargs) -> NamedDimArray:
@@ -65,6 +65,44 @@ def extrapolate_stock(
     return StockArray(**dict(stocks))
 
 
+def scale_parameter_to_future(historic_parameter : NamedDimArray, scaler : NamedDimArray) -> NamedDimArray:
+    """Scale parameter to future."""
+    n_historic = historic_parameter.shape[0]
+    dims = historic_parameter.dims.union_with(scaler.dims)
+
+    future_parameter = get_new_array(dims, dim_letters=('t',) + historic_parameter.dims.letters[1:])
+    future_parameter.values[:n_historic] = historic_parameter.values
+
+    # add missing dimensions to scaler values
+    scaler_values = scaler.values
+    for i, letter in enumerate(historic_parameter.dims.letters[1:],start=1):  # first dim is h which should not be ammended
+        if letter not in scaler.dims.letters:
+            scaler_values = np.expand_dims(scaler_values, axis=i)
+
+    extrapolation = LinearExtrapolation(data_to_extrapolate=historic_parameter.values,
+                                        extrapolate_from=scaler_values)
+    future_parameter.values = extrapolation.predict()
+    future_parameter.values[:n_historic] = historic_parameter.values
+
+    return Parameter(dims=future_parameter.dims, values=future_parameter.values)
+
+
+def split_parameter_to_sectors(to_split : NamedDimArray, split_by : NamedDimArray) -> NamedDimArray:
+    """
+    Split to_split parameter data into the same sector shares as the split_by data, mainly used for in-use goods.
+    """
+    result_dims = to_split.dims.union_with(split_by.dims)
+    intersect_dims = to_split.dims.intersect_with(split_by.dims)
+    split_data = get_new_array(dims=result_dims, dim_letters=result_dims.letters)
+
+    sum_split_by = split_by.sum_nda_to(result_dims=intersect_dims.letters)
+    sector_splits = split_by / sum_split_by
+
+    split_data[...] = to_split * sector_splits
+
+    return Parameter(dims=split_data.dims, values=split_data.values)
+
+
 def gdp_regression(historic_stocks_pc, gdppc, prediction_out, fitting_function_type='sigmoid'):
     shape_out = prediction_out.shape
     assert len(shape_out) == 3, "Prediction array must have 3 dimensions: Time, Region, Good"
@@ -73,16 +111,16 @@ def gdp_regression(historic_stocks_pc, gdppc, prediction_out, fitting_function_t
 
     for i_region in range(shape_out[1]):
         for i_good in range(shape_out[2]):
-            regional_historic_good = historic_stocks_pc[:, i_region, i_good]
+            region_category_historic_stock = historic_stocks_pc[:, i_region, i_good]
             regional_gdppc = gdppc[:, i_region]
             if fitting_function_type == 'sigmoid':
                 extrapolation = SigmoidalExtrapolation(
-                    data_to_extrapolate=regional_historic_good,
+                    data_to_extrapolate=region_category_historic_stock,
                     extrapolate_from=regional_gdppc
                 )
             elif fitting_function_type == 'exponential':
                 extrapolation = ExponentialExtrapolation(
-                    data_to_extrapolate=regional_historic_good,
+                    data_to_extrapolate=region_category_historic_stock,
                     extrapolate_from=regional_gdppc
                 )
             else:

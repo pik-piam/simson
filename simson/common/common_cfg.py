@@ -16,7 +16,7 @@ class VisualizationCfg(PydanticBaseModel):
 
 class CommonCfg(PydanticBaseModel):
     input_data_path: str
-    model_customization: ModelCustomization
+    customization: ModelCustomization
     visualization: VisualizationCfg
     output_path: str
     do_export: dict[str, bool]

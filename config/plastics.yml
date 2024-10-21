@@ -8,7 +8,7 @@ verbose: False
 input_data_path: 'data/plastics/input'
 
 # model customization
-model_customization:
+customization:
   curve_strategy: 'GDP_regression'
   ldf_type: 'Normal'
 
