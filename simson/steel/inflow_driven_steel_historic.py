@@ -1,8 +1,10 @@
 import numpy as np
 from numpy.linalg import inv
 from simson.common.inflow_driven_mfa import InflowDrivenHistoricMFA
+from simson.steel.steel_trade_model import SteelTradeModel
 
 class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
+    trade_model: SteelTradeModel
 
     def compute(self):
         """
@@ -16,6 +18,7 @@ class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
     def compute_historic_flows(self):
         prm = self.parameters
         flw = self.flows
+        trd = self.trade_model
 
         aux = {
             'net_intermediate_trade': self.get_new_array(dim_letters=('h','r','i')),
@@ -28,8 +31,8 @@ class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
         flw['forming => ip_market'][...]        = prm['production_by_intermediate']     *   prm['forming_yield']
         flw['forming => sysenv'][...]           = flw['sysenv => forming']              -   flw['forming => ip_market']
 
-        flw['ip_market => sysenv'][...]         = prm['direct_exports']
-        flw['sysenv => ip_market'][...]         = prm['direct_imports']
+        flw['ip_market => sysenv'][...]         = trd.intermediate.exports
+        flw['sysenv => ip_market'][...]         = trd.intermediate.imports
 
         aux['net_intermediate_trade'][...]      = flw['sysenv => ip_market']            -   flw['ip_market => sysenv']
         flw['ip_market => fabrication'][...]    = flw['forming => ip_market']           +   aux['net_intermediate_trade']
@@ -43,22 +46,15 @@ class InflowDrivenHistoricSteelMFASystem(InflowDrivenHistoricMFA):
         aux['fabrication_loss'][...]            = aux['fabrication_by_sector']          -   flw['fabrication => use']
         flw['fabrication => sysenv'][...]       = aux['fabrication_error']              +   aux['fabrication_loss']
 
-        flw['sysenv => use'][...]       = prm['indirect_imports']
-        prm['indirect_exports'] = self._calc_indirect_exports_with_availability(prm['indirect_exports'],
-                                                                                prm['indirect_imports'],
-                                                                                flw['fabrication => use'])
-        flw['use => sysenv'][...] = prm['indirect_exports']
+        # Recalculate indirect trade according to available inflow from fabrication
+        trd.indirect.exports[...]        = trd.indirect.exports.minimum(flw['fabrication => use'])
+        trd.indirect.balance(by='minimum')
+
+        flw['sysenv => use'][...]               = trd.indirect.imports
+        flw['use => sysenv'][...]               = trd.indirect.exports
 
         return
 
-    def _calc_indirect_exports_with_availability(self, indirect_exports, indirect_imports, fabrication_use):
-        """
-        Calculate indirect exports according to fabrication and indirect imports.
-        """
-        availablity = indirect_imports + fabrication_use
-        indirect_exports.values = np.minimum(indirect_exports.values, availablity.values)
-
-        return indirect_exports
 
     def _calc_sector_flows(self, intermediate_flow, gi_distribution):
         """

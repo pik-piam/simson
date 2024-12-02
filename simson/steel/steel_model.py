@@ -6,11 +6,12 @@ from sodym.stock_helper import create_dynamic_stock, make_empty_stocks
 from sodym.flow_helper import make_empty_flows
 
 from simson.common.common_cfg import CommonCfg
-from simson.common.data_transformations import extrapolate_stock, extrapolate_to_future
+from simson.common.data_transformations import extrapolate_stock
 from simson.common.custom_data_reader import CustomDataReader
 from simson.common.custom_export import CustomDataExporter
 from simson.steel.stock_driven_steel import StockDrivenSteelMFASystem
 from simson.steel.inflow_driven_steel_historic import InflowDrivenHistoricSteelMFASystem
+from simson.steel.steel_trade_model import SteelTradeModel
 
 
 class SteelModel:
@@ -38,17 +39,20 @@ class SteelModel:
         }
 
     def run(self):
-        historic_mfa = self.make_historic_mfa()
+        trade_model = self.make_trade_model()
+        trade_model.balance_historic_trade()
+        historic_mfa = self.make_historic_mfa(trade_model)
         historic_mfa.compute()
         historic_in_use_stock = historic_mfa.stocks['in_use'].stock
         future_in_use_stock = self.create_future_stock_from_historic(historic_in_use_stock)
-        self.extrapolate_trade_to_future(future_in_use_stock)
-        mfa = self.make_future_mfa(future_in_use_stock)
+        trade_model = trade_model.predict(future_in_use_stock)
+        trade_model.balance_future_trade()
+        mfa = self.make_future_mfa(future_in_use_stock, trade_model)
         mfa.compute()
         self.data_writer.export_mfa(mfa=mfa)
         self.data_writer.visualize_results(mfa=mfa)
 
-    def make_historic_mfa(self) -> InflowDrivenHistoricSteelMFASystem:
+    def make_historic_mfa(self,  trade_model) -> InflowDrivenHistoricSteelMFASystem:
         """
         Splitting production and direct trade by IP sector splits, and indirect trade by category trade sector splits (s. step 3)
         subtracting Losses in steel forming from production by IP data
@@ -92,6 +96,7 @@ class SteelModel:
             dims=historic_dims,
             flows=flows,
             stocks=stocks,
+            trade_model=trade_model,
         )
 
     def create_future_stock_from_historic(self, historic_in_use_stock):
@@ -111,12 +116,11 @@ class SteelModel:
         stock=dsm.stock, inflow=dsm.inflow, outflow=dsm.outflow, name='in_use', process_name='use',
         process=self.processes['use'],)
 
-    def extrapolate_trade_to_future(self, future_in_use_stock: Stock):
-        """
-        Scale trade flow to the future with new in-use stock inflow and outflow information.
-        TODO: This could be here or within the stock driven MFA. -> Decide
-        """
 
+    def make_trade_model(self):
+        """
+        Create a trade module that stores and calculates the trade flows between regions and sectors.
+        """
         trade_prm_names = [
             'direct_imports',
             'direct_exports',
@@ -125,57 +129,11 @@ class SteelModel:
             'scrap_imports',
             'scrap_exports'
         ]
-        historic_trade = {name: self.parameters[name] for name in trade_prm_names}
-        product_demand = future_in_use_stock.inflow
-        eol_products = future_in_use_stock.outflow
+        trade_prms = {name: self.parameters[name] for name in trade_prm_names}
+        self.parameters = {name : self.parameters[name] for name in self.parameters if name not in trade_prm_names}
+        return SteelTradeModel.create(dims=self.dims, trade_data=trade_prms)
 
-        future_trade = {name: Parameter(name=name,
-                                        dims=prm.dims.replace('h', self.dims['t']).expand_by([self.dims['g']])
-                                            if 'scrap' in name
-                                            else prm.dims.replace('h', self.dims['t']))
-                        for name, prm in historic_trade.items()}
-
-        # indirect trade
-
-        future_trade['indirect_imports'][...] = extrapolate_to_future(
-            historic_values=historic_trade['indirect_imports'],
-            scale_by=product_demand)
-
-        global_indirect_imports = future_trade['indirect_imports'].sum_nda_over(sum_over_dims='r')
-        future_trade['indirect_exports'][...] = extrapolate_to_future(
-            historic_values=historic_trade['indirect_exports'],
-            scale_by=global_indirect_imports)
-
-        # intermediate trade
-
-        total_product_demand = product_demand.sum_nda_over(sum_over_dims='g')
-        future_trade['direct_imports'][...] = extrapolate_to_future(
-            historic_values=historic_trade['direct_imports'],
-            scale_by=total_product_demand)
-
-        global_direct_imports = future_trade['direct_imports'].sum_nda_over(sum_over_dims='r')
-        future_trade['direct_exports'][...] = extrapolate_to_future(
-            historic_values=historic_trade['direct_exports'],
-            scale_by=global_direct_imports)
-
-        # scrap trade
-
-        total_eol_products = eol_products.sum_nda_over(sum_over_dims='g')
-        total_scrap_exports = extrapolate_to_future(
-            historic_values=historic_trade['scrap_exports'],
-            scale_by=total_eol_products) # shouldn't this be total _collected_ scrap?
-
-        global_scrap_exports = total_scrap_exports.sum_nda_over(sum_over_dims='r')
-        total_scrap_imports = extrapolate_to_future(
-            historic_values=historic_trade['scrap_imports'],
-            scale_by=global_scrap_exports)
-
-        future_trade['scrap_exports'][...] = total_scrap_exports * eol_products.get_shares_over('g')
-        future_trade['scrap_imports'][...] = total_scrap_imports * future_trade['scrap_exports'].get_shares_over('g')
-
-        self.parameters.update(future_trade)
-
-    def make_future_mfa(self, future_in_use_stock):
+    def make_future_mfa(self, future_in_use_stock, trade_model):
         future_dims = self.dims.drop('h', inplace=False)
         flows = make_empty_flows(
             processes=self.processes,
@@ -190,7 +148,7 @@ class SteelModel:
         stocks['use'] = future_in_use_stock
         return StockDrivenSteelMFASystem(
             dims=future_dims, parameters=self.parameters, scalar_parameters=self.scalar_parameters,
-            processes=self.processes, flows=flows, stocks=stocks
+            processes=self.processes, flows=flows, stocks=stocks, trade_model=trade_model,
         )
 
 
