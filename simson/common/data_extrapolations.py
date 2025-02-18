@@ -1,12 +1,12 @@
 from abc import abstractmethod
 import numpy as np
 import sys
-from pydantic import BaseModel, ConfigDict, model_validator
+from simson.common.base_model import SimsonBaseModel
+from pydantic import model_validator
 from scipy.optimize import least_squares
 
 
-class Extrapolation(BaseModel):
-    model_config = ConfigDict(arbitrary_types_allowed=True)
+class Extrapolation(SimsonBaseModel):
 
     data_to_extrapolate: np.ndarray  # historical data, 1 dimensional (time)
     target_range: np.ndarray  # predictor variable(s)
@@ -27,6 +27,7 @@ class Extrapolation(BaseModel):
 
 
 class OneDimensionalExtrapolation(Extrapolation):
+
     @model_validator(mode="after")
     def validate_data(self):
         assert self.data_to_extrapolate.ndim == 1, "Data to extrapolate must be 1-dimensional."

@@ -1,12 +1,12 @@
 import os
 from matplotlib import pyplot as plt
-from pydantic import BaseModel as PydanticBaseModel
+from simson.common.base_model import SimsonBaseModel
 import plotly.graph_objects as go
 import flodym as fd
 import flodym.export as fde
 
 
-class CustomDataExporter(PydanticBaseModel):
+class CustomDataExporter(SimsonBaseModel):
     output_path: str
     do_save_figs: bool = True
     do_show_figs: bool = True

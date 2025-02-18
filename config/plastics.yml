@@ -1,8 +1,6 @@
 # general config
 model_class: 'plastics'
 
-verbose: False
-
 # data sources
 input_data_path: 'data/plastics/input'
 
@@ -31,7 +29,7 @@ visualization:
       - "sysenv"
     exclude_flows: [ ]
   do_show_figs: True
-  do_save_figs: True
+  do_save_figs: False
 
 # data export
 output_path: 'data/plastics/output'

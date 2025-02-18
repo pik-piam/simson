@@ -63,7 +63,6 @@ def predict_by_extrapolation(
     # create future trade object
     future_dims = scaler.dims if adopt_scaler_dims else historic_dims_with_t_dimension
     future_trade = Trade(
-        dims=future_dims,
         imports=fd.Parameter(name=trade.imports.name, dims=future_dims),
         exports=fd.Parameter(name=trade.exports.name, dims=future_dims),
     )

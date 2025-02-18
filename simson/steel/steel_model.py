@@ -3,7 +3,7 @@ import flodym as fd
 import flodym.export as fde
 
 from simson.common.data_blending import blend, blend_over_time
-from simson.common.common_cfg import CommonCfg
+from simson.common.common_cfg import GeneralCfg
 from simson.common.data_transformations import extrapolate_stock, extrapolate_to_future
 from simson.common.custom_data_reader import CustomDataReader
 from simson.common.trade import TradeSet
@@ -15,7 +15,7 @@ from simson.steel.steel_definition import get_definition
 
 class SteelModel:
 
-    def __init__(self, cfg: CommonCfg):
+    def __init__(self, cfg: GeneralCfg):
         self.cfg = cfg
         self.definition = get_definition(self.cfg)
         self.data_reader = CustomDataReader(

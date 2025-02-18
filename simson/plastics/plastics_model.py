@@ -1,6 +1,6 @@
 import os
 
-from simson.common.common_cfg import CommonCfg
+from simson.common.common_cfg import GeneralCfg
 from .plastics_mfa_system import PlasticsMFASystem
 from .plastics_export import PlasticsDataExporter
 from .plastics_definition import get_definition
@@ -8,7 +8,7 @@ from .plastics_definition import get_definition
 
 class PlasticsModel:
 
-    def __init__(self, cfg: CommonCfg):
+    def __init__(self, cfg: GeneralCfg):
         self.cfg = cfg
         self.definition = get_definition(cfg)
         self.data_writer = PlasticsDataExporter(

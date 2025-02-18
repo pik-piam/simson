@@ -1,9 +1,9 @@
 import flodym as fd
 
-from simson.common.common_cfg import CommonCfg
+from simson.common.common_cfg import GeneralCfg
 
 
-def get_definition(cfg: CommonCfg):
+def get_definition(cfg: GeneralCfg):
 
     dimensions = [
         fd.DimensionDefinition(name="Time", dim_letter="t", dtype=int),

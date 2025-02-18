@@ -1,8 +1,6 @@
 # general config
 model_class: 'steel'
 
-verbose: False
-
 # data sources
 input_data_path: '../simson_data/data/steel/output'
 
@@ -10,7 +8,6 @@ input_data_path: '../simson_data/data/steel/output'
 customization:
   curve_strategy: 'Exponential_GDP_regression'
   ldf_type: 'LogNormal'
-  product_dimension_name: 'Good'
 
 # visualization
 visualization:
