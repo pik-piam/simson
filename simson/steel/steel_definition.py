@@ -36,6 +36,10 @@ def get_definition(cfg: CommonCfg):
         "recycling",
         "scrap_market",
         "excess_scrap",
+        "imports",
+        "exports",
+        "losses",
+        "extraction",
     ]
 
     # fmt: off
@@ -56,31 +60,35 @@ def get_definition(cfg: CommonCfg):
 
         # Future Flows
 
-        fd.FlowDefinition(from_process="sysenv", to_process="bof_production", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="extraction", to_process="bof_production", dim_letters=("t", "e", "r")),
         fd.FlowDefinition(from_process="scrap_market", to_process="bof_production", dim_letters=("t", "e", "r")),
         fd.FlowDefinition(from_process="bof_production", to_process="forming", dim_letters=("t", "e", "r")),
-        fd.FlowDefinition(from_process="bof_production", to_process="sysenv", dim_letters=("t", "e", "r",)),
+        fd.FlowDefinition(from_process="bof_production", to_process="losses", dim_letters=("t", "e", "r",)),
         fd.FlowDefinition(from_process="scrap_market", to_process="eaf_production", dim_letters=("t", "e", "r")),
         fd.FlowDefinition(from_process="eaf_production", to_process="forming", dim_letters=("t", "e", "r")),
-        fd.FlowDefinition(from_process="eaf_production", to_process="sysenv", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="eaf_production", to_process="losses", dim_letters=("t", "e", "r")),
         fd.FlowDefinition(from_process="forming", to_process="ip_market", dim_letters=("t", "e", "r", "i")),
         fd.FlowDefinition(from_process="forming", to_process="scrap_market", dim_letters=("t", "e", "r")),
-        fd.FlowDefinition(from_process="forming", to_process="sysenv", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="forming", to_process="losses", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="fabrication", to_process="losses", dim_letters=("t", "e", "r")),
         fd.FlowDefinition(from_process="ip_market", to_process="fabrication", dim_letters=("t", "e", "r", "i")),
-        fd.FlowDefinition(from_process="ip_market", to_process="sysenv", dim_letters=("t", "e", "r", "i")),
-        fd.FlowDefinition(from_process="sysenv", to_process="ip_market", dim_letters=("t", "e", "r", "i")),
+        fd.FlowDefinition(from_process="ip_market", to_process="exports", dim_letters=("t", "e", "r", "i")),
+        fd.FlowDefinition(from_process="imports", to_process="ip_market", dim_letters=("t", "e", "r", "i")),
         fd.FlowDefinition(from_process="fabrication", to_process="use", dim_letters=("t", "e", "r", "g")),
         fd.FlowDefinition(from_process="fabrication", to_process="scrap_market", dim_letters=("t", "e", "r")),
-        fd.FlowDefinition(from_process="use", to_process="sysenv", dim_letters=("t", "e", "r", "g")),
-        fd.FlowDefinition(from_process="sysenv", to_process="use", dim_letters=("t", "e", "r", "g")),
+        fd.FlowDefinition(from_process="use", to_process="exports", dim_letters=("t", "e", "r", "g")),
+        fd.FlowDefinition(from_process="imports", to_process="use", dim_letters=("t", "e", "r", "g")),
         fd.FlowDefinition(from_process="use", to_process="obsolete", dim_letters=("t", "e", "r", "g")),
         fd.FlowDefinition(from_process="use", to_process="eol_market", dim_letters=("t", "e", "r", "g")),
         fd.FlowDefinition(from_process="eol_market", to_process="recycling", dim_letters=("t", "e", "r", "g")),
-        fd.FlowDefinition(from_process="eol_market", to_process="sysenv", dim_letters=("t", "e", "r", "g")),
-        fd.FlowDefinition(from_process="sysenv", to_process="eol_market", dim_letters=("t", "e", "r", "g")),
-        fd.FlowDefinition(from_process="sysenv", to_process="recycling", dim_letters=("t", "e", "r", "g")),
+        fd.FlowDefinition(from_process="eol_market", to_process="exports", dim_letters=("t", "e", "r", "g")),
+        fd.FlowDefinition(from_process="imports", to_process="eol_market", dim_letters=("t", "e", "r", "g")),
         fd.FlowDefinition(from_process="recycling", to_process="scrap_market", dim_letters=("t", "e", "r", "g")),
-        fd.FlowDefinition(from_process="scrap_market", to_process="excess_scrap", dim_letters=("t", "e", "r"))
+        fd.FlowDefinition(from_process="scrap_market", to_process="excess_scrap", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="exports", to_process="sysenv", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="sysenv", to_process="imports", dim_letters=("t", "e", "r")),
+        fd.FlowDefinition(from_process="losses", to_process="sysenv", dim_letters=("t", "e", "r",)),
+        fd.FlowDefinition(from_process="sysenv", to_process="extraction", dim_letters=("t", "e", "r")),
     ]
     # fmt: on
 
@@ -134,6 +142,7 @@ def get_definition(cfg: CommonCfg):
         fd.ParameterDefinition(name="lifetime_mean", dim_letters=("r", "g")),
         fd.ParameterDefinition(name="lifetime_std", dim_letters=("r", "g")),
         fd.ParameterDefinition(name="sector_split_low", dim_letters=("g",)),
+        fd.ParameterDefinition(name="sector_split_medium", dim_letters=("g",)),
         fd.ParameterDefinition(name="sector_split_high", dim_letters=("g",)),
         fd.ParameterDefinition(name="secsplit_gdppc_low", dim_letters=()),
         fd.ParameterDefinition(name="secsplit_gdppc_high", dim_letters=()),
@@ -144,11 +153,11 @@ def get_definition(cfg: CommonCfg):
         fd.ParameterDefinition(name="dri_production", dim_letters=("h", "r")),
         fd.ParameterDefinition(name="dri_imports", dim_letters=("h", "r")),
         fd.ParameterDefinition(name="dri_exports", dim_letters=("h", "r")),
-        fd.ParameterDefinition(name="lifetime_mean", dim_letters=("r", "g")),
-        fd.ParameterDefinition(name="lifetime_std", dim_letters=("r", "g")),
+        fd.ParameterDefinition(name="scrap_consumption", dim_letters=("h", "r")),
         fd.ParameterDefinition(name="max_scrap_share_base_model", dim_letters=()),
         fd.ParameterDefinition(name="scrap_in_bof_rate", dim_letters=()),
         fd.ParameterDefinition(name="forming_losses", dim_letters=()),
+        fd.ParameterDefinition(name="fabrication_losses", dim_letters=()),
         fd.ParameterDefinition(name="production_yield", dim_letters=()),
     ]
 

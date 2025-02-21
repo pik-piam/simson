@@ -29,7 +29,46 @@ class SteelModel:
         self.parameters = self.data_reader.read_parameters(
             self.definition.parameters, dims=self.dims
         )
+        self.modify_parameters()
         self.processes = fd.make_processes(self.definition.processes)
+
+    def modify_parameters(self):
+        """Manual changes to parameters in order to match historical scrap consumption.
+        """
+        lifetime_factor = fd.Parameter(dims=self.dims["t", "r"])
+        lifetime_factor.values[:45, ...] = np.linspace(1., 0.7, 45)[:, np.newaxis]
+        lifetime_factor.values[45:55, ...] = 0.7
+        lifetime_factor.values[55:90, ...] = np.linspace(0.7, 0.8, 35)[:, np.newaxis]
+        lifetime_factor.values[90:110, ...] = np.linspace(0.8, 1.3, 20)[:, np.newaxis]
+        lifetime_factor.values[110:, ...] = 1.3
+        self.parameters["lifetime_factor"] = lifetime_factor
+
+        self.parameters["lifetime_mean"] = fd.Parameter(
+            dims=self.dims["t", "r", "g"],
+            values=(self.parameters["lifetime_factor"] * self.parameters["lifetime_mean"]).values,
+        )
+        self.parameters["lifetime_std"] = fd.Parameter(
+            dims=self.dims["t", "r", "g"],
+            values=(self.parameters["lifetime_factor"] * self.parameters["lifetime_std"]).values,
+        )
+
+        scrap_rate_factor = fd.Parameter(dims=self.dims["t",])
+        scrap_rate_factor.values[:20] = 1.9
+        scrap_rate_factor.values[20:50] = np.linspace(1.9, 1.6, 30)
+        scrap_rate_factor.values[50:70] = 1.6
+        scrap_rate_factor.values[70:100] = np.linspace(1.6, 0.8, 30)
+        scrap_rate_factor.values[100:] = 0.8
+        self.parameters["forming_yield"] = fd.Parameter(
+            dims=self.dims["t", "i"],
+            values=(1 - scrap_rate_factor * (1 - self.parameters["forming_yield"])).values,
+        )
+        self.parameters["fabrication_yield"] = fd.Parameter(
+            dims=self.dims["t", "g"],
+            values=(1 - scrap_rate_factor * (1 - self.parameters["fabrication_yield"])).values,
+        )
+
+        self.parameters["recovery_rate"].values *= 0.95
+
 
     def run(self):
         self.historic_mfa = self.make_historic_mfa()
@@ -40,7 +79,7 @@ class SteelModel:
         self.future_mfa.compute(future_demand, self.historic_mfa.trade_set)
 
         self.data_writer.export_mfa(mfa=self.future_mfa)
-        self.data_writer.visualize_results(mfa=self.future_mfa)
+        self.data_writer.visualize_results(historic_mfa=self.historic_mfa, future_mfa=self.future_mfa)
 
     def make_historic_mfa(self) -> InflowDrivenHistoricSteelMFASystem:
         """
@@ -153,7 +192,7 @@ class SteelModel:
 
     def get_high_stock_sector_split(self):
         prm = self.parameters
-        high_stock_sector_split = (prm["lifetime_mean"] * prm["sector_split_high"]).get_shares_over("g")
+        high_stock_sector_split = (prm["lifetime_mean"][{'t': self.dims['t'].items[-1]}] * prm["sector_split_high"]).get_shares_over("g")
         return high_stock_sector_split
 
     def calc_stock_sector_splits(self):

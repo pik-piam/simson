@@ -27,16 +27,11 @@ def extrapolate_stock(
         historic_dim_letters = ("h",) + target_dim_letters[1:]
 
     # transform to per capita
-    pop = parameters["population"]
-    historic_pop = fd.FlodymArray(dims=dims[("h", "r")])
-    historic_gdppc = fd.FlodymArray(dims=dims[("h", "r")])
     historic_stocks_pc = fd.FlodymArray(dims=dims[historic_dim_letters])
     stocks_pc = fd.FlodymArray(dims=dims[target_dim_letters])
     stocks = fd.FlodymArray(dims=dims[target_dim_letters])
 
-    historic_pop[...] = pop[{"t": dims["h"]}]
-    historic_gdppc[...] = parameters["gdppc"][{"t": dims["h"]}]
-    historic_stocks_pc[...] = historic_stocks / historic_pop
+    historic_stocks_pc[...] = historic_stocks / parameters["population"][{"t": dims["h"]}]
 
     extrapolation_class_dict = {
         'GDP_regression': SigmoidalExtrapolation,
@@ -54,9 +49,8 @@ def extrapolate_stock(
                    saturation_level=saturation_level)
 
     # transform back to total stocks
-    stocks[...] = stocks_pc * pop
+    stocks[...] = stocks_pc * parameters["population"]
 
-    # visualize_stock(self, self.parameters['gdppc'], historic_gdppc, stocks, historic_stocks, stocks_pc, historic_stocks_pc)
     return fd.StockArray(**dict(stocks))
 
 
@@ -120,46 +114,3 @@ def gdp_regression(historic_stocks_pc, gdppc, prediction_out, extrapolation_clas
         prediction_out[...] = pure_prediction
 
     prediction_out[:n_historic, ...] = historic_stocks_pc
-
-    # TODO delete visualisation
-    visualise = False
-
-    if visualise:
-
-        from matplotlib import pyplot as plt
-        regions = ['CAZ', 'CHA', 'EUR', 'IND', 'JPN', 'LAM', 'MEA', 'NEU', 'OAS', 'REF', 'SSA', 'USA']
-        for r, region in enumerate(regions):
-            plt.plot(gdppc[:, r], pure_prediction[:, r], label=region)
-            # plt.plot(gdppc[:, r], prediction_out[:, r], label=region)
-        plt.legend()
-        plt.xlabel('GDP pc')
-        plt.axvline(x=2022, color='r', linestyle='--')
-        plt.ylabel('Stocks pc')
-        plt.title('Stocks over GDP')
-        plt.show()
-
-        for r, region in enumerate(regions):
-            plt.plot(np.log(gdppc[:, r]), pure_prediction[:, r], label=region)
-            # plt.plot(np.log(gdppc[:, r]), prediction_out[:, r], label=region)
-        plt.legend()
-        plt.axvline(x=2022, color='r', linestyle='--')
-        plt.xlabel('Log GDP pc')
-        plt.ylabel('Stocks pc')
-        plt.title('Stocks over Log GDP')
-        plt.show()
-
-        if len(pure_prediction.shape) == 3:
-            pure_prediction = np.sum(pure_prediction, axis=2)
-            prediction_out = np.sum(prediction_out, axis=2)
-
-        for r, region in enumerate(regions):
-            # plt.plot(range(1900, 2101), pure_prediction[:, r], label=region)
-            plt.plot(range(1900, 2101), prediction_out[:, r], label=region)
-        plt.axvline(x=2022, color='r', linestyle='--')
-        plt.legend()
-        plt.xlabel('Year')
-        plt.ylabel('Stocks pc')
-        plt.title('Stocks over Time')
-        plt.show()
-
-        a = 0

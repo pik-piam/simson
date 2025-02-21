@@ -21,26 +21,26 @@ visualization:
     do_visualize: True
   stock:
     do_visualize: True
-    over_gdp: False
+    over_gdp: True
     per_capita: True
   production:
     do_visualize: True
   sankey:
     do_visualize: True
     slice_dict:
-      t: 2050
-    split_flows_by: 'Good'
-    color_scheme: 'blueish'
-    flow_color: 'hsl(230,20,70)'
+      t: 1994
+      # r: 'USA'
     exclude_processes:
       - "sysenv"
+      - "imports"
+      - "exports"
     exclude_flows: [ ]
-  do_show_figs: False
-  do_save_figs: True
+  do_show_figs: True
+  do_save_figs: False
   plotting_engine: 'plotly'
 
 # data export
 output_path: 'data/steel/output'
 do_export:
-  pickle: True
-  csv: True
+  pickle: False
+  csv: False
