@@ -27,7 +27,7 @@ dependencies = [
     "pydantic>=2.8.2",
     # Kaleido version: https://github.com/plotly/Kaleido/issues/134#issuecomment-1215791893
     "kaleido==0.1.0.post1",
-    "flodym>=0.1.1",
+    "flodym>=0.2.0",
     "black>=25.1.0",
 ]
 

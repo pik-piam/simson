@@ -126,3 +126,72 @@ class ExponentialExtrapolation(OneDimensionalExtrapolation):
         regression = prms_out.x[0] * (1 - np.exp(-prms_out.x[1] * self.target_range))
 
         return regression
+
+
+class MultiDimLogSigmoidalExtrapolation(Extrapolation):
+    saturation_level: float = None
+    guess_sat_level_over_max_by_pct: float = 0.2  # TODO store default value in new config
+
+    def __init__(self, **data):
+        super().__init__(**data)
+        self.target_range = np.log(self.target_range)
+
+    def initial_guess(self):
+        max_level = np.max(self.data_to_extrapolate)
+        sat_level_guess = (1.0 + self.guess_sat_level_over_max_by_pct) * max_level
+
+        mean_target = np.mean(
+            self.target_range
+        )  # TODO: decide maybe only use mean of historic values
+
+        index_max_level = np.where(self.data_to_extrapolate == max_level)  # todo check
+        target_max_level = self.target_range[index_max_level][0]
+        stretch_factor = -np.log(self.guess_sat_level_over_max_by_pct) / (
+            target_max_level - mean_target
+        )
+
+        return np.array([sat_level_guess, stretch_factor, mean_target])
+
+    def fitting_function_with_saturation_level(self, prms):
+        return (
+            self.saturation_level
+            / (
+                1.0
+                + np.exp(-(prms[0] * (self.target_range[: self.n_historic].flatten() - prms[1])))
+            )
+        ) - self.data_to_extrapolate.flatten()
+
+    def fitting_function_without_saturation_level(self, prms):
+        return (
+            prms[0]
+            / (
+                1.0
+                + np.exp(-(prms[1] * (self.target_range[: self.n_historic].flatten() - prms[2])))
+            )
+        ) - self.data_to_extrapolate.flatten()
+
+    def get_params(self):
+        initial_guess = self.initial_guess()
+
+        if self.saturation_level is None:
+            fitting_function = self.fitting_function_without_saturation_level
+        else:
+            fitting_function = self.fitting_function_with_saturation_level
+            initial_guess = initial_guess[1:]
+
+        return least_squares(fitting_function, x0=initial_guess, gtol=1.0e-12).x
+
+    def regress(self):
+        prms_out = self.get_params()
+        if len(prms_out) == 2:
+            prms_out = np.concatenate([[self.saturation_level], prms_out])
+        regression = prms_out[0] / (
+            1.0 + np.exp(-(prms_out[1] * (self.target_range - prms_out[2])))
+        )
+
+        return regression
+
+
+class LogSigmoidalExtrapolation(MultiDimLogSigmoidalExtrapolation, OneDimensionalExtrapolation):
+    # TODO decide class structure -> is OneDimensionalExtrapolation really necessary?
+    pass

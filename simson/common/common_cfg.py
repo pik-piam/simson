@@ -12,6 +12,7 @@ class ModelCustomization(SimsonBaseModel):
 
     curve_strategy: str
     ldf_type: str
+    do_stock_extrapolation_by_category: bool = False
     _lifetime_model_class: type = None
 
     @property
