@@ -6,8 +6,8 @@ input_data_path: 'data/plastics/input'
 
 # model customization
 customization:
-  curve_strategy: 'PehlExtrapolation'
-  ldf_type: 'Normal'
+  stock_extrapolation_class_name: 'PehlExtrapolation'
+  lifetime_model_name: 'NormalLifetime'
 
 # visualization
 visualization:

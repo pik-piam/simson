@@ -1,6 +1,8 @@
 from simson.common.base_model import SimsonBaseModel
 import flodym as fd
 
+from .data_extrapolations import Extrapolation
+
 
 IMPLEMENTED_MODELS = [
     "plastics",
@@ -8,22 +10,35 @@ IMPLEMENTED_MODELS = [
 ]
 
 
+def choose_sublass_by_name(name: str, parent: type) -> type:
+
+    def recurse_subclasses(cls):
+        return set(cls.__subclasses__()).union(
+            [s for c in cls.__subclasses__() for s in recurse_subclasses(c)]
+        )
+
+    subclasses = {cls.__name__: cls for cls in recurse_subclasses(parent)}
+    if name not in subclasses:
+        raise ValueError(
+            f"Subclass name for {parent.__name__} must be one of {list(subclasses.keys())}, but {name} was given."
+        )
+    return subclasses[name]
+
+
 class ModelCustomization(SimsonBaseModel):
 
-    curve_strategy: str
-    ldf_type: str
-    _lifetime_model_class: type = None
+    stock_extrapolation_class_name: str
+    lifetime_model_name: str
+    do_stock_extrapolation_by_category: bool = False
 
     @property
-    def lifetime_model(self):
-        lifetime_model_classes = {
-            "Fixed": fd.FixedLifetime,
-            "Normal": fd.NormalLifetime,
-            "FoldedNormal": fd.FoldedNormalLifetime,
-            "LogNormal": fd.LogNormalLifetime,
-            "Weibull": fd.WeibullLifetime,
-        }
-        return lifetime_model_classes[self.ldf_type]
+    def lifetime_model(self) -> fd.LifetimeModel:
+        return choose_sublass_by_name(self.lifetime_model_name, fd.LifetimeModel)
+
+    @property
+    def stock_extrapolation_class(self) -> Extrapolation:
+        """Check if the given extrapolation class is a valid subclass of OneDimensionalExtrapolation and return it."""
+        return choose_sublass_by_name(self.stock_extrapolation_class_name, Extrapolation)
 
 
 class VisualizationCfg(SimsonBaseModel):

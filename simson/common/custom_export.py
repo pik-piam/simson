@@ -42,13 +42,22 @@ class CustomDataExporter(SimsonBaseModel):
             mfa=mfa, display_names=self._display_names, **self.cfg.sankey
         )
         fig = plotter.plot()
+
+        fig.update_layout(
+            # title_text=f"Steel Flows ({', '.join([str(v) for v in self.sankey['slice_dict'].values()])})",
+            font_size=20,
+        )
+
         self._show_and_save_plotly(fig, name="sankey")
 
     def figure_path(self, filename: str) -> str:
         return os.path.join(self.output_path, "figures", filename)
 
-    def plot_and_save_figure(self, plotter: fde.ArrayPlotter, filename: str):
-        plotter.plot(do_show=self.cfg.do_show_figs)
+    def plot_and_save_figure(self, plotter: fde.ArrayPlotter, filename: str, do_plot: bool = True):
+        if do_plot:
+            plotter.plot()
+        if self.cfg.do_show_figs:
+            plotter.show()
         if self.cfg.do_save_figs:
             plotter.save(self.figure_path(filename), width=2200, height=1300)
 

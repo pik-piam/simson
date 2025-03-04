@@ -2,12 +2,12 @@ from typing import Optional
 import flodym as fd
 
 from simson.common.data_transformations import StockExtrapolation
-from simson.common.common_cfg import ModelCustomization
+from simson.common.common_cfg import PlasticsCfg
 
 
 class PlasticsMFASystem(fd.MFASystem):
 
-    cfg: Optional[ModelCustomization] = None
+    cfg: Optional[PlasticsCfg] = None
 
     def compute(self):
         """
@@ -32,7 +32,7 @@ class PlasticsMFASystem(fd.MFASystem):
             self.stocks["in_use_historic"].stock,
             dims=self.dims,
             parameters=self.parameters,
-            stock_extrapolation_class=self.cfg.customization.curve_strategy,
+            stock_extrapolation_class=self.cfg.customization.stock_extrapolation_class,
         )
         in_use_stock = stock_handler.stocks
         self.stocks["in_use_dsm"].stock[...] = in_use_stock

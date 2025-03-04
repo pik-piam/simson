@@ -1,10 +1,9 @@
 import numpy as np
 import flodym as fd
-from typing import Callable
 
 from .data_extrapolations import (
-    OneDimensionalExtrapolation,
-    WeightedProportionalExtrapolation,
+    Extrapolation,
+    ProportionalExtrapolation,
 )
 
 
@@ -15,38 +14,21 @@ class StockExtrapolation:
         historic_stocks: fd.StockArray,
         dims: fd.DimensionSet,
         parameters: dict[str, fd.Parameter],
-        stock_extrapolation_class: OneDimensionalExtrapolation,
+        stock_extrapolation_class: Extrapolation,
         target_dim_letters=None,
+        saturation_level=None,
     ):
         self.historic_stocks = historic_stocks
         self.dims = dims
         self.parameters = parameters
-        self.stock_extrapolation_class = self.validate_extrapolation_class(
-            stock_extrapolation_class
-        )
+        self.stock_extrapolation_class = stock_extrapolation_class
         self.target_dim_letters = target_dim_letters
-        self.regression_strategy = self.find_regression_strategy()
-        self.n_fit_prms = self.stock_extrapolation_class.n_prms
+        self.saturation_level = saturation_level
         self.extrapolate()
-
-    def validate_extrapolation_class(self, extrapolation_class) -> OneDimensionalExtrapolation:
-        """Check if the given extrapolation class is a valid subclass of OneDimensionalExtrapolation and return it."""
-        extrapolation_classes = {
-            cls.__name__: cls for cls in OneDimensionalExtrapolation.__subclasses__()
-        }
-        if extrapolation_class not in extrapolation_classes:
-            raise ValueError(
-                f"Extrapolation class must be one of {list(extrapolation_classes.keys())}"
-            )
-        return extrapolation_classes[extrapolation_class]
-
-    def find_regression_strategy(self) -> Callable:
-        """For now, only a regression based on GDP is implemented."""
-        return self.gdp_regression
 
     def extrapolate(self):
         self.per_capita_transformation()
-        self.regression_strategy()
+        self.gdp_regression()
 
     def per_capita_transformation(self):
         if self.target_dim_letters is None:
@@ -75,19 +57,21 @@ class StockExtrapolation:
         shape_out = prediction_out.shape
         pure_prediction = np.zeros_like(prediction_out)
         n_historic = historic_in.shape[0]
-        self.fit_prms = np.zeros(shape_out[1:] + (self.n_fit_prms,))
 
         for idx in np.ndindex(shape_out[1:]):
             # idx is a tuple of indices for all dimensions except the time dimension
             index = (slice(None),) + idx
             current_hist_stock_pc = historic_in[index]
             current_gdppc = self.gdppc.values[index[:2]]
+            kwargs = {}
+            if self.saturation_level is not None:
+                kwargs["saturation_level"] = self.saturation_level[idx]
             extrapolation = self.stock_extrapolation_class(
-                data_to_extrapolate=current_hist_stock_pc, target_range=current_gdppc
+                data_to_extrapolate=current_hist_stock_pc, target_range=current_gdppc, **kwargs
             )
             pure_prediction[index] = extrapolation.regress()
-            self.fit_prms[idx] = extrapolation.fit_prms
 
+        # match last point by adding the difference between the last historic point and the corresponding prediction
         prediction_out[...] = pure_prediction - (
             pure_prediction[n_historic - 1, :] - historic_in[n_historic - 1, :]
         )
@@ -95,11 +79,6 @@ class StockExtrapolation:
 
         # transform back to total stocks
         self.stocks[...] = self.stocks_pc * self.pop
-        self.transform_to_fd_stock_array()
-
-    def transform_to_fd_stock_array(self):
-        self.stocks = fd.StockArray(**dict(self.stocks))
-        self.stocks_pc = fd.StockArray(**dict(self.stocks_pc))
 
 
 def extrapolate_to_future(
@@ -121,8 +100,19 @@ def extrapolate_to_future(
 
     scale_by = scale_by.cast_to(extrapolated_values.dims)
 
-    extrapolation = WeightedProportionalExtrapolation(
-        data_to_extrapolate=historic_values.values, target_range=scale_by.values
+    # calculate weights
+    n_hist_points = historic_values.dims.shape()[0]
+    n_last_points = 5
+    weights_1d = np.maximum(0.0, np.arange(-n_hist_points, 0) + n_last_points + 1)
+    weights_1d = weights_1d / weights_1d.sum()
+    weights = np.zeros_like(historic_values.values)
+    weights[...] = weights_1d[(slice(None),) + (np.newaxis,) * (weights.ndim - 1)]
+
+    extrapolation = ProportionalExtrapolation(
+        data_to_extrapolate=historic_values.values,
+        target_range=scale_by.values,
+        weights=weights,
+        independent=True,
     )
     extrapolated_values.set_values(extrapolation.extrapolate())
 

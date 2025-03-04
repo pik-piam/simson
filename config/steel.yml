@@ -6,8 +6,9 @@ input_data_path: '../simson_data/data/steel/output'
 
 # model customization
 customization:
-  curve_strategy: 'ExponentialSaturationExtrapolation'
-  ldf_type: 'LogNormal'
+  stock_extrapolation_class_name: 'FixedSatLogSigmoidExtrapolation'
+  lifetime_model_name: 'LogNormalLifetime'
+  do_stock_extrapolation_by_category: True
 
 # visualization
 visualization:
@@ -17,19 +18,19 @@ visualization:
     do_visualize: True
   stock:
     do_visualize: True
-    over_gdp: False
+    over_gdp: True
     per_capita: True
   production:
     do_visualize: True
   sankey:
     do_visualize: True
     slice_dict:
-      t: 2050
-    split_flows_by: 'Good'
-    color_scheme: 'blueish'
-    flow_color: 'hsl(230,20,70)'
+      t: 2020
+      # r: 'USA'
     exclude_processes:
       - "sysenv"
+      - "imports"
+      - "exports"
     exclude_flows: [ ]
   do_show_figs: True
   do_save_figs: False

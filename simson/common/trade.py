@@ -27,7 +27,15 @@ class Trade(SimsonBaseModel):
         ), "Imports and exports must have the same dimensions."
         return self
 
-    def balance(self, to: str = "hmean", inplace=False):
+    @property
+    def net_imports(self):
+        return self.imports - self.exports
+
+    @property
+    def net_exports(self):
+        return self.exports - self.imports
+
+    def balance(self, to: str = "hmean"):
         global_imports = self.imports.sum_over("r")
         global_exports = self.exports.sum_over("r")
 
@@ -39,13 +47,8 @@ class Trade(SimsonBaseModel):
         new_imports = self.imports * import_factor
         new_exports = self.exports * export_factor
 
-        if not inplace:
-            return Trade(imports=new_imports, exports=new_exports)
-
         self.imports = new_imports
         self.exports = new_exports
-
-        return self
 
     @staticmethod
     def get_reference_trade(
