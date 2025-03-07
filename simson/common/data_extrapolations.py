@@ -182,3 +182,47 @@ class FixedSatLogSigmoidExtrapolation(Extrapolation):
         target_max_level = np.max(np.log(target_range))
         stretch_factor = 2 / (target_max_level - mean_target)
         return np.array([stretch_factor, mean_target])
+
+
+class SigmoidExtrapolation(Extrapolation):
+
+    n_prms: ClassVar[int] = 3
+
+    @staticmethod
+    def func(x, prms):
+        return prms[0] / (1.0 + np.exp(-prms[1] * (x - prms[2])))
+
+    def initial_guess(self):
+        current_level = self.data_to_extrapolate[-1]
+        current_extrapolator = self.target_range[self.n_historic - 1]
+        initial_saturation_level = (
+            2.0 * current_level if np.max(np.abs(current_level)) > sys.float_info.epsilon else 1.0
+        )
+
+        # Estimate slope based on historical data points
+        if len(self.data_to_extrapolate) > 1:
+            # Calculate average rate of change in recent history
+            recent_y_change = self.data_to_extrapolate[-1] - self.data_to_extrapolate[-2]
+            recent_x_change = (
+                self.target_range[self.n_historic - 1] - self.target_range[self.n_historic - 2]
+            )
+            if abs(recent_x_change) > sys.float_info.epsilon:
+                slope_estimate = recent_y_change / recent_x_change
+                # Convert slope to stretch factor (sigmoid derivative at midpoint is prms[0]*prms[1]/4)
+                initial_stretch_factor = 4.0 * slope_estimate / initial_saturation_level
+            else:
+                initial_stretch_factor = 0.1
+        else:
+            initial_stretch_factor = 0.1
+
+        # If current level is approximately half the saturation level, set x-offset to current x value
+        ratio = current_level / initial_saturation_level
+        # Solve for x-offset using the sigmoid equation at current point
+        if 0 < ratio < 1:
+            logit = np.log(ratio / (1.0 - ratio))
+            initial_x_offset = current_extrapolator - logit / initial_stretch_factor
+        else:
+            # Fallback if ratio is not in (0,1)
+            initial_x_offset = current_extrapolator
+
+        return np.array([initial_saturation_level, initial_stretch_factor, initial_x_offset])
