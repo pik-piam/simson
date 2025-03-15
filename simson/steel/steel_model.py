@@ -152,6 +152,7 @@ class SteelModel:
             target_dim_letters=(
                 None if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
             ),
+            fit_dim_letters=("r",),
             saturation_level=saturation_level,
         )
         total_in_use_stock = stock_handler.stocks
@@ -162,7 +163,7 @@ class SteelModel:
             total_in_use_stock = total_in_use_stock * sector_splits
         return total_in_use_stock
 
-    def get_saturation_level(self, historic_stocks):
+    def get_saturation_level(self, historic_stocks: fd.StockArray):
         pop = self.parameters["population"]
         gdppc = self.parameters["gdppc"]
         historic_pop = pop[{"t": self.dims["h"]}]
@@ -171,9 +172,10 @@ class SteelModel:
         multi_dim_extrapolation = VarySatLogSigmoidExtrapolation(
             data_to_extrapolate=historic_stocks_pc.values,
             target_range=gdppc.values,
+            independent_dims=(),
         )
         multi_dim_extrapolation.regress()
-        saturation_level = multi_dim_extrapolation.fit_prms[0]
+        saturation_level = multi_dim_extrapolation.fit_prms.T[0]
 
         if self.cfg.customization.do_stock_extrapolation_by_category:
             # TODO Decide method for high stock sector split
@@ -183,7 +185,7 @@ class SteelModel:
             else:  # calc regional specific stock sector split for end of century
                 gdp_sector_splits = self.calc_stock_sector_splits().values
                 high_stock_sector_split = gdp_sector_splits[-1]
-            saturation_level = saturation_level * high_stock_sector_split.values
+            saturation_level = (saturation_level * high_stock_sector_split.values.T).T
         else:
             saturation_level = np.full(gdppc.values.shape[1:], saturation_level)
 
