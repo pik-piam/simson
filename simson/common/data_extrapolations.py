@@ -14,11 +14,11 @@ class Extrapolation(SimsonBaseModel):
     target_range: np.ndarray
     """predictor variable(s) covering range of data_to_extrapolate and beyond"""
     weights: Optional[np.ndarray] = None
-    saturation_level: Optional[np.ndarray] = None
     independent_dims: Tuple[int, ...] = ()
     """Indizes for dimensions across which to regress independently. Other dimensions are regressed commonly."""
     fit_prms: np.ndarray = None
-    n_prms: ClassVar[int]
+    prm_names: list[str] = []
+    bounds_dict: dict[str, Tuple[float, float]] = {}
 
     @model_validator(mode="after")
     def validate_data(self):
@@ -37,8 +37,52 @@ class Extrapolation(SimsonBaseModel):
         return self
 
     @property
+    def n_prms(self):
+        return len(self.prm_names)
+
+    @property
     def n_historic(self):
         return self.data_to_extrapolate.shape[0]
+    
+    @staticmethod
+    def create_bounds(bounds_dict, prm_names):
+        """
+        Create bounds arrays for scipy.optimize.least_squares from a dictionary of bounds.
+        
+        Parameters:
+        -----------
+        bounds_dict : dict
+            Dictionary mapping parameter names to (lower_bound, upper_bound) tuples
+        prm_names : list
+            List of parameter names in the correct order
+            
+        Returns:
+        --------
+        tuple
+            Tuple of (lower_bounds, upper_bounds) arrays for scipy.optimize.least_squares
+        
+        Raises:
+        -------
+        ValueError
+            If bounds_dict contains keys not in prm_names
+        ValueError
+            If any bound tuple doesn't have exactly 2 elements
+        """
+        # Check for invalid parameter names in bounds_dict
+        invalid_keys = set(bounds_dict.keys()) - set(prm_names)
+        if invalid_keys:
+            raise ValueError(f"Unknown parameters in bounds_dict: {invalid_keys}")
+        
+        # Check for invalid bound tuples
+        for param, bounds in bounds_dict.items():
+            if not isinstance(bounds, tuple) or len(bounds) != 2:
+                raise ValueError(f"Bound for {param} must be a tuple of (lower, upper), got {bounds}")
+        
+        # Create the bounds arrays
+        lower_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[0] for param in prm_names]
+        upper_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[1] for param in prm_names]
+        
+        return (lower_bounds, upper_bounds)
 
     def extrapolate(self, historic_from_regression: bool = False):
         regression = self.regress()
@@ -47,7 +91,7 @@ class Extrapolation(SimsonBaseModel):
         return regression
 
     @abstractmethod
-    def func(x: np.ndarray, prms: np.ndarray, **kwargs) -> np.ndarray:
+    def func(x: np.ndarray, prms: np.ndarray) -> np.ndarray:
         pass
 
     @abstractmethod
@@ -62,12 +106,10 @@ class Extrapolation(SimsonBaseModel):
         target_range: np.ndarray,
         data_to_extrapolate: np.ndarray,
         weights: np.ndarray,
-        saturation_level: np.ndarray,
     ) -> callable:
-        kwargs = {"saturation_level": saturation_level} if saturation_level is not None else {}
 
         def fitting_function(prms: np.ndarray) -> np.ndarray:
-            f = self.func(target_range, prms, **kwargs)
+            f = self.func(target_range, prms)
             loss = weights * (f - data_to_extrapolate)
             return loss.flatten()
 
@@ -92,29 +134,27 @@ class Extrapolation(SimsonBaseModel):
                 self.target_range[index],
                 self.data_to_extrapolate[index],
                 self.weights[index],
-                self.saturation_level[idx] if self.saturation_level is not None else None,
             )
 
         return regression
 
-    def regress_common(self, target, data, weights, saturation_level):
+    def regress_common(self, target, data, weights):
         """Finds optimal fit of data and extrapolates to target."""
         fitting_function = self.get_fitting_function(
             target[: self.n_historic, ...],
             data,
             weights,
-            saturation_level,
         )
         initial_guess = self.initial_guess(target, data)
-        fit_prms = least_squares(fitting_function, x0=initial_guess, gtol=1.0e-12).x
-        kwargs = {"saturation_level": saturation_level} if saturation_level is not None else {}
-        regression = self.func(target, fit_prms, **kwargs)
+        bounds = self.create_bounds(self.bounds_dict, self.prm_names)
+        fit_prms = least_squares(fitting_function, x0=initial_guess, gtol=1.0e-12, bounds=bounds).x
+        regression = self.func(target, fit_prms)
         return fit_prms, regression
 
 
 class ProportionalExtrapolation(Extrapolation):
 
-    n_prms: ClassVar[int] = 1
+    prm_names: list[str] = ["proportionality_factor"]
 
     @staticmethod
     def func(x, prms):
@@ -127,7 +167,7 @@ class ProportionalExtrapolation(Extrapolation):
 
 class PehlExtrapolation(Extrapolation):
 
-    n_prms: ClassVar[int] = 2
+    prm_names: list[str]  = ["saturation_level", "stretch_factor"]
 
     @staticmethod
     def func(x, prms):
@@ -144,7 +184,7 @@ class PehlExtrapolation(Extrapolation):
 
 class ExponentialSaturationExtrapolation(Extrapolation):
 
-    n_prms: ClassVar[int] = 2
+    prm_names: list[str]  = ["saturation_level", "stretch_factor"]    
 
     @staticmethod
     def func(x, prms):
@@ -160,9 +200,9 @@ class ExponentialSaturationExtrapolation(Extrapolation):
         return np.array([initial_saturation_level, initial_stretch_factor])
 
 
-class VarySatLogSigmoidExtrapolation(Extrapolation):
+class LogSigmoidExtrapolation(Extrapolation):
 
-    n_prms: ClassVar[int] = 3
+    prm_names: list[str]  = ["saturation_level", "stretch_factor", "x_offset"]
 
     @staticmethod
     def func(x, prms):
@@ -179,27 +219,9 @@ class VarySatLogSigmoidExtrapolation(Extrapolation):
         stretch_factor = 2 / (target_max_level - mean_target)
         return np.array([sat_level_guess, stretch_factor, mean_target])
 
-
-class FixedSatLogSigmoidExtrapolation(Extrapolation):
-
-    n_prms: ClassVar[int] = 2
-    saturation_level: np.ndarray = np.array([1.0])
-
-    @staticmethod
-    def func(x, prms, saturation_level):
-        return saturation_level / (1 + np.exp(-prms[0] * (np.log(x) - prms[1])))
-
-    @staticmethod
-    def initial_guess(target_range, data_to_extrapolate):
-        mean_target = np.mean(np.log(target_range))
-        target_max_level = np.max(np.log(target_range))
-        stretch_factor = 2 / (target_max_level - mean_target)
-        return np.array([stretch_factor, mean_target])
-
-
 class SigmoidExtrapolation(Extrapolation):
 
-    n_prms: ClassVar[int] = 3
+    prm_names: list[str]  = ["saturation_level", "stretch_factor", "x_offset"]
 
     @staticmethod
     def func(x, prms):

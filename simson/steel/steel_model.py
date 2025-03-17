@@ -3,8 +3,8 @@ import flodym as fd
 
 from simson.common.data_blending import blend, blend_over_time
 from simson.common.common_cfg import GeneralCfg
-from simson.common.data_extrapolations import VarySatLogSigmoidExtrapolation
-from simson.common.data_transformations import StockExtrapolation  # , extrapolate_to_future
+from simson.common.data_extrapolations import LogSigmoidExtrapolation
+from simson.common.data_transformations import StockExtrapolation
 from simson.common.custom_data_reader import CustomDataReader
 from simson.common.trade import TradeSet
 from simson.steel.steel_export import SteelDataExporter
@@ -155,7 +155,7 @@ class SteelModel:
             indep_fit_dim_letters=(
                 ("r",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
             ),
-            saturation_level=saturation_level,
+            bounds_dict = {"saturation_level": (saturation_level, saturation_level)},
         )
         total_in_use_stock = stock_handler.stocks
 
@@ -171,7 +171,7 @@ class SteelModel:
         historic_pop = pop[{"t": self.dims["h"]}]
         historic_stocks_pc = historic_stocks.sum_over("g") / historic_pop
 
-        multi_dim_extrapolation = VarySatLogSigmoidExtrapolation(
+        multi_dim_extrapolation = LogSigmoidExtrapolation(
             data_to_extrapolate=historic_stocks_pc.values,
             target_range=gdppc.values,
             independent_dims=(),
