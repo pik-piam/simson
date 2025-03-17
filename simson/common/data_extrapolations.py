@@ -18,7 +18,7 @@ class Extrapolation(SimsonBaseModel):
     """Indizes for dimensions across which to regress independently. Other dimensions are regressed commonly."""
     fit_prms: np.ndarray = None
     prm_names: list[str] = []
-    bounds_dict: dict[str, Tuple[float, float]] = {}
+    bounds_dict: dict[str, Tuple] = {}
 
     @model_validator(mode="after")
     def validate_data(self):
