@@ -56,7 +56,7 @@ class StockExtrapolation:
         In this case, fit_dim_letters should be a subset of target_dim_letters.
         This check cannot be performed if self.target_dim_letters or self.fit_dim_letters is None.
         """
-        if self.target_dim_letters is None:
+        if self.target_dim_letters == "all":
             self.historic_dim_letters = self.historic_stocks.dims.letters
             self.target_dim_letters = ("t",) + self.historic_dim_letters[1:]
         else:
