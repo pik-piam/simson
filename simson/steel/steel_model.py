@@ -153,7 +153,7 @@ class SteelModel:
                 "all" if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
             ),
             indep_fit_dim_letters=(
-                ("r",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
+                ("r", "g",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
             ),
             bounds_dict = {"saturation_level": (saturation_level, saturation_level)},
         )
