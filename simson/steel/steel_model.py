@@ -150,7 +150,7 @@ class SteelModel:
             parameters=self.parameters,
             stock_extrapolation_class=self.cfg.customization.stock_extrapolation_class,
             target_dim_letters=(
-                None if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
+                "all" if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
             ),
             indep_fit_dim_letters=(
                 ("r",) if self.cfg.customization.do_stock_extrapolation_by_category else ()

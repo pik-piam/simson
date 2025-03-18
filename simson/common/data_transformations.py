@@ -16,7 +16,7 @@ class StockExtrapolation:
         dims: fd.DimensionSet,
         parameters: dict[str, fd.Parameter],
         stock_extrapolation_class: Extrapolation,
-        target_dim_letters: Optional[Tuple[str, ...]] = None,
+        target_dim_letters: Union[Tuple[str, ...], str] = "all",
         indep_fit_dim_letters: Union[Tuple[str, ...], str] = (),
         bounds_dict: dict[str, Tuple[float, float]] = {},
         do_gdppc_accumulation: bool = True,
@@ -30,7 +30,7 @@ class StockExtrapolation:
             dims (fd.DimensionSet): Dimension set for the data.
             parameters (dict[str, fd.Parameter]): Parameters for the extrapolation.
             stock_extrapolation_class (Extrapolation): Class used for stock extrapolation.
-            target_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions of the stock extrapolation output. Defaults to None.
+            target_dim_letters (Union[Tuple[str, ...], str]): Sets the dimensions of the stock extrapolation output. If "all", all dimensions given in historic_stocks are used. Defaults to "all".
             indep_fit_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions across which an individual fit is performed, must be subset of target_dim_letters. If "all", all dimensions given in target_dim_letters are regressed individually. If empty (), all dimensions are regressed aggregately. Defaults to ().
             bounds (dict[str, Tuple[float, float]], optional): Parameter name and it's bounds for the extrapolation. If upper and lower bound are equal, the parameter is fixed. If no bound is given, the parameter stays unbounded. Defaults to {}. 
             do_gdppc_accumulation (bool, optional): Flag to perform GDP per capita accumulation. Defaults to True.
