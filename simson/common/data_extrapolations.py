@@ -1,5 +1,5 @@
 from abc import abstractmethod
-from typing import ClassVar, Optional, Tuple
+from typing import Optional, Tuple
 import numpy as np
 import sys
 from simson.common.base_model import SimsonBaseModel
@@ -18,7 +18,7 @@ class Extrapolation(SimsonBaseModel):
     """Indizes for dimensions across which to regress independently. Other dimensions are regressed commonly."""
     fit_prms: np.ndarray = None
     prm_names: list[str] = []
-    bounds_dict: dict[str, Tuple] = {}
+    bound_list: dict[str, Tuple] = {}
 
     @model_validator(mode="after")
     def validate_data(self):
@@ -43,46 +43,6 @@ class Extrapolation(SimsonBaseModel):
     @property
     def n_historic(self):
         return self.data_to_extrapolate.shape[0]
-    
-    @staticmethod
-    def create_bounds(bounds_dict, prm_names):
-        """
-        Create bounds arrays for scipy.optimize.least_squares from a dictionary of bounds.
-        
-        Parameters:
-        -----------
-        bounds_dict : dict
-            Dictionary mapping parameter names to (lower_bound, upper_bound) tuples
-        prm_names : list
-            List of parameter names in the correct order
-            
-        Returns:
-        --------
-        tuple
-            Tuple of (lower_bounds, upper_bounds) arrays for scipy.optimize.least_squares
-        
-        Raises:
-        -------
-        ValueError
-            If bounds_dict contains keys not in prm_names
-        ValueError
-            If any bound tuple doesn't have exactly 2 elements
-        """
-        # Check for invalid parameter names in bounds_dict
-        invalid_keys = set(bounds_dict.keys()) - set(prm_names)
-        if invalid_keys:
-            raise ValueError(f"Unknown parameters in bounds_dict: {invalid_keys}")
-        
-        # Check for invalid bound tuples
-        for param, bounds in bounds_dict.items():
-            if not isinstance(bounds, tuple) or len(bounds) != 2:
-                raise ValueError(f"Bound for {param} must be a tuple of (lower, upper), got {bounds}")
-        
-        # Create the bounds arrays
-        lower_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[0] for param in prm_names]
-        upper_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[1] for param in prm_names]
-        
-        return (lower_bounds, upper_bounds)
 
     def extrapolate(self, historic_from_regression: bool = False):
         regression = self.regress()
@@ -126,6 +86,7 @@ class Extrapolation(SimsonBaseModel):
         target_shape = self.remove_shape_dimensions(self.target_range.shape, self.independent_dims)
         regression = np.zeros_like(self.target_range)
         self.fit_prms = np.zeros(self.target_range.shape[1:] + (self.n_prms,))
+        #bounds_arr = Bound.create_bounds_arr(self.bound_list, self.prm_names)
 
         # loop over dimensions that are regressed independently
         for idx in np.ndindex(target_shape):
@@ -134,11 +95,12 @@ class Extrapolation(SimsonBaseModel):
                 self.target_range[index],
                 self.data_to_extrapolate[index],
                 self.weights[index],
+                #bounds=bounds_arr[idx],
             )
 
         return regression
 
-    def regress_common(self, target, data, weights):
+    def regress_common(self, target, data, weights, bounds=(-np.inf, np.inf)):
         """Finds optimal fit of data and extrapolates to target."""
         fitting_function = self.get_fitting_function(
             target[: self.n_historic, ...],
@@ -146,7 +108,6 @@ class Extrapolation(SimsonBaseModel):
             weights,
         )
         initial_guess = self.initial_guess(target, data)
-        bounds = self.create_bounds(self.bounds_dict, self.prm_names)
         fit_prms = least_squares(fitting_function, x0=initial_guess, gtol=1.0e-12, bounds=bounds).x
         regression = self.func(target, fit_prms)
         return fit_prms, regression
@@ -261,3 +222,57 @@ class SigmoidExtrapolation(Extrapolation):
             initial_x_offset = current_extrapolator
 
         return np.array([initial_saturation_level, initial_stretch_factor, initial_x_offset])
+
+class Bound():
+
+    def __init__(self, var_name: str, dimensions: Tuple[str, ...], lower_bound: float, upper_bound: float):
+        self.var_name = var_name
+        self.dimensions = dimensions
+        self.lower_bound = lower_bound
+        self.upper_bound = upper_bound
+
+    @staticmethod
+    def create_bounds_arr(bounds_list: list["Bound"], all_prm_names: list[str]):
+        """Takes list of bound instances and creates the bounds ready for scipy.optimize.least_squares."""
+        bounds = None
+        return bounds
+    
+    @staticmethod
+    def create_bounds(bounds_dict, prm_names):
+        """
+        Create bounds arrays for scipy.optimize.least_squares from a dictionary of bounds.
+        
+        Parameters:
+        -----------
+        bounds_dict : dict
+            Dictionary mapping parameter names to (lower_bound, upper_bound) tuples
+        prm_names : list
+            List of parameter names in the correct order
+            
+        Returns:
+        --------
+        tuple
+            Tuple of (lower_bounds, upper_bounds) arrays for scipy.optimize.least_squares
+        
+        Raises:
+        -------
+        ValueError
+            If bounds_dict contains keys not in prm_names
+        ValueError
+            If any bound tuple doesn't have exactly 2 elements
+        """
+        # Check for invalid parameter names in bounds_dict
+        invalid_keys = set(bounds_dict.keys()) - set(prm_names)
+        if invalid_keys:
+            raise ValueError(f"Unknown parameters in bounds_dict: {invalid_keys}")
+        
+        # Check for invalid bound tuples
+        for param, bounds in bounds_dict.items():
+            if not isinstance(bounds, tuple) or len(bounds) != 2:
+                raise ValueError(f"Bound for {param} must be a tuple of (lower, upper), got {bounds}")
+        
+        # Create the bounds arrays
+        lower_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[0] for param in prm_names]
+        upper_bounds = [bounds_dict.get(param, (-np.inf, np.inf))[1] for param in prm_names]
+        
+        return (lower_bounds, upper_bounds)

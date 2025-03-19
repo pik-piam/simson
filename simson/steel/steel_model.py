@@ -5,12 +5,14 @@ from simson.common.data_blending import blend, blend_over_time
 from simson.common.common_cfg import GeneralCfg
 from simson.common.data_extrapolations import LogSigmoidExtrapolation
 from simson.common.data_transformations import StockExtrapolation
+from simson.common.data_extrapolations import Bound
 from simson.common.custom_data_reader import CustomDataReader
 from simson.common.trade import TradeSet
 from simson.steel.steel_export import SteelDataExporter
 from simson.steel.steel_mfa_system_future import StockDrivenSteelMFASystem
 from simson.steel.steel_mfa_system_historic import InflowDrivenHistoricSteelMFASystem
 from simson.steel.steel_definition import get_definition
+
 
 
 class SteelModel:
@@ -141,7 +143,14 @@ class SteelModel:
 
     def get_long_term_stock(self):
         historic_stocks = self.historic_mfa.stocks["historic_in_use"].stock
+        if self.cfg.customization.do_stock_extrapolation_by_category:
+            target_dim_letters = "all"
+            indep_fit_dim_letters = ("r", "g")
+        else:
+            target_dim_letters = ("t", "r")
+            indep_fit_dim_letters = ()
         saturation_level = self.get_saturation_level(historic_stocks)
+        #saturation_bound = Bound(saturation_level)
 
         # extrapolate in use stock to future
         stock_handler = StockExtrapolation(
@@ -149,13 +158,9 @@ class SteelModel:
             dims=self.dims,
             parameters=self.parameters,
             stock_extrapolation_class=self.cfg.customization.stock_extrapolation_class,
-            target_dim_letters=(
-                "all" if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
-            ),
-            indep_fit_dim_letters=(
-                ("r", "g",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
-            ),
-            bounds_dict = {"saturation_level": (saturation_level, saturation_level)},
+            target_dim_letters=target_dim_letters,
+            indep_fit_dim_letters=indep_fit_dim_letters,
+            #bound_list=[saturation_bound,],
         )
         total_in_use_stock = stock_handler.stocks
 
@@ -188,8 +193,6 @@ class SteelModel:
                 gdp_sector_splits = self.calc_stock_sector_splits().values
                 high_stock_sector_split = gdp_sector_splits[-1]
             saturation_level = (saturation_level * high_stock_sector_split.values.T).T
-        else:
-            saturation_level = np.full(gdppc.values.shape[1:], saturation_level)
 
         return saturation_level
 
@@ -255,10 +258,6 @@ class SteelModel:
         in_use_dsm_long_term.stock[...] = long_term_stock
         in_use_dsm_long_term.compute()
         return in_use_dsm_long_term.inflow
-
-    # def get_short_term_demand_trend(self, historic_demand: fd.FlodymArray):
-    #     demand_via_gdp = extrapolate_to_future(historic_demand, scale_by=self.parameters["gdppc"])
-    #     return demand_via_gdp
 
     def make_future_mfa(self) -> StockDrivenSteelMFASystem:
         flows = fd.make_empty_flows(

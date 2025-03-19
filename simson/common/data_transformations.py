@@ -18,7 +18,7 @@ class StockExtrapolation:
         stock_extrapolation_class: Extrapolation,
         target_dim_letters: Union[Tuple[str, ...], str] = "all",
         indep_fit_dim_letters: Union[Tuple[str, ...], str] = (),
-        bounds_dict: dict[str, Tuple[float, float]] = {},
+        bound_list: dict[str, Tuple[float, float]] = {},
         do_gdppc_accumulation: bool = True,
         stock_correction: str = "gaussian_first_order",
     ):
@@ -32,7 +32,7 @@ class StockExtrapolation:
             stock_extrapolation_class (Extrapolation): Class used for stock extrapolation.
             target_dim_letters (Union[Tuple[str, ...], str]): Sets the dimensions of the stock extrapolation output. If "all", all dimensions given in historic_stocks are used. Defaults to "all".
             indep_fit_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions across which an individual fit is performed, must be subset of target_dim_letters. If "all", all dimensions given in target_dim_letters are regressed individually. If empty (), all dimensions are regressed aggregately. Defaults to ().
-            bounds (dict[str, Tuple[float, float]], optional): Parameter name and it's bounds for the extrapolation. If upper and lower bound are equal, the parameter is fixed. If no bound is given, the parameter stays unbounded. Defaults to {}. 
+            bound_list (dict[str, Tuple[float, float]], optional): Parameter name and it's bounds for the extrapolation. If upper and lower bound are equal, the parameter is fixed. If no bound is given, the parameter stays unbounded. Defaults to {}. 
             do_gdppc_accumulation (bool, optional): Flag to perform GDP per capita accumulation. Defaults to True.
             stock_correction (str, optional): Method for stock correction. Possible values are "gaussian_first_order", "shift_zeroth_order", "none". Defaults to "gaussian_first_order".
         """
@@ -43,7 +43,7 @@ class StockExtrapolation:
         self.stock_extrapolation_class = stock_extrapolation_class
         self.target_dim_letters = target_dim_letters
         self.set_dims(indep_fit_dim_letters)
-        self.bounds = bounds_dict
+        self.bound_list = bound_list
         self.do_gdppc_accumulation = do_gdppc_accumulation
         self.stock_correction = stock_correction
         self.extrapolate()
@@ -160,7 +160,7 @@ class StockExtrapolation:
             data_to_extrapolate=historic_in,
             target_range=gdppc,
             independent_dims=self.fit_dim_idx,
-            bounds=self.bounds,
+            bound_list=self.bound_list,
         )
         pure_prediction = extrapolation.regress()
 
