@@ -1,5 +1,4 @@
 import flodym as fd
-import numpy as np
 
 
 class StockDrivenCementMFASystem(fd.MFASystem):
