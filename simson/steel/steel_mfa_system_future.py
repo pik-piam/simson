@@ -8,18 +8,18 @@ class StockDrivenSteelMFASystem(fd.MFASystem):
 
     trade_set: TradeSet
 
-    def compute(self, demand: fd.FlodymArray, historic_trade: TradeSet):
+    def compute(self, stock_projection: fd.FlodymArray, historic_trade: TradeSet):
         """
         Perform all computations for the MFA system.
         """
-        self.compute_in_use_stock(demand)
+        self.compute_in_use_stock(stock_projection)
         self.compute_trade(historic_trade)
         self.compute_flows()
         self.compute_other_stocks()
         self.check_mass_balance()
 
-    def compute_in_use_stock(self, demand):
-        self.stocks["in_use"].inflow = demand
+    def compute_in_use_stock(self, stock_projection):
+        self.stocks["in_use"].stock = stock_projection
         self.stocks["in_use"].lifetime_model.set_prms(
             mean=self.parameters["lifetime_mean"], std=self.parameters["lifetime_std"]
         )

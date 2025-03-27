@@ -88,13 +88,6 @@ class CementDataExporter(CustomDataExporter):
         production = mfa.flows["concrete_production => use"].sum_over("s")
         self.visualize_production(production, "Concrete")
 
-    # def visualize_use_stock(self, mfa: fd.MFASystem):
-    #     over_gdp = self.cfg.use_stock["over_gdp"]
-    #     per_capita = self.cfg.use_stock["per_capita"]
-    #     stock = mfa.stocks["in_use"].stock
-
-    #     self.visualize_stock(mfa, stock, over_gdp, per_capita, "In use")
-
     def visualize_eol_stock(self, mfa: fd.MFASystem):
         over_gdp = self.cfg.eol_stock["over_gdp"]
         per_capita = self.cfg.eol_stock["per_capita"]
@@ -120,14 +113,6 @@ class CementDataExporter(CustomDataExporter):
             if not per_capita:
                 # get global GDP per capita
                 x_array = x_array * population
-        elif self.cfg.use_stock["over_time"]:
-            # TODO: add plot over time...
-            # this does not quite work yet...
-            title = title + f" over Time"
-            x_label = f"Time"
-            x_array = mfa.dims["Time"]
-        else:
-            raise ValueError("Either 'over_gdp' or 'over_time' must be True.")
 
         if subplots_by_stock_type:
             subplot_dim = {"subplot_dim": "Stock Type"}

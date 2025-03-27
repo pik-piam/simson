@@ -6,7 +6,7 @@ input_data_path: '../simson_data/data/cement/output'
 
 # model customization
 customization:
-  stock_extrapolation_class_name: 'VarySatLogSigmoidExtrapolation'
+  stock_extrapolation_class_name: 'LogSigmoidExtrapolation'
   lifetime_model_name: 'LogNormalLifetime'
 
 # visualization
@@ -14,7 +14,6 @@ visualization:
   use_stock:
     do_visualize: True
     over_gdp: True
-    over_time: False
     per_capita: True
   eol_stock:
     do_visualize: True
