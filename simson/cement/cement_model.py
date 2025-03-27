@@ -1,10 +1,10 @@
-import numpy as np
 import flodym as fd
 
 from simson.common.common_cfg import GeneralCfg
+from simson.common.data_transformations import Bound, BoundList
 from simson.cement.cement_definition import get_definition
-from simson.cement.cement_mfa_system_historic_simple import (
-    InflowDrivenHistoricSimpleCementMFASystem,
+from simson.cement.cement_mfa_system_historic import (
+    InflowDrivenHistoricCementMFASystem,
 )
 from simson.cement.cement_mfa_system_historic import InflowDrivenHistoricCementMFASystem
 from simson.cement.cement_mfa_system_future import StockDrivenCementMFASystem
@@ -33,8 +33,8 @@ class CementModel:
         self.processes = fd.make_processes(self.definition.processes)
 
     def run(self):
-        # simple historic mfa
-        self.historic_mfa = self.make_historic_simple_mfa()
+        # historic mfa
+        self.historic_mfa = self.make_historic_mfa()
         self.historic_mfa.compute()
 
         # future mfa
@@ -49,45 +49,12 @@ class CementModel:
         # visualize extrapolation
         # self.data_writer.visualize_extrapolation(mfa=self.historic_mfa, future_demand=future_demand)
 
-    def make_historic_simple_mfa(self) -> InflowDrivenHistoricSimpleCementMFASystem:
-        historic_dim_letters = tuple([d for d in self.dims.letters if d != "t"])
-        historic_dims = self.dims[historic_dim_letters]
-        historic_processes = [
-            "sysenv",
-            "use",
-        ]
-        processes = fd.make_processes(historic_processes)
-        flows = fd.make_empty_flows(
-            processes=processes,
-            flow_definitions=[f for f in self.definition.flows if "h" in f.dim_letters],
-            dims=historic_dims,
-        )
-        stocks = fd.make_empty_stocks(
-            processes=processes,
-            stock_definitions=[s for s in self.definition.stocks if "h" in s.dim_letters],
-            dims=historic_dims,
-        )
-        return InflowDrivenHistoricSimpleCementMFASystem(
-            cfg=self.cfg,
-            parameters=self.parameters,
-            processes=processes,
-            dims=historic_dims,
-            flows=flows,
-            stocks=stocks,
-        )
-
     def make_historic_mfa(self) -> InflowDrivenHistoricCementMFASystem:
-
         historic_dim_letters = tuple([d for d in self.dims.letters if d != "t"])
         historic_dims = self.dims[historic_dim_letters]
         historic_processes = [
             "sysenv",
-            "raw_meal_preparation",
-            "clinker_production",
-            "cement_grinding",
-            "concrete_production",
             "use",
-            "eol",
         ]
         processes = fd.make_processes(historic_processes)
         flows = fd.make_empty_flows(
@@ -100,7 +67,6 @@ class CementModel:
             stock_definitions=[s for s in self.definition.stocks if "h" in s.dim_letters],
             dims=historic_dims,
         )
-
         return InflowDrivenHistoricCementMFASystem(
             cfg=self.cfg,
             parameters=self.parameters,
@@ -117,13 +83,22 @@ class CementModel:
 
     def get_long_term_stock(self):
         # extrapolate in use stock to future
+        indep_fit_dim_letters = ("r",)
+        sat_bound = Bound(var_name="saturation_level", lower_bound=100, upper_bound=300)
+        bound_list = BoundList(
+            bound_list=[
+                sat_bound,
+            ],
+            target_dims=self.dims[indep_fit_dim_letters],
+        )
         self.stock_handler = StockExtrapolation(
             self.historic_mfa.stocks["historic_in_use"].stock,
             dims=self.dims,
             parameters=self.parameters,
             stock_extrapolation_class=self.cfg.customization.stock_extrapolation_class,
             target_dim_letters=("t", "r"),
-            indep_fit_dim_letters=(),
+            indep_fit_dim_letters=indep_fit_dim_letters,
+            bound_list=bound_list,
         )
 
         total_in_use_stock = self.stock_handler.stocks

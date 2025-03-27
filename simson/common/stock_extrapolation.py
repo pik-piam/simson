@@ -1,9 +1,9 @@
 import flodym as fd
 import numpy as np
-from typing import Tuple, Optional, Union
+from typing import Tuple, Optional, Union, Type
 
 from simson.common.data_extrapolations import Extrapolation
-from simson.common.data_transformations import broadcast_trailing_dimensions
+from simson.common.data_transformations import broadcast_trailing_dimensions, BoundList
 
 
 class StockExtrapolation:
@@ -13,10 +13,10 @@ class StockExtrapolation:
         historic_stocks: fd.StockArray,
         dims: fd.DimensionSet,
         parameters: dict[str, fd.Parameter],
-        stock_extrapolation_class: Extrapolation,
-        target_dim_letters: Optional[Tuple[str, ...]] = None,
+        stock_extrapolation_class: Type[Extrapolation],
+        target_dim_letters: Union[Tuple[str, ...], str] = "all",
         indep_fit_dim_letters: Union[Tuple[str, ...], str] = (),
-        saturation_level: Optional[np.ndarray] = None,
+        bound_list: BoundList = BoundList(),
         do_gdppc_accumulation: bool = True,
         stock_correction: str = "gaussian_first_order",
     ):
@@ -28,20 +28,19 @@ class StockExtrapolation:
             dims (fd.DimensionSet): Dimension set for the data.
             parameters (dict[str, fd.Parameter]): Parameters for the extrapolation.
             stock_extrapolation_class (Extrapolation): Class used for stock extrapolation.
-            target_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions of the stock extrapolation output. Defaults to None.
+            target_dim_letters (Union[Tuple[str, ...], str], optional): Sets the dimensions of the stock extrapolation output. If "all", the output will have the same shape as historic_stocks, except for the time dimension. Defaults to "all".
             indep_fit_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions across which an individual fit is performed, must be subset of target_dim_letters. If "all", all dimensions given in target_dim_letters are regressed individually. If empty (), all dimensions are regressed aggregately. Defaults to ().
-            saturation_level (Optional[np.ndarray], optional): Saturation level for the extrapolation. Defaults to None.
+            bounds (list[Bound], optional): List of bounds for the extrapolation. Defaults to [].
             do_gdppc_accumulation (bool, optional): Flag to perform GDP per capita accumulation. Defaults to True.
             stock_correction (str, optional): Method for stock correction. Possible values are "gaussian_first_order", "shift_zeroth_order", "none". Defaults to "gaussian_first_order".
         """
-
         self.historic_stocks = historic_stocks
         self.dims = dims
         self.parameters = parameters
         self.stock_extrapolation_class = stock_extrapolation_class
         self.target_dim_letters = target_dim_letters
         self.set_dims(indep_fit_dim_letters)
-        self.saturation_level = saturation_level
+        self.bound_list = bound_list
         self.do_gdppc_accumulation = do_gdppc_accumulation
         self.stock_correction = stock_correction
         self.extrapolate()
@@ -54,7 +53,7 @@ class StockExtrapolation:
         In this case, fit_dim_letters should be a subset of target_dim_letters.
         This check cannot be performed if self.target_dim_letters or self.fit_dim_letters is None.
         """
-        if self.target_dim_letters is None:
+        if self.target_dim_letters == "all":
             self.historic_dim_letters = self.historic_stocks.dims.letters
             self.target_dim_letters = ("t",) + self.historic_dim_letters[1:]
         else:
@@ -151,7 +150,7 @@ class StockExtrapolation:
             data_to_extrapolate=historic_in,
             target_range=gdppc,
             independent_dims=self.fit_dim_idx,
-            saturation_level=self.saturation_level,
+            bound_list=self.bound_list,
         )
         pure_prediction = extrapolation.regress()
 

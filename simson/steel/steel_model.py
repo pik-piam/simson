@@ -3,7 +3,8 @@ import flodym as fd
 
 from simson.common.data_blending import blend, blend_over_time
 from simson.common.common_cfg import GeneralCfg
-from simson.common.data_extrapolations import VarySatLogSigmoidExtrapolation
+from simson.common.data_extrapolations import LogSigmoidExtrapolation
+from simson.common.data_transformations import Bound, BoundList
 from simson.common.stock_extrapolation import StockExtrapolation
 from simson.common.custom_data_reader import CustomDataReader
 from simson.common.trade import TradeSet
@@ -132,9 +133,23 @@ class SteelModel:
         return demand
 
     def get_long_term_stock(self):
+        indep_fit_dim_letters = (
+            ("g",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
+        )
         historic_stocks = self.historic_mfa.stocks["historic_in_use"].stock
-        saturation_level = self.get_saturation_level(historic_stocks)
-
+        sat_level = self.get_saturation_level(historic_stocks)
+        sat_bound = Bound(
+            var_name="saturation_level",
+            lower_bound=sat_level,
+            upper_bound=sat_level,
+            dims=self.dims[indep_fit_dim_letters],
+        )
+        bound_list = BoundList(
+            bound_list=[
+                sat_bound,
+            ],
+            target_dims=self.dims[indep_fit_dim_letters],
+        )
         # extrapolate in use stock to future
         stock_handler = StockExtrapolation(
             historic_stocks,
@@ -142,12 +157,10 @@ class SteelModel:
             parameters=self.parameters,
             stock_extrapolation_class=self.cfg.customization.stock_extrapolation_class,
             target_dim_letters=(
-                None if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
+                "all" if self.cfg.customization.do_stock_extrapolation_by_category else ("t", "r")
             ),
-            indep_fit_dim_letters=(
-                ("g",) if self.cfg.customization.do_stock_extrapolation_by_category else ()
-            ),
-            saturation_level=saturation_level,
+            indep_fit_dim_letters=indep_fit_dim_letters,
+            bound_list=bound_list,
         )
         total_in_use_stock = stock_handler.stocks
 
@@ -163,7 +176,7 @@ class SteelModel:
         historic_pop = pop[{"t": self.dims["h"]}]
         historic_stocks_pc = historic_stocks.sum_over("g") / historic_pop
 
-        multi_dim_extrapolation = VarySatLogSigmoidExtrapolation(
+        multi_dim_extrapolation = LogSigmoidExtrapolation(
             data_to_extrapolate=historic_stocks_pc.values,
             target_range=gdppc.values,
             independent_dims=(),
