@@ -29,6 +29,8 @@ dependencies = [
     "kaleido==0.1.0.post1",
     "flodym>=0.2.0",
     "black>=25.1.0",
+    "ipykernel>=6.29.5",
+    "nbformat>=5.10.4",
 ]
 
 [tool.setuptools]

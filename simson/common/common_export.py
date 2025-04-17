@@ -1,28 +1,41 @@
 import os
 from matplotlib import pyplot as plt
-from simson.common.base_model import SimsonBaseModel
 import plotly.graph_objects as go
+import plotly.colors as plc
+import plotly.io as pio
+from typing import Optional
+from pydantic import model_validator
 import flodym as fd
 import flodym.export as fde
-from plotly import colors as plc
-from typing import Optional
 
-from simson.common.common_cfg import VisualizationCfg
+from simson.common.base_model import SimsonBaseModel
+from simson.common.common_cfg import VisualizationCfg, ExportCfg
+from simson.common.assumptions_doc import assumptions_str
 
 
 class CommonDataExporter(SimsonBaseModel):
     output_path: str
-    do_export: dict = {"pickle": True, "csv": True}
+    do_export: ExportCfg
     cfg: VisualizationCfg
     _display_names: dict = {}
 
+    @model_validator(mode="after")
+    def set_plotly_renderer(self):
+        if self.cfg.plotting_engine == "plotly":
+            pio.renderers.default = self.cfg.plotly_renderer
+        return self
+
     def export_mfa(self, mfa: fd.MFASystem):
-        if self.do_export["pickle"]:
+        if self.do_export.pickle:
             fde.export_mfa_to_pickle(mfa=mfa, export_path=self.export_path("mfa.pickle"))
-        if self.do_export["csv"]:
+        if self.do_export.csv:
             dir_out = os.path.join(self.export_path(), "flows")
             fde.export_mfa_flows_to_csv(mfa=mfa, export_directory=dir_out)
             fde.export_mfa_stocks_to_csv(mfa=mfa, export_directory=dir_out)
+        if self.do_export.assumptions:
+            file_out = os.path.join(self.export_path("assumptions.txt"))
+            with open(file_out, "w") as f:
+                f.write(assumptions_str())
 
     def export_path(self, filename: str = None):
         path_tuple = (self.output_path, "export")

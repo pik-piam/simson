@@ -1,6 +1,7 @@
 import logging
 import yaml
 import flodym as fd
+import sys
 
 from simson.common.common_cfg import GeneralCfg
 from simson.plastics.plastics_model import PlasticsModel
@@ -21,7 +22,7 @@ def get_model_config(filename):
     return {k: v for k, v in data.items()}
 
 
-def init_mfa(cfg: dict) -> fd.MFASystem:
+def init_model(cfg: dict) -> fd.MFASystem:
     """Choose MFA subclass and return an initialized instance."""
 
     cfg = GeneralCfg.from_model_class(**cfg)
@@ -29,16 +30,11 @@ def init_mfa(cfg: dict) -> fd.MFASystem:
     return mfa
 
 
-def recalculate_mfa(model_config):
-    mfa = init_mfa(cfg=model_config)
+def calculate_model(model_config):
+    mfa = init_model(cfg=model_config)
     logging.info(f"{type(mfa).__name__} instance created.")
     mfa.run()
     logging.info("Model computations completed.")
-
-
-def visualize_mfa(model_config):
-    # TODO: Implement load of MFA to visualize without recalculating
-    pass
 
 
 def run_simson(cfg_file: str):
@@ -49,9 +45,12 @@ def run_simson(cfg_file: str):
     )
 
     model_config = get_model_config(cfg_file)
-    recalculate_mfa(model_config)
+    calculate_model(model_config)
 
 
 if __name__ == "__main__":
-    cfg_file = "config/plastics.yml"
+    try:
+        cfg_file = sys.argv[1]
+    except IndexError:
+        raise ValueError("Please provide a configuration file as an argument.")
     run_simson(cfg_file)

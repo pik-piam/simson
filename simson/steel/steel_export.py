@@ -1,3 +1,4 @@
+import numpy as np
 from plotly import colors as plc
 import plotly.graph_objects as go
 import flodym as fd
@@ -97,19 +98,27 @@ class SteelDataExporter(CommonDataExporter):
 
     def visualize_consumption(self, mfa: fd.MFASystem):
         consumption = mfa.stocks["in_use"].inflow
+        good_dim = consumption.dims.index("g")
+        consumption = consumption.apply(np.cumsum, kwargs={"axis": good_dim})
         ap = self.plotter_class(
             array=consumption,
             intra_line_dim="Time",
             subplot_dim="Region",
             linecolor_dim="Good",
+            chart_type="area",
             display_names=self._display_names,
             title="Consumption",
         )
         fig = ap.plot()
         self.plot_and_save_figure(ap, "consumption.png", do_plot=False)
 
-    def visualize_gdppc(self, mfa: fd.MFASystem):
+    def visualize_gdppc(self, mfa: fd.MFASystem, change=False, per_capita=False):
         gdppc = mfa.parameters["gdppc"]
+        if not per_capita:
+            gdppc = gdppc * mfa.parameters["population"]
+        if change:
+            gdppc = gdppc.apply(np.diff, kwargs={"axis": 0, "prepend": 0})
+            gdppc[1900] = gdppc[1901]
         ap = self.plotter_class(
             array=gdppc,
             intra_line_dim="Time",
@@ -118,8 +127,11 @@ class SteelDataExporter(CommonDataExporter):
             title="GDP per capita",
         )
         fig = ap.plot()
-        fig.update_yaxes(type="log")
-        self.plot_and_save_figure(ap, "gdppc.png", do_plot=False)
+        if change:
+            self.plot_and_save_figure(ap, "gdppc_change.png", do_plot=False)
+        else:
+            fig.update_yaxes(type="log")
+            self.plot_and_save_figure(ap, "gdppc.png", do_plot=False)
 
     def visualize_sankey(self, mfa: fd.MFASystem):
         good_colors = [f"hsl({190 + 10 *i},40,{77-5*i})" for i in range(4)]

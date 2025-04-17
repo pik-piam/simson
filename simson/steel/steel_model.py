@@ -12,6 +12,7 @@ from simson.steel.steel_export import SteelDataExporter
 from simson.steel.steel_mfa_system_future import StockDrivenSteelMFASystem
 from simson.steel.steel_mfa_system_historic import InflowDrivenHistoricSteelMFASystem
 from simson.steel.steel_definition import get_definition
+from simson.common.assumptions_doc import add_assumption_doc
 
 
 class SteelModel:
@@ -36,8 +37,19 @@ class SteelModel:
 
     def modify_parameters(self):
         """Manual changes to parameters in order to match historical scrap consumption."""
+
+        scalar_lifetime_factor = 1.1
+        add_assumption_doc(
+            type="ad-hoc fix",
+            name="overall lifetime factor",
+            value=scalar_lifetime_factor,
+            description=(
+                "Factor multiplied to all lifetime means and standard deviations to match "
+                "historical scrap consumption."
+            ),
+        )
         lifetime_factor = fd.Parameter(dims=self.dims["t", "r"])
-        lifetime_factor.values[...] = 1.3
+        lifetime_factor.values[...] = scalar_lifetime_factor
         self.parameters["lifetime_factor"] = lifetime_factor
 
         self.parameters["lifetime_mean"] = fd.Parameter(
@@ -48,13 +60,33 @@ class SteelModel:
             dims=self.dims["t", "r", "g"],
             values=(self.parameters["lifetime_factor"] * self.parameters["lifetime_std"]).values,
         )
+        construction_lifetime_factor = 1.1
+        add_assumption_doc(
+            type="ad-hoc fix",
+            name="construction lifetime factor",
+            value=construction_lifetime_factor,
+            description=(
+                "Additional factor multiplied to construction lifetime mean and standard deviation "
+                "to match historical scrap consumption. The special treatment of construction "
+                "is motivated by literature sources suggesting longer building lifetimes than the "
+                "used source"
+            ),
+        )
         self.parameters["lifetime_mean"]["Construction"] = (
-            self.parameters["lifetime_mean"]["Construction"] * 1.5
+            self.parameters["lifetime_mean"]["Construction"] * construction_lifetime_factor
         )
         self.parameters["lifetime_std"]["Construction"] = (
-            self.parameters["lifetime_std"]["Construction"] * 1.5
+            self.parameters["lifetime_std"]["Construction"] * construction_lifetime_factor
         )
 
+        add_assumption_doc(
+            type="ad-hoc fix",
+            name="scrap rate factor",
+            description=(
+                "Time-dependent factor multiplied to forming and fabrication losses to match "
+                "historical scrap consumption."
+            ),
+        )
         scrap_rate_factor = fd.Parameter(dims=self.dims["t",])
         scrap_rate_factor.values[:80] = 1.4
         scrap_rate_factor.values[80:110] = np.linspace(1.4, 0.8, 30)
@@ -182,6 +214,18 @@ class SteelModel:
         if self.cfg.customization.do_stock_extrapolation_by_category:
             high_stock_sector_split = self.get_high_stock_sector_split()
             saturation_level = saturation_level * high_stock_sector_split.values
+
+        saturation_level_factor = 0.75
+        add_assumption_doc(
+            type="ad-hoc fix",
+            name="saturation level factor",
+            value=saturation_level_factor,
+            description=(
+                "Factor multiplied to regressed saturation level to reduce future steel demand "
+                "in line with other literature sources."
+            ),
+        )
+        saturation_level *= 0.75
 
         return saturation_level
 

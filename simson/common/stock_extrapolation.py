@@ -1,9 +1,11 @@
 import flodym as fd
 import numpy as np
 from typing import Tuple, Optional, Union, Type
+from copy import deepcopy
 
 from simson.common.data_extrapolations import Extrapolation
 from simson.common.data_transformations import broadcast_trailing_dimensions, BoundList
+from simson.common.assumptions_doc import add_assumption_doc
 
 
 class StockExtrapolation:
@@ -95,8 +97,68 @@ class StockExtrapolation:
         self.historic_gdppc[...] = self.gdppc[{"t": self.dims["h"]}]
         self.historic_stocks_pc[...] = self.historic_stocks / self.historic_pop
 
+    def gdp_regression(self):
+        """Updates per capita stock to future by extrapolation."""
+
+        prediction_out = self.stocks_pc.values.copy()
+        historic_in = self.historic_stocks_pc.values
+        gdppc = self.gdppc_acc if self.do_gdppc_accumulation else self.gdppc
+        gdppc = broadcast_trailing_dimensions(gdppc, prediction_out)
+        n_historic = historic_in.shape[0]
+
+        n_deriv = 5
+        add_assumption_doc(
+            type="integer number",
+            name="n years for regression derivative correction",
+            value=n_deriv,
+            description=(
+                "Number of historic years used for determination of regressed and actual "
+                "growth rates of ins-use stocks, which are then used for a correction "
+                "reconciling the two and blending from observed to regression."
+            ),
+        )
+
+        add_assumption_doc(
+            name="synthetic recent GDP for regression correction",
+            type="ad-hoc fix",
+            description=(
+                "GDP per capita SSP curves assume a steady growth after 2025, which in some "
+                "regions breaks historic trends. Here, we overwrite recent historic GDP per capita "
+                "by extrapolating back from 2025 using the growth rates after 2025. "
+                "This creates continuity between the recent historic GDP growth used for the "
+                "gaussian correction and the future assumed growth rates and thereby prevents "
+                "discontinuities in production."
+            ),
+        )
+        gdppc = deepcopy(gdppc)
+        growth = gdppc[126] / gdppc[127]
+        for i in range(n_deriv + 5):
+            gdppc[125 - i, ...] = gdppc[125 - i + 1, ...] * growth
+
+        extrapolation = self.stock_extrapolation_class(
+            data_to_extrapolate=historic_in,
+            target_range=gdppc,
+            independent_dims=self.fit_dim_idx,
+            bound_list=self.bound_list,
+        )
+        pure_prediction = extrapolation.regress()
+
+        if self.stock_correction == "gaussian_first_order":
+            prediction_out[...] = self.gaussian_correction(historic_in, pure_prediction, n_deriv)
+        elif self.stock_correction == "shift_zeroth_order":
+            # match last point by adding the difference between the last historic point and the corresponding prediction
+            prediction_out[...] = pure_prediction - (
+                pure_prediction[n_historic - 1, :] - historic_in[n_historic - 1, :]
+            )
+
+        prediction_out[:n_historic, ...] = historic_in
+        self.stocks_pc.set_values(prediction_out)
+
+        # transform back to total stocks
+        self.stocks[...] = self.stocks_pc * self.pop
+
     def gaussian_correction(
-        self, historic: np.ndarray, prediction: np.ndarray, approaching_time: float = 50
+        self, historic: np.ndarray, prediction: np.ndarray, approaching_time: float = 50, n: int = 5
     ):
         """Gaussian smoothing of extrapolation around interface historic/future to remove discontinuities."""
         """Multiplies Gaussian with a Taylor expansion around the difference beteween historic and fit."""
@@ -110,7 +172,7 @@ class StockExtrapolation:
         # last_prediction_1st = prediction[last_history_idx, :] - prediction[last_history_idx - 1, :]
 
         # do a proper linear regression to last n1 points
-        def lin_fit(x, y, last_idx, n=5):
+        def lin_fit(x, y, last_idx, n=n):
             x_cut = np.vstack([x[last_idx - n : last_idx], np.ones(n)]).T
             y_cut = y[last_idx - n : last_idx, :]
             y_reshaped = y_cut.reshape(n, -1).T
@@ -130,39 +192,32 @@ class StockExtrapolation:
             a = np.sqrt(np.log(20))
             return np.exp(-((a * t / approaching_time) ** 2))
 
+        approaching_time_0th = 50
+        add_assumption_doc(
+            type="integer number",
+            name="years for absolute blending to regression",
+            value=approaching_time_0th,
+            description=(
+                "Number of years for the blending from historical to regressed in-use stocks. "
+            ),
+        )
+        approaching_time_1st = 30
+        add_assumption_doc(
+            type="integer number",
+            name="years for derivative blending to regression",
+            value=approaching_time_1st,
+            description=(
+                "Number of years for the blending from historical to regressed in-use stock "
+                "growth rates. "
+            ),
+        )
         time_extended = time.reshape(-1, *([1] * len(difference_0th.shape)))
-        taylor = difference_0th + difference_1st * (time_extended - last_history_year)
-        correction = taylor * gaussian(time_extended - last_history_year, approaching_time)
+        corr0 = difference_0th * gaussian(time_extended - last_history_year, 50)
+        corr1 = (
+            difference_1st
+            * (time_extended - last_history_year)
+            * gaussian(time_extended - last_history_year, 30)
+        )
+        correction = corr0 + corr1
 
         return prediction[...] + correction
-
-    def gdp_regression(self):
-        """Updates per capita stock to future by extrapolation."""
-
-        prediction_out = self.stocks_pc.values
-        pure_prediction = np.zeros_like(prediction_out)
-        historic_in = self.historic_stocks_pc.values
-        gdppc = self.gdppc_acc if self.do_gdppc_accumulation else self.gdppc
-        gdppc = broadcast_trailing_dimensions(gdppc, prediction_out)
-        n_historic = historic_in.shape[0]
-
-        extrapolation = self.stock_extrapolation_class(
-            data_to_extrapolate=historic_in,
-            target_range=gdppc,
-            independent_dims=self.fit_dim_idx,
-            bound_list=self.bound_list,
-        )
-        pure_prediction = extrapolation.regress()
-
-        if self.stock_correction == "gaussian_first_order":
-            prediction_out[...] = self.gaussian_correction(historic_in, pure_prediction)
-        elif self.stock_correction == "shift_zeroth_order":
-            # match last point by adding the difference between the last historic point and the corresponding prediction
-            prediction_out[...] = pure_prediction - (
-                pure_prediction[n_historic - 1, :] - historic_in[n_historic - 1, :]
-            )
-
-        prediction_out[:n_historic, ...] = historic_in
-
-        # transform back to total stocks
-        self.stocks[...] = self.stocks_pc * self.pop
