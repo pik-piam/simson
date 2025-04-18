@@ -97,7 +97,7 @@ def extrapolate_to_future(
     scale_by = scale_by.cast_to(extrapolated_values.dims)
 
     # calculate weights
-    n_hist_points = historic_values.dims.shape()[0]
+    n_hist_points = historic_values.dims.shape[0]
     n_last_points = 5
     weights_1d = np.maximum(0.0, np.arange(-n_hist_points, 0) + n_last_points + 1)
     weights_1d = weights_1d / weights_1d.sum()
