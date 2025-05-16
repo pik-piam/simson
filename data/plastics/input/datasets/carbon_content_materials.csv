@@ -1,15 +1,25 @@
 Material,Element,value
-Other,C,0.85
-Other,Other Elements,0.15000000000000002
-PE,C,0.86
-PE,Other Elements,0.14
+ABS_ASA_SAN,C,0.85
+ABS_ASA_SAN,Other Elements,0.15
+BioPlastics,C,0.5
+BioPlastics,Other Elements,0.5
+Fibres,C,0.65
+Fibres,Other Elements,0.35
+Elastomers (tyres),C,0.85
+Elastomers (tyres),Other Elements,0.15
+HDPE,C,0.85
+HDPE,Other Elements,0.15
 PET,C,0.63
 PET,Other Elements,0.37
 PP,C,0.86
 PP,Other Elements,0.14
 PS,C,0.92
-PS,Other Elements,0.07999999999999996
-PUR,C,0.6
-PUR,Other Elements,0.4
+PS,Other Elements,0.08
+PUR,C,0.65
+PUR,Other Elements,0.35
+LDPE,C,0.85
+LDPE,Other Elements,0.15
 PVC,C,0.39
 PVC,Other Elements,0.61
+Others,C,0.7
+Others,Other Elements,0.3

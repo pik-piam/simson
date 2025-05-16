@@ -130,10 +130,11 @@ class StockExtrapolation:
                 "discontinuities in production."
             ),
         )
+        i_2025 = self.dims["t"].index(2025)
         gdppc = deepcopy(gdppc)
-        growth = gdppc[126] / gdppc[127]
+        growth = gdppc[i_2025 + 1] / gdppc[i_2025 + 2]
         for i in range(n_deriv + 5):
-            gdppc[125 - i, ...] = gdppc[125 - i + 1, ...] * growth
+            gdppc[i_2025 - i, ...] = gdppc[i_2025 - i + 1, ...] * growth
 
         extrapolation = self.stock_extrapolation_class(
             data_to_extrapolate=historic_in,

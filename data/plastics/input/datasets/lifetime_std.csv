@@ -1,5 +1,97 @@
-Good,value
-Building and Construction,7.0
-Other Uses,3.235392801608631
-Packaging,0.10000000000000005
-Transportation,3.0
+Region,Good,value
+CAZ,Buildings & Construction,7
+CAZ,Household & Leisure & Sports,1
+CAZ,Electrical/Electronics,2
+CAZ,Packaging,0.1
+CAZ,Textile sector,1.5
+CAZ,Transportation,3
+CAZ,Others,1.5
+CAZ,Plastic Waste,0.1
+CHA,Buildings & Construction,7
+CHA,Household & Leisure & Sports,0.5
+CHA,Electrical/Electronics,1
+CHA,Packaging,0.1
+CHA,Textile sector,0.5
+CHA,Transportation,1.5
+CHA,Others,0.5
+CHA,Plastic Waste,0.1
+EUR,Buildings & Construction,15
+EUR,Household & Leisure & Sports,2
+EUR,Electrical/Electronics,3
+EUR,Packaging,0.1
+EUR,Textile sector,3
+EUR,Transportation,5
+EUR,Others,1.5
+EUR,Plastic Waste,0.1
+IND,Buildings & Construction,7
+IND,Household & Leisure & Sports,1
+IND,Electrical/Electronics,2
+IND,Packaging,0.1
+IND,Textile sector,1.5
+IND,Transportation,3
+IND,Others,1.5
+IND,Plastic Waste,0.1
+JPN,Buildings & Construction,7
+JPN,Household & Leisure & Sports,1
+JPN,Electrical/Electronics,2
+JPN,Packaging,0.1
+JPN,Textile sector,1.5
+JPN,Transportation,3
+JPN,Others,1.5
+JPN,Plastic Waste,0.1
+LAM,Buildings & Construction,7
+LAM,Household & Leisure & Sports,1
+LAM,Electrical/Electronics,2
+LAM,Packaging,0.1
+LAM,Textile sector,1.5
+LAM,Transportation,3
+LAM,Others,1.5
+LAM,Plastic Waste,0.1
+MEA,Buildings & Construction,7
+MEA,Household & Leisure & Sports,1
+MEA,Electrical/Electronics,2
+MEA,Packaging,0.1
+MEA,Textile sector,1.5
+MEA,Transportation,3
+MEA,Others,1.5
+MEA,Plastic Waste,0.1
+NEU,Buildings & Construction,7
+NEU,Household & Leisure & Sports,1
+NEU,Electrical/Electronics,2
+NEU,Packaging,0.1
+NEU,Textile sector,1.5
+NEU,Transportation,3
+NEU,Others,1.5
+NEU,Plastic Waste,0.1
+OAS,Buildings & Construction,7
+OAS,Household & Leisure & Sports,1
+OAS,Electrical/Electronics,2
+OAS,Packaging,0.1
+OAS,Textile sector,1.5
+OAS,Transportation,3
+OAS,Others,1.5
+OAS,Plastic Waste,0.1
+REF,Buildings & Construction,7
+REF,Household & Leisure & Sports,1
+REF,Electrical/Electronics,2
+REF,Packaging,0.1
+REF,Textile sector,1.5
+REF,Transportation,3
+REF,Others,1.5
+REF,Plastic Waste,0.1
+SSA,Buildings & Construction,7
+SSA,Household & Leisure & Sports,1
+SSA,Electrical/Electronics,2
+SSA,Packaging,0.1
+SSA,Textile sector,1.5
+SSA,Transportation,3
+SSA,Others,1.5
+SSA,Plastic Waste,0.1
+USA,Buildings & Construction,10
+USA,Household & Leisure & Sports,2
+USA,Electrical/Electronics,2
+USA,Packaging,0.1
+USA,Textile sector,1.5
+USA,Transportation,5
+USA,Others,2
+USA,Plastic Waste,0.1

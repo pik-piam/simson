@@ -1,29 +1,1153 @@
-Good,Material,value
-Building and Construction,Other,0.026595744680851064
-Building and Construction,PE,0.23404255319148934
-Building and Construction,PET,0.0
-Building and Construction,PP,0.06382978723404255
-Building and Construction,PS,0.11702127659574467
-Building and Construction,PUR,0.1276595744680851
-Building and Construction,PVC,0.4308510638297873
-Other Uses,Other,0.07335907335907339
-Other Uses,PE,0.28957528957528966
-Other Uses,PET,0.0
-Other Uses,PP,0.31660231660231675
-Other Uses,PS,0.09652509652509618
-Other Uses,PUR,0.14671814671814679
-Other Uses,PVC,0.07722007722007725
-Packaging,Other,0.002242152466367713
-Packaging,PE,0.5112107623318386
-Packaging,PET,0.22645739910313903
-Packaging,PP,0.18385650224215247
-Packaging,PS,0.051569506726457395
-Packaging,PUR,0.004484304932735426
-Packaging,PVC,0.020179372197309416
-Transportation,Other,0.20588235294117646
-Transportation,PE,0.13235294117647056
-Transportation,PET,0.0
-Transportation,PP,0.38235294117647056
-Transportation,PS,0.0
-Transportation,PUR,0.23529411764705882
-Transportation,PVC,0.044117647058823525
+Region,Good,Material,value
+LAM,Transportation,ABS_ASA_SAN,0.023982165
+OAS,Transportation,ABS_ASA_SAN,0.023527204
+SSA,Transportation,ABS_ASA_SAN,0.027421561
+EUR,Transportation,ABS_ASA_SAN,0.024347672
+NEU,Transportation,ABS_ASA_SAN,0.024362226
+MEA,Transportation,ABS_ASA_SAN,0.02368444
+REF,Transportation,ABS_ASA_SAN,0.023859704
+CAZ,Transportation,ABS_ASA_SAN,0.023764236
+CHA,Transportation,ABS_ASA_SAN,0.024173315
+IND,Transportation,ABS_ASA_SAN,0.024082442
+JPN,Transportation,ABS_ASA_SAN,0.027410492
+USA,Transportation,ABS_ASA_SAN,0.023599501
+LAM,Transportation,BioPlastics,0.002665888
+OAS,Transportation,BioPlastics,0.002615212
+SSA,Transportation,BioPlastics,0.003048024
+EUR,Transportation,BioPlastics,0.002706299
+NEU,Transportation,BioPlastics,0.002708082
+MEA,Transportation,BioPlastics,0.002632779
+REF,Transportation,BioPlastics,0.002652127
+CAZ,Transportation,BioPlastics,0.00264174
+CHA,Transportation,BioPlastics,0.002687068
+IND,Transportation,BioPlastics,0.002676946
+JPN,Transportation,BioPlastics,0.003047097
+USA,Transportation,BioPlastics,0.002623234
+LAM,Transportation,Fibres,0.097633705
+OAS,Transportation,Fibres,0.095782114
+SSA,Transportation,Fibres,0.111634683
+EUR,Transportation,Fibres,0.09912193
+NEU,Transportation,Fibres,0.099180643
+MEA,Transportation,Fibres,0.096421625
+REF,Transportation,Fibres,0.097135266
+CAZ,Transportation,Fibres,0.096748156
+CHA,Transportation,Fibres,0.098412257
+IND,Transportation,Fibres,0.098042797
+JPN,Transportation,Fibres,0.111592688
+USA,Transportation,Fibres,0.096076113
+LAM,Transportation,Elastomers (tyres),0.12448119
+OAS,Transportation,Elastomers (tyres),0.14175793
+SSA,Transportation,Elastomers (tyres),0
+EUR,Transportation,Elastomers (tyres),0.111894353
+NEU,Transportation,Elastomers (tyres),0.112043033
+MEA,Transportation,Elastomers (tyres),0.136725976
+REF,Transportation,Elastomers (tyres),0.130162837
+CAZ,Transportation,Elastomers (tyres),0.134032742
+CHA,Transportation,Elastomers (tyres),0.117769969
+IND,Transportation,Elastomers (tyres),0.121270149
+JPN,Transportation,Elastomers (tyres),0
+USA,Transportation,Elastomers (tyres),0.140059223
+LAM,Transportation,Others,0.456458535
+OAS,Transportation,Others,0.447588611
+SSA,Transportation,Others,0.521588938
+EUR,Transportation,Others,0.463192574
+NEU,Transportation,Others,0.463252818
+MEA,Transportation,Others,0.450366759
+REF,Transportation,Others,0.45375233
+CAZ,Transportation,Others,0.451821222
+CHA,Transportation,Others,0.460097692
+IND,Transportation,Others,0.458289238
+JPN,Transportation,Others,0.521515384
+USA,Transportation,Others,0.448680861
+LAM,Transportation,HDPE,0.038075884
+OAS,Transportation,HDPE,0.036946992
+SSA,Transportation,HDPE,0.042873074
+EUR,Transportation,HDPE,0.038176611
+NEU,Transportation,HDPE,0.037790751
+MEA,Transportation,HDPE,0.036756557
+REF,Transportation,HDPE,0.037137924
+CAZ,Transportation,HDPE,0.03674024
+CHA,Transportation,HDPE,0.03811273
+IND,Transportation,HDPE,0.037878405
+JPN,Transportation,HDPE,0.043080959
+USA,Transportation,HDPE,0.03647531
+LAM,Transportation,PET,0
+OAS,Transportation,PET,0
+SSA,Transportation,PET,0
+EUR,Transportation,PET,0
+NEU,Transportation,PET,0
+MEA,Transportation,PET,0
+REF,Transportation,PET,0
+CAZ,Transportation,PET,0
+CHA,Transportation,PET,0
+IND,Transportation,PET,0
+JPN,Transportation,PET,0
+USA,Transportation,PET,0
+LAM,Transportation,PP,0.17007846
+OAS,Transportation,PP,0.166853171
+SSA,Transportation,PP,0.19446882
+EUR,Transportation,PP,0.172671283
+NEU,Transportation,PP,0.172773771
+MEA,Transportation,PP,0.167967482
+REF,Transportation,PP,0.169210448
+CAZ,Transportation,PP,0.168535346
+CHA,Transportation,PP,0.171434917
+IND,Transportation,PP,0.170791134
+JPN,Transportation,PP,0.194395215
+USA,Transportation,PP,0.167365453
+LAM,Transportation,PS,0
+OAS,Transportation,PS,0
+SSA,Transportation,PS,0
+EUR,Transportation,PS,0
+NEU,Transportation,PS,0
+MEA,Transportation,PS,0
+REF,Transportation,PS,0
+CAZ,Transportation,PS,0
+CHA,Transportation,PS,0
+IND,Transportation,PS,0
+JPN,Transportation,PS,0
+USA,Transportation,PS,0
+LAM,Transportation,PUR,0.054924375
+OAS,Transportation,PUR,0.053882795
+SSA,Transportation,PUR,0.062800757
+EUR,Transportation,PUR,0.055761653
+NEU,Transportation,PUR,0.055794783
+MEA,Transportation,PUR,0.054242625
+REF,Transportation,PUR,0.054644036
+CAZ,Transportation,PUR,0.054426291
+CHA,Transportation,PUR,0.055362415
+IND,Transportation,PUR,0.055154506
+JPN,Transportation,PUR,0.062776673
+USA,Transportation,PUR,0.054048275
+LAM,Transportation,LDPE,0.008306371
+OAS,Transportation,LDPE,0.008096002
+SSA,Transportation,LDPE,0.009416099
+EUR,Transportation,LDPE,0.008377451
+NEU,Transportation,LDPE,0.00832951
+MEA,Transportation,LDPE,0.00809837
+REF,Transportation,LDPE,0.008171098
+CAZ,Transportation,LDPE,0.008109094
+CHA,Transportation,LDPE,0.008369486
+IND,Transportation,LDPE,0.00832273
+JPN,Transportation,LDPE,0.009443548
+USA,Transportation,LDPE,0.008051588
+LAM,Transportation,PVC,0.023393426
+OAS,Transportation,PVC,0.022949969
+SSA,Transportation,PVC,0.026748046
+EUR,Transportation,PVC,0.023750174
+NEU,Transportation,PVC,0.023764382
+MEA,Transportation,PVC,0.023103386
+REF,Transportation,PVC,0.023274229
+CAZ,Transportation,PVC,0.023180934
+CHA,Transportation,PVC,0.023580151
+IND,Transportation,PVC,0.023491653
+JPN,Transportation,PVC,0.026737944
+USA,Transportation,PVC,0.023020442
+LAM,Textile sector,ABS_ASA_SAN,0
+OAS,Textile sector,ABS_ASA_SAN,0
+SSA,Textile sector,ABS_ASA_SAN,0
+EUR,Textile sector,ABS_ASA_SAN,0
+NEU,Textile sector,ABS_ASA_SAN,0
+MEA,Textile sector,ABS_ASA_SAN,0
+REF,Textile sector,ABS_ASA_SAN,0
+CAZ,Textile sector,ABS_ASA_SAN,0
+CHA,Textile sector,ABS_ASA_SAN,0
+IND,Textile sector,ABS_ASA_SAN,0
+JPN,Textile sector,ABS_ASA_SAN,0
+USA,Textile sector,ABS_ASA_SAN,0
+LAM,Textile sector,BioPlastics,0.004412111
+OAS,Textile sector,BioPlastics,0.006524048
+SSA,Textile sector,BioPlastics,0.003058238
+EUR,Textile sector,BioPlastics,0.004364274
+NEU,Textile sector,BioPlastics,0.004483027
+MEA,Textile sector,BioPlastics,0.005460045
+REF,Textile sector,BioPlastics,0.006170318
+CAZ,Textile sector,BioPlastics,0.006218286
+CHA,Textile sector,BioPlastics,0.005696961
+IND,Textile sector,BioPlastics,0.007406983
+JPN,Textile sector,BioPlastics,0.005804175
+USA,Textile sector,BioPlastics,0.005785576
+LAM,Textile sector,Fibres,0.995587889
+OAS,Textile sector,Fibres,0.993475952
+SSA,Textile sector,Fibres,0.996941762
+EUR,Textile sector,Fibres,0.995635726
+NEU,Textile sector,Fibres,0.995516973
+MEA,Textile sector,Fibres,0.994539955
+REF,Textile sector,Fibres,0.993829682
+CAZ,Textile sector,Fibres,0.993781714
+CHA,Textile sector,Fibres,0.994303039
+IND,Textile sector,Fibres,0.992593017
+JPN,Textile sector,Fibres,0.994195825
+USA,Textile sector,Fibres,0.994214424
+LAM,Textile sector,Elastomers (tyres),0
+OAS,Textile sector,Elastomers (tyres),0
+SSA,Textile sector,Elastomers (tyres),0
+EUR,Textile sector,Elastomers (tyres),0
+NEU,Textile sector,Elastomers (tyres),0
+MEA,Textile sector,Elastomers (tyres),0
+REF,Textile sector,Elastomers (tyres),0
+CAZ,Textile sector,Elastomers (tyres),0
+CHA,Textile sector,Elastomers (tyres),0
+IND,Textile sector,Elastomers (tyres),0
+JPN,Textile sector,Elastomers (tyres),0
+USA,Textile sector,Elastomers (tyres),0
+LAM,Textile sector,Others,0
+OAS,Textile sector,Others,0
+SSA,Textile sector,Others,0
+EUR,Textile sector,Others,0
+NEU,Textile sector,Others,0
+MEA,Textile sector,Others,0
+REF,Textile sector,Others,0
+CAZ,Textile sector,Others,0
+CHA,Textile sector,Others,0
+IND,Textile sector,Others,0
+JPN,Textile sector,Others,0
+USA,Textile sector,Others,0
+LAM,Textile sector,HDPE,0
+OAS,Textile sector,HDPE,0
+SSA,Textile sector,HDPE,0
+EUR,Textile sector,HDPE,0
+NEU,Textile sector,HDPE,0
+MEA,Textile sector,HDPE,0
+REF,Textile sector,HDPE,0
+CAZ,Textile sector,HDPE,0
+CHA,Textile sector,HDPE,0
+IND,Textile sector,HDPE,0
+JPN,Textile sector,HDPE,0
+USA,Textile sector,HDPE,0
+LAM,Textile sector,PET,0
+OAS,Textile sector,PET,0
+SSA,Textile sector,PET,0
+EUR,Textile sector,PET,0
+NEU,Textile sector,PET,0
+MEA,Textile sector,PET,0
+REF,Textile sector,PET,0
+CAZ,Textile sector,PET,0
+CHA,Textile sector,PET,0
+IND,Textile sector,PET,0
+JPN,Textile sector,PET,0
+USA,Textile sector,PET,0
+LAM,Textile sector,PP,0
+OAS,Textile sector,PP,0
+SSA,Textile sector,PP,0
+EUR,Textile sector,PP,0
+NEU,Textile sector,PP,0
+MEA,Textile sector,PP,0
+REF,Textile sector,PP,0
+CAZ,Textile sector,PP,0
+CHA,Textile sector,PP,0
+IND,Textile sector,PP,0
+JPN,Textile sector,PP,0
+USA,Textile sector,PP,0
+LAM,Textile sector,PS,0
+OAS,Textile sector,PS,0
+SSA,Textile sector,PS,0
+EUR,Textile sector,PS,0
+NEU,Textile sector,PS,0
+MEA,Textile sector,PS,0
+REF,Textile sector,PS,0
+CAZ,Textile sector,PS,0
+CHA,Textile sector,PS,0
+IND,Textile sector,PS,0
+JPN,Textile sector,PS,0
+USA,Textile sector,PS,0
+LAM,Textile sector,PUR,0
+OAS,Textile sector,PUR,0
+SSA,Textile sector,PUR,0
+EUR,Textile sector,PUR,0
+NEU,Textile sector,PUR,0
+MEA,Textile sector,PUR,0
+REF,Textile sector,PUR,0
+CAZ,Textile sector,PUR,0
+CHA,Textile sector,PUR,0
+IND,Textile sector,PUR,0
+JPN,Textile sector,PUR,0
+USA,Textile sector,PUR,0
+LAM,Textile sector,LDPE,0
+OAS,Textile sector,LDPE,0
+SSA,Textile sector,LDPE,0
+EUR,Textile sector,LDPE,0
+NEU,Textile sector,LDPE,0
+MEA,Textile sector,LDPE,0
+REF,Textile sector,LDPE,0
+CAZ,Textile sector,LDPE,0
+CHA,Textile sector,LDPE,0
+IND,Textile sector,LDPE,0
+JPN,Textile sector,LDPE,0
+USA,Textile sector,LDPE,0
+LAM,Textile sector,PVC,0
+OAS,Textile sector,PVC,0
+SSA,Textile sector,PVC,0
+EUR,Textile sector,PVC,0
+NEU,Textile sector,PVC,0
+MEA,Textile sector,PVC,0
+REF,Textile sector,PVC,0
+CAZ,Textile sector,PVC,0
+CHA,Textile sector,PVC,0
+IND,Textile sector,PVC,0
+JPN,Textile sector,PVC,0
+USA,Textile sector,PVC,0
+LAM,Household & Leisure & Sports,ABS_ASA_SAN,0.085159633
+OAS,Household & Leisure & Sports,ABS_ASA_SAN,0.085181521
+SSA,Household & Leisure & Sports,ABS_ASA_SAN,0.086917668
+EUR,Household & Leisure & Sports,ABS_ASA_SAN,0.086176132
+NEU,Household & Leisure & Sports,ABS_ASA_SAN,0.087374741
+MEA,Household & Leisure & Sports,ABS_ASA_SAN,0.087107004
+REF,Household & Leisure & Sports,ABS_ASA_SAN,0.086556979
+CAZ,Household & Leisure & Sports,ABS_ASA_SAN,0.086792871
+CHA,Household & Leisure & Sports,ABS_ASA_SAN,0.084412575
+IND,Household & Leisure & Sports,ABS_ASA_SAN,0.083172871
+JPN,Household & Leisure & Sports,ABS_ASA_SAN,0.086893662
+USA,Household & Leisure & Sports,ABS_ASA_SAN,0.088014813
+LAM,Household & Leisure & Sports,BioPlastics,0.003442151
+OAS,Household & Leisure & Sports,BioPlastics,0.003443037
+SSA,Household & Leisure & Sports,BioPlastics,0.00351331
+EUR,Household & Leisure & Sports,BioPlastics,0.003483295
+NEU,Household & Leisure & Sports,BioPlastics,0.0035318
+MEA,Household & Leisure & Sports,BioPlastics,0.003520926
+REF,Household & Leisure & Sports,BioPlastics,0.003498868
+CAZ,Household & Leisure & Sports,BioPlastics,0.003508309
+CHA,Household & Leisure & Sports,BioPlastics,0.003412039
+IND,Household & Leisure & Sports,BioPlastics,0.003362047
+JPN,Household & Leisure & Sports,BioPlastics,0.003512531
+USA,Household & Leisure & Sports,BioPlastics,0.003557638
+LAM,Household & Leisure & Sports,Fibres,0
+OAS,Household & Leisure & Sports,Fibres,0
+SSA,Household & Leisure & Sports,Fibres,0
+EUR,Household & Leisure & Sports,Fibres,0
+NEU,Household & Leisure & Sports,Fibres,0
+MEA,Household & Leisure & Sports,Fibres,0
+REF,Household & Leisure & Sports,Fibres,0
+CAZ,Household & Leisure & Sports,Fibres,0
+CHA,Household & Leisure & Sports,Fibres,0
+IND,Household & Leisure & Sports,Fibres,0
+JPN,Household & Leisure & Sports,Fibres,0
+USA,Household & Leisure & Sports,Fibres,0
+LAM,Household & Leisure & Sports,Elastomers (tyres),0
+OAS,Household & Leisure & Sports,Elastomers (tyres),0
+SSA,Household & Leisure & Sports,Elastomers (tyres),0
+EUR,Household & Leisure & Sports,Elastomers (tyres),0
+NEU,Household & Leisure & Sports,Elastomers (tyres),0
+MEA,Household & Leisure & Sports,Elastomers (tyres),0
+REF,Household & Leisure & Sports,Elastomers (tyres),0
+CAZ,Household & Leisure & Sports,Elastomers (tyres),0
+CHA,Household & Leisure & Sports,Elastomers (tyres),0
+IND,Household & Leisure & Sports,Elastomers (tyres),0
+JPN,Household & Leisure & Sports,Elastomers (tyres),0
+USA,Household & Leisure & Sports,Elastomers (tyres),0
+LAM,Household & Leisure & Sports,Others,0.084205946
+OAS,Household & Leisure & Sports,Others,0.084236482
+SSA,Household & Leisure & Sports,Others,0.085882589
+EUR,Household & Leisure & Sports,Others,0.085329185
+NEU,Household & Leisure & Sports,Others,0.086418944
+MEA,Household & Leisure & Sports,Others,0.086072172
+REF,Household & Leisure & Sports,Others,0.085548066
+CAZ,Household & Leisure & Sports,Others,0.085854787
+CHA,Household & Leisure & Sports,Others,0.083517169
+IND,Household & Leisure & Sports,Others,0.082282813
+JPN,Household & Leisure & Sports,Others,0.085987088
+USA,Household & Leisure & Sports,Others,0.087004029
+LAM,Household & Leisure & Sports,HDPE,0.111996249
+OAS,Household & Leisure & Sports,HDPE,0.113975924
+SSA,Household & Leisure & Sports,HDPE,0.107899782
+EUR,Household & Leisure & Sports,HDPE,0.124635188
+NEU,Household & Leisure & Sports,HDPE,0.115797999
+MEA,Household & Leisure & Sports,HDPE,0.107044985
+REF,Household & Leisure & Sports,HDPE,0.109013388
+CAZ,Household & Leisure & Sports,HDPE,0.116727058
+CHA,Household & Leisure & Sports,HDPE,0.116605164
+IND,Household & Leisure & Sports,HDPE,0.116517444
+JPN,Household & Leisure & Sports,HDPE,0.12012109
+USA,Household & Leisure & Sports,HDPE,0.111307139
+LAM,Household & Leisure & Sports,PET,0
+OAS,Household & Leisure & Sports,PET,0
+SSA,Household & Leisure & Sports,PET,0
+EUR,Household & Leisure & Sports,PET,0
+NEU,Household & Leisure & Sports,PET,0
+MEA,Household & Leisure & Sports,PET,0
+REF,Household & Leisure & Sports,PET,0
+CAZ,Household & Leisure & Sports,PET,0
+CHA,Household & Leisure & Sports,PET,0
+IND,Household & Leisure & Sports,PET,0
+JPN,Household & Leisure & Sports,PET,0
+USA,Household & Leisure & Sports,PET,0
+LAM,Household & Leisure & Sports,PP,0.353151489
+OAS,Household & Leisure & Sports,PP,0.350739327
+SSA,Household & Leisure & Sports,PP,0.347961132
+EUR,Household & Leisure & Sports,PP,0.33078999
+NEU,Household & Leisure & Sports,PP,0.334812978
+MEA,Household & Leisure & Sports,PP,0.347567422
+REF,Household & Leisure & Sports,PP,0.348488776
+CAZ,Household & Leisure & Sports,PP,0.337208565
+CHA,Household & Leisure & Sports,PP,0.351744779
+IND,Household & Leisure & Sports,PP,0.359865176
+JPN,Household & Leisure & Sports,PP,0.332259467
+USA,Household & Leisure & Sports,PP,0.336650843
+LAM,Household & Leisure & Sports,PS,0.10583196
+OAS,Household & Leisure & Sports,PS,0.105870039
+SSA,Household & Leisure & Sports,PS,0.107939516
+EUR,Household & Leisure & Sports,PS,0.107244197
+NEU,Household & Leisure & Sports,PS,0.108613165
+MEA,Household & Leisure & Sports,PS,0.108177554
+REF,Household & Leisure & Sports,PS,0.10751897
+CAZ,Household & Leisure & Sports,PS,0.107903994
+CHA,Household & Leisure & Sports,PS,0.104970399
+IND,Household & Leisure & Sports,PS,0.103414302
+JPN,Household & Leisure & Sports,PS,0.108071948
+USA,Household & Leisure & Sports,PS,0.109348443
+LAM,Household & Leisure & Sports,PUR,0.044859788
+OAS,Household & Leisure & Sports,PUR,0.044871811
+SSA,Household & Leisure & Sports,PUR,0.045757267
+EUR,Household & Leisure & Sports,PUR,0.045410068
+NEU,Household & Leisure & Sports,PUR,0.046011973
+MEA,Household & Leisure & Sports,PUR,0.045856874
+REF,Household & Leisure & Sports,PUR,0.04557558
+CAZ,Household & Leisure & Sports,PUR,0.045711539
+CHA,Household & Leisure & Sports,PUR,0.044481493
+IND,Household & Leisure & Sports,PUR,0.043837068
+JPN,Household & Leisure & Sports,PUR,0.045771335
+USA,Household & Leisure & Sports,PUR,0.046333825
+LAM,Household & Leisure & Sports,LDPE,0.161007532
+OAS,Household & Leisure & Sports,LDPE,0.161323553
+SSA,Household & Leisure & Sports,LDPE,0.162743894
+EUR,Household & Leisure & Sports,LDPE,0.165985514
+NEU,Household & Leisure & Sports,LDPE,0.165783168
+MEA,Household & Leisure & Sports,LDPE,0.163156157
+REF,Household & Leisure & Sports,LDPE,0.162627947
+CAZ,Household & Leisure & Sports,LDPE,0.164982411
+CHA,Household & Leisure & Sports,LDPE,0.160952538
+IND,Household & Leisure & Sports,LDPE,0.158377278
+JPN,Household & Leisure & Sports,LDPE,0.166012116
+USA,Household & Leisure & Sports,LDPE,0.165749769
+LAM,Household & Leisure & Sports,PVC,0.05034525
+OAS,Household & Leisure & Sports,PVC,0.050358305
+SSA,Household & Leisure & Sports,PVC,0.051384841
+EUR,Household & Leisure & Sports,PVC,0.050946432
+NEU,Household & Leisure & Sports,PVC,0.051655232
+MEA,Household & Leisure & Sports,PVC,0.051496907
+REF,Household & Leisure & Sports,PVC,0.051171427
+CAZ,Household & Leisure & Sports,PVC,0.051310466
+CHA,Household & Leisure & Sports,PVC,0.049903844
+IND,Household & Leisure & Sports,PVC,0.049171002
+JPN,Household & Leisure & Sports,PVC,0.051370764
+USA,Household & Leisure & Sports,PVC,0.052033499
+LAM,Electrical/Electronics,ABS_ASA_SAN,0.139135609
+OAS,Electrical/Electronics,ABS_ASA_SAN,0.139327314
+SSA,Electrical/Electronics,ABS_ASA_SAN,0.140354662
+EUR,Electrical/Electronics,ABS_ASA_SAN,0.140690912
+NEU,Electrical/Electronics,ABS_ASA_SAN,0.141102056
+MEA,Electrical/Electronics,ABS_ASA_SAN,0.140288674
+REF,Electrical/Electronics,ABS_ASA_SAN,0.139909418
+CAZ,Electrical/Electronics,ABS_ASA_SAN,0.141192694
+CHA,Electrical/Electronics,ABS_ASA_SAN,0.138897974
+IND,Electrical/Electronics,ABS_ASA_SAN,0.138678937
+JPN,Electrical/Electronics,ABS_ASA_SAN,0.140520349
+USA,Electrical/Electronics,ABS_ASA_SAN,0.141018897
+LAM,Electrical/Electronics,BioPlastics,0.002618843
+OAS,Electrical/Electronics,BioPlastics,0.002622218
+SSA,Electrical/Electronics,BioPlastics,0.002641736
+EUR,Electrical/Electronics,BioPlastics,0.00264789
+NEU,Electrical/Electronics,BioPlastics,0.002656084
+MEA,Electrical/Electronics,BioPlastics,0.002639824
+REF,Electrical/Electronics,BioPlastics,0.002633521
+CAZ,Electrical/Electronics,BioPlastics,0.002657936
+CHA,Electrical/Electronics,BioPlastics,0.002614207
+IND,Electrical/Electronics,BioPlastics,0.002610299
+JPN,Electrical/Electronics,BioPlastics,0.002644878
+USA,Electrical/Electronics,BioPlastics,0.002653944
+LAM,Electrical/Electronics,Fibres,0
+OAS,Electrical/Electronics,Fibres,0
+SSA,Electrical/Electronics,Fibres,0
+EUR,Electrical/Electronics,Fibres,0
+NEU,Electrical/Electronics,Fibres,0
+MEA,Electrical/Electronics,Fibres,0
+REF,Electrical/Electronics,Fibres,0
+CAZ,Electrical/Electronics,Fibres,0
+CHA,Electrical/Electronics,Fibres,0
+IND,Electrical/Electronics,Fibres,0
+JPN,Electrical/Electronics,Fibres,0
+USA,Electrical/Electronics,Fibres,0
+LAM,Electrical/Electronics,Elastomers (tyres),0
+OAS,Electrical/Electronics,Elastomers (tyres),0
+SSA,Electrical/Electronics,Elastomers (tyres),0
+EUR,Electrical/Electronics,Elastomers (tyres),0
+NEU,Electrical/Electronics,Elastomers (tyres),0
+MEA,Electrical/Electronics,Elastomers (tyres),0
+REF,Electrical/Electronics,Elastomers (tyres),0
+CAZ,Electrical/Electronics,Elastomers (tyres),0
+CHA,Electrical/Electronics,Elastomers (tyres),0
+IND,Electrical/Electronics,Elastomers (tyres),0
+JPN,Electrical/Electronics,Elastomers (tyres),0
+USA,Electrical/Electronics,Elastomers (tyres),0
+LAM,Electrical/Electronics,Others,0.314256951
+OAS,Electrical/Electronics,Others,0.314584965
+SSA,Electrical/Electronics,Others,0.316556378
+EUR,Electrical/Electronics,Others,0.317011309
+NEU,Electrical/Electronics,Others,0.317867525
+MEA,Electrical/Electronics,Others,0.316427343
+REF,Electrical/Electronics,Others,0.315711412
+CAZ,Electrical/Electronics,Others,0.31807678
+CHA,Electrical/Electronics,Others,0.31378003
+IND,Electrical/Electronics,Others,0.313389197
+JPN,Electrical/Electronics,Others,0.316733186
+USA,Electrical/Electronics,Others,0.317726918
+LAM,Electrical/Electronics,HDPE,0.028251672
+OAS,Electrical/Electronics,HDPE,0.028023589
+SSA,Electrical/Electronics,HDPE,0.026927955
+EUR,Electrical/Electronics,HDPE,0.026388267
+NEU,Electrical/Electronics,HDPE,0.026024811
+MEA,Electrical/Electronics,HDPE,0.026995388
+REF,Electrical/Electronics,HDPE,0.027408394
+CAZ,Electrical/Electronics,HDPE,0.025966472
+CHA,Electrical/Electronics,HDPE,0.028501927
+IND,Electrical/Electronics,HDPE,0.028772921
+JPN,Electrical/Electronics,HDPE,0.026620845
+USA,Electrical/Electronics,HDPE,0.02612925
+LAM,Electrical/Electronics,PET,0
+OAS,Electrical/Electronics,PET,0
+SSA,Electrical/Electronics,PET,0
+EUR,Electrical/Electronics,PET,0
+NEU,Electrical/Electronics,PET,0
+MEA,Electrical/Electronics,PET,0
+REF,Electrical/Electronics,PET,0
+CAZ,Electrical/Electronics,PET,0
+CHA,Electrical/Electronics,PET,0
+IND,Electrical/Electronics,PET,0
+JPN,Electrical/Electronics,PET,0
+USA,Electrical/Electronics,PET,0
+LAM,Electrical/Electronics,PP,0.204354128
+OAS,Electrical/Electronics,PP,0.203885082
+SSA,Electrical/Electronics,PP,0.201309809
+EUR,Electrical/Electronics,PP,0.200450643
+NEU,Electrical/Electronics,PP,0.199436347
+MEA,Electrical/Electronics,PP,0.201474516
+REF,Electrical/Electronics,PP,0.202421778
+CAZ,Electrical/Electronics,PP,0.199213876
+CHA,Electrical/Electronics,PP,0.204913709
+IND,Electrical/Electronics,PP,0.205521838
+JPN,Electrical/Electronics,PP,0.200884029
+USA,Electrical/Electronics,PP,0.199642649
+LAM,Electrical/Electronics,PS,0.094039625
+OAS,Electrical/Electronics,PS,0.094136262
+SSA,Electrical/Electronics,PS,0.094727041
+EUR,Electrical/Electronics,PS,0.094863598
+NEU,Electrical/Electronics,PS,0.09511984
+MEA,Electrical/Electronics,PS,0.094689382
+REF,Electrical/Electronics,PS,0.094476359
+CAZ,Electrical/Electronics,PS,0.095182256
+CHA,Electrical/Electronics,PS,0.09390229
+IND,Electrical/Electronics,PS,0.09377822
+JPN,Electrical/Electronics,PS,0.094780812
+USA,Electrical/Electronics,PS,0.095077959
+LAM,Electrical/Electronics,PUR,0.049692277
+OAS,Electrical/Electronics,PUR,0.049760978
+SSA,Electrical/Electronics,PUR,0.050127445
+EUR,Electrical/Electronics,PUR,0.050247858
+NEU,Electrical/Electronics,PUR,0.050394969
+MEA,Electrical/Electronics,PUR,0.050104461
+REF,Electrical/Electronics,PUR,0.049969372
+CAZ,Electrical/Electronics,PUR,0.050425739
+CHA,Electrical/Electronics,PUR,0.049607602
+IND,Electrical/Electronics,PUR,0.049529226
+JPN,Electrical/Electronics,PUR,0.05018642
+USA,Electrical/Electronics,PUR,0.050364958
+LAM,Electrical/Electronics,LDPE,0.087128925
+OAS,Electrical/Electronics,LDPE,0.086904496
+SSA,Electrical/Electronics,LDPE,0.086209321
+EUR,Electrical/Electronics,LDPE,0.085303059
+NEU,Electrical/Electronics,LDPE,0.085296368
+MEA,Electrical/Electronics,LDPE,0.086244405
+REF,Electrical/Electronics,LDPE,0.086532386
+CAZ,Electrical/Electronics,LDPE,0.085366654
+CHA,Electrical/Electronics,LDPE,0.087242127
+IND,Electrical/Electronics,LDPE,0.087544683
+JPN,Electrical/Electronics,LDPE,0.085603375
+USA,Electrical/Electronics,LDPE,0.085415977
+LAM,Electrical/Electronics,PVC,0.08052197
+OAS,Electrical/Electronics,PVC,0.080755096
+SSA,Electrical/Electronics,PVC,0.081145653
+EUR,Electrical/Electronics,PVC,0.082396464
+NEU,Electrical/Electronics,PVC,0.082102
+MEA,Electrical/Electronics,PVC,0.081136006
+REF,Electrical/Electronics,PVC,0.08093736
+CAZ,Electrical/Electronics,PVC,0.081917591
+CHA,Electrical/Electronics,PVC,0.080540135
+IND,Electrical/Electronics,PVC,0.080174679
+JPN,Electrical/Electronics,PVC,0.082026105
+USA,Electrical/Electronics,PVC,0.081969448
+LAM,Others,ABS_ASA_SAN,0.010021028
+OAS,Others,ABS_ASA_SAN,0.010819728
+SSA,Others,ABS_ASA_SAN,0.011057695
+EUR,Others,ABS_ASA_SAN,0.009864977
+NEU,Others,ABS_ASA_SAN,0.01029442
+MEA,Others,ABS_ASA_SAN,0.011359445
+REF,Others,ABS_ASA_SAN,0.011142198
+CAZ,Others,ABS_ASA_SAN,0.010505324
+CHA,Others,ABS_ASA_SAN,0.010100864
+IND,Others,ABS_ASA_SAN,0.010482114
+JPN,Others,ABS_ASA_SAN,0.010645203
+USA,Others,ABS_ASA_SAN,0.010536992
+LAM,Others,BioPlastics,0.003350773
+OAS,Others,BioPlastics,0.003773746
+SSA,Others,BioPlastics,0.003782512
+EUR,Others,BioPlastics,0.00351116
+NEU,Others,BioPlastics,0.003629764
+MEA,Others,BioPlastics,0.003782631
+REF,Others,BioPlastics,0.003739427
+CAZ,Others,BioPlastics,0.003579649
+CHA,Others,BioPlastics,0.003525276
+IND,Others,BioPlastics,0.003779949
+JPN,Others,BioPlastics,0.003768508
+USA,Others,BioPlastics,0.003708075
+LAM,Others,Fibres,0.147453062
+OAS,Others,Fibres,0.16148651
+SSA,Others,Fibres,0.164337468
+EUR,Others,Fibres,0.145892483
+NEU,Others,Fibres,0.151485908
+MEA,Others,Fibres,0.167435527
+REF,Others,Fibres,0.161173994
+CAZ,Others,Fibres,0.157102053
+CHA,Others,Fibres,0.148587918
+IND,Others,Fibres,0.155542085
+JPN,Others,Fibres,0.155763278
+USA,Others,Fibres,0.154722741
+LAM,Others,Elastomers (tyres),0
+OAS,Others,Elastomers (tyres),0
+SSA,Others,Elastomers (tyres),0
+EUR,Others,Elastomers (tyres),0
+NEU,Others,Elastomers (tyres),0
+MEA,Others,Elastomers (tyres),0
+REF,Others,Elastomers (tyres),0
+CAZ,Others,Elastomers (tyres),0
+CHA,Others,Elastomers (tyres),0
+IND,Others,Elastomers (tyres),0
+JPN,Others,Elastomers (tyres),0
+USA,Others,Elastomers (tyres),0
+LAM,Others,Others,0.445586546
+OAS,Others,Others,0.485875938
+SSA,Others,Others,0.492754649
+EUR,Others,Others,0.451273456
+NEU,Others,Others,0.462738615
+MEA,Others,Others,0.493597691
+REF,Others,Others,0.490984125
+CAZ,Others,Others,0.463337623
+CHA,Others,Others,0.456620576
+IND,Others,Others,0.486145374
+JPN,Others,Others,0.481531324
+USA,Others,Others,0.469871014
+LAM,Others,HDPE,0.074245869
+OAS,Others,HDPE,0.060385392
+SSA,Others,HDPE,0.055428225
+EUR,Others,HDPE,0.073851603
+NEU,Others,HDPE,0.065100579
+MEA,Others,HDPE,0.052772352
+REF,Others,HDPE,0.057300787
+CAZ,Others,HDPE,0.066021199
+CHA,Others,HDPE,0.070118697
+IND,Others,HDPE,0.061166069
+JPN,Others,HDPE,0.062817558
+USA,Others,HDPE,0.061495982
+LAM,Others,PET,0
+OAS,Others,PET,0
+SSA,Others,PET,0
+EUR,Others,PET,0
+NEU,Others,PET,0
+MEA,Others,PET,0
+REF,Others,PET,0
+CAZ,Others,PET,0
+CHA,Others,PET,0
+IND,Others,PET,0
+JPN,Others,PET,0
+USA,Others,PET,0
+LAM,Others,PP,0.024211457
+OAS,Others,PP,0.000271175
+SSA,Others,PP,7.05E-05
+EUR,Others,PP,0.016868415
+NEU,Others,PP,0.015701367
+MEA,Others,PP,0.000113368
+REF,Others,PP,0.000181628
+CAZ,Others,PP,0.012743044
+CHA,Others,PP,0.014056026
+IND,Others,PP,0.000136791
+JPN,Others,PP,0.000310256
+USA,Others,PP,0.01277299
+LAM,Others,PS,0.025336434
+OAS,Others,PS,0.028477754
+SSA,Others,PS,0.028304666
+EUR,Others,PS,0.026776247
+NEU,Others,PS,0.027533104
+MEA,Others,PS,0.027944895
+REF,Others,PS,0.027424514
+CAZ,Others,PS,0.027183378
+CHA,Others,PS,0.026829779
+IND,Others,PS,0.028760428
+JPN,Others,PS,0.028688954
+USA,Others,PS,0.027780508
+LAM,Others,PUR,0.091864931
+OAS,Others,PUR,0.077084179
+SSA,Others,PUR,0.078529551
+EUR,Others,PUR,0.084842311
+NEU,Others,PUR,0.087968566
+MEA,Others,PUR,0.080204886
+REF,Others,PUR,0.081167943
+CAZ,Others,PUR,0.085934097
+CHA,Others,PUR,0.085873227
+IND,Others,PUR,0.077986356
+JPN,Others,PUR,0.078074629
+USA,Others,PUR,0.08800226
+LAM,Others,LDPE,0.091408391
+OAS,Others,LDPE,0.075730108
+SSA,Others,LDPE,0.07299951
+EUR,Others,LDPE,0.091427784
+NEU,Others,LDPE,0.083879318
+MEA,Others,LDPE,0.071601954
+REF,Others,LDPE,0.075142114
+CAZ,Others,LDPE,0.08295047
+CHA,Others,LDPE,0.090386893
+IND,Others,LDPE,0.077730387
+JPN,Others,LDPE,0.079831882
+USA,Others,LDPE,0.07959905
+LAM,Others,PVC,0.086521508
+OAS,Others,PVC,0.096095472
+SSA,Others,PVC,0.092735185
+EUR,Others,PVC,0.095691565
+NEU,Others,PVC,0.091668359
+MEA,Others,PVC,0.091187252
+REF,Others,PVC,0.091743269
+CAZ,Others,PVC,0.090643162
+CHA,Others,PVC,0.093900743
+IND,Others,PVC,0.098270447
+JPN,Others,PVC,0.098568408
+USA,Others,PVC,0.091510387
+LAM,Buildings & Construction,ABS_ASA_SAN,0.00372344
+OAS,Buildings & Construction,ABS_ASA_SAN,0.003799761
+SSA,Buildings & Construction,ABS_ASA_SAN,0.003720241
+EUR,Buildings & Construction,ABS_ASA_SAN,0.003498689
+NEU,Buildings & Construction,ABS_ASA_SAN,0.003663779
+MEA,Buildings & Construction,ABS_ASA_SAN,0.003754817
+REF,Buildings & Construction,ABS_ASA_SAN,0.003780245
+CAZ,Buildings & Construction,ABS_ASA_SAN,0.003782921
+CHA,Buildings & Construction,ABS_ASA_SAN,0.00381716
+IND,Buildings & Construction,ABS_ASA_SAN,0.003843386
+JPN,Buildings & Construction,ABS_ASA_SAN,0.003707023
+USA,Buildings & Construction,ABS_ASA_SAN,0.003694054
+LAM,Buildings & Construction,BioPlastics,0.001261387
+OAS,Buildings & Construction,BioPlastics,0.001287202
+SSA,Buildings & Construction,BioPlastics,0.001259468
+EUR,Buildings & Construction,BioPlastics,0.001185239
+NEU,Buildings & Construction,BioPlastics,0.001241192
+MEA,Buildings & Construction,BioPlastics,0.001272043
+REF,Buildings & Construction,BioPlastics,0.001280528
+CAZ,Buildings & Construction,BioPlastics,0.001281407
+CHA,Buildings & Construction,BioPlastics,0.001293138
+IND,Buildings & Construction,BioPlastics,0.001301934
+JPN,Buildings & Construction,BioPlastics,0.001255837
+USA,Buildings & Construction,BioPlastics,0.001251396
+LAM,Buildings & Construction,Fibres,0
+OAS,Buildings & Construction,Fibres,0
+SSA,Buildings & Construction,Fibres,0
+EUR,Buildings & Construction,Fibres,0
+NEU,Buildings & Construction,Fibres,0
+MEA,Buildings & Construction,Fibres,0
+REF,Buildings & Construction,Fibres,0
+CAZ,Buildings & Construction,Fibres,0
+CHA,Buildings & Construction,Fibres,0
+IND,Buildings & Construction,Fibres,0
+JPN,Buildings & Construction,Fibres,0
+USA,Buildings & Construction,Fibres,0
+LAM,Buildings & Construction,Elastomers (tyres),0
+OAS,Buildings & Construction,Elastomers (tyres),0
+SSA,Buildings & Construction,Elastomers (tyres),0
+EUR,Buildings & Construction,Elastomers (tyres),0
+NEU,Buildings & Construction,Elastomers (tyres),0
+MEA,Buildings & Construction,Elastomers (tyres),0
+REF,Buildings & Construction,Elastomers (tyres),0
+CAZ,Buildings & Construction,Elastomers (tyres),0
+CHA,Buildings & Construction,Elastomers (tyres),0
+IND,Buildings & Construction,Elastomers (tyres),0
+JPN,Buildings & Construction,Elastomers (tyres),0
+USA,Buildings & Construction,Elastomers (tyres),0
+LAM,Buildings & Construction,Others,0.130038033
+OAS,Buildings & Construction,Others,0.13239933
+SSA,Buildings & Construction,Others,0.129933291
+EUR,Buildings & Construction,Others,0.123276432
+NEU,Buildings & Construction,Others,0.128274283
+MEA,Buildings & Construction,Others,0.1310199
+REF,Buildings & Construction,Others,0.131789142
+CAZ,Buildings & Construction,Others,0.131890513
+CHA,Buildings & Construction,Others,0.133025663
+IND,Buildings & Construction,Others,0.133716399
+JPN,Buildings & Construction,Others,0.1295786
+USA,Buildings & Construction,Others,0.129190141
+LAM,Buildings & Construction,HDPE,0.135283692
+OAS,Buildings & Construction,HDPE,0.130703
+SSA,Buildings & Construction,HDPE,0.134619945
+EUR,Buildings & Construction,HDPE,0.144638046
+NEU,Buildings & Construction,HDPE,0.137361798
+MEA,Buildings & Construction,HDPE,0.133511449
+REF,Buildings & Construction,HDPE,0.132213368
+CAZ,Buildings & Construction,HDPE,0.131661046
+CHA,Buildings & Construction,HDPE,0.128960415
+IND,Buildings & Construction,HDPE,0.128302076
+JPN,Buildings & Construction,HDPE,0.135465986
+USA,Buildings & Construction,HDPE,0.135981534
+LAM,Buildings & Construction,PET,0
+OAS,Buildings & Construction,PET,0
+SSA,Buildings & Construction,PET,0
+EUR,Buildings & Construction,PET,0
+NEU,Buildings & Construction,PET,0
+MEA,Buildings & Construction,PET,0
+REF,Buildings & Construction,PET,0
+CAZ,Buildings & Construction,PET,0
+CHA,Buildings & Construction,PET,0
+IND,Buildings & Construction,PET,0
+JPN,Buildings & Construction,PET,0
+USA,Buildings & Construction,PET,0
+LAM,Buildings & Construction,PP,0.0699847
+OAS,Buildings & Construction,PP,0.06927004
+SSA,Buildings & Construction,PP,0.069899377
+EUR,Buildings & Construction,PP,0.071559028
+NEU,Buildings & Construction,PP,0.070226413
+MEA,Buildings & Construction,PP,0.069727659
+REF,Buildings & Construction,PP,0.069507481
+CAZ,Buildings & Construction,PP,0.069386108
+CHA,Buildings & Construction,PP,0.069288976
+IND,Buildings & Construction,PP,0.069040206
+JPN,Buildings & Construction,PP,0.069843786
+USA,Buildings & Construction,PP,0.069922426
+LAM,Buildings & Construction,PS,0.082284196
+OAS,Buildings & Construction,PS,0.083765577
+SSA,Buildings & Construction,PS,0.08221219
+EUR,Buildings & Construction,PS,0.078007409
+NEU,Buildings & Construction,PS,0.081168344
+MEA,Buildings & Construction,PS,0.082903625
+REF,Buildings & Construction,PS,0.083394796
+CAZ,Buildings & Construction,PS,0.083453721
+CHA,Buildings & Construction,PS,0.08418086
+IND,Buildings & Construction,PS,0.084602958
+JPN,Buildings & Construction,PS,0.081996574
+USA,Buildings & Construction,PS,0.081741288
+LAM,Buildings & Construction,PUR,0.069474103
+OAS,Buildings & Construction,PUR,0.070867858
+SSA,Buildings & Construction,PUR,0.069400511
+EUR,Buildings & Construction,PUR,0.065340852
+NEU,Buildings & Construction,PUR,0.06836964
+MEA,Buildings & Construction,PUR,0.070050302
+REF,Buildings & Construction,PUR,0.070514434
+CAZ,Buildings & Construction,PUR,0.070558355
+CHA,Buildings & Construction,PUR,0.071197774
+IND,Buildings & Construction,PUR,0.07167051
+JPN,Buildings & Construction,PUR,0.069160892
+USA,Buildings & Construction,PUR,0.068924286
+LAM,Buildings & Construction,LDPE,0.043186879
+OAS,Buildings & Construction,LDPE,0.042739587
+SSA,Buildings & Construction,LDPE,0.043220123
+EUR,Buildings & Construction,LDPE,0.045272066
+NEU,Buildings & Construction,LDPE,0.043875157
+MEA,Buildings & Construction,LDPE,0.043031941
+REF,Buildings & Construction,LDPE,0.042843347
+CAZ,Buildings & Construction,LDPE,0.042898124
+CHA,Buildings & Construction,LDPE,0.042680889
+IND,Buildings & Construction,LDPE,0.042439285
+JPN,Buildings & Construction,LDPE,0.043507691
+USA,Buildings & Construction,LDPE,0.043575677
+LAM,Buildings & Construction,PVC,0.464763568
+OAS,Buildings & Construction,PVC,0.465167646
+SSA,Buildings & Construction,PVC,0.465734854
+EUR,Buildings & Construction,PVC,0.467222238
+NEU,Buildings & Construction,PVC,0.465819395
+MEA,Buildings & Construction,PVC,0.464728263
+REF,Buildings & Construction,PVC,0.464676659
+CAZ,Buildings & Construction,PVC,0.465087805
+CHA,Buildings & Construction,PVC,0.465555125
+IND,Buildings & Construction,PVC,0.465083246
+JPN,Buildings & Construction,PVC,0.465483611
+USA,Buildings & Construction,PVC,0.465719198
+LAM,Packaging,ABS_ASA_SAN,0
+OAS,Packaging,ABS_ASA_SAN,0
+SSA,Packaging,ABS_ASA_SAN,0
+EUR,Packaging,ABS_ASA_SAN,0
+NEU,Packaging,ABS_ASA_SAN,0
+MEA,Packaging,ABS_ASA_SAN,0
+REF,Packaging,ABS_ASA_SAN,0
+CAZ,Packaging,ABS_ASA_SAN,0
+CHA,Packaging,ABS_ASA_SAN,0
+IND,Packaging,ABS_ASA_SAN,0
+JPN,Packaging,ABS_ASA_SAN,0
+USA,Packaging,ABS_ASA_SAN,0
+LAM,Packaging,BioPlastics,0.009429039
+OAS,Packaging,BioPlastics,0.009353123
+SSA,Packaging,BioPlastics,0.009981316
+EUR,Packaging,BioPlastics,0.009258511
+NEU,Packaging,BioPlastics,0.009639062
+MEA,Packaging,BioPlastics,0.009844716
+REF,Packaging,BioPlastics,0.009626223
+CAZ,Packaging,BioPlastics,0.009705435
+CHA,Packaging,BioPlastics,0.009085294
+IND,Packaging,BioPlastics,0.008743662
+JPN,Packaging,BioPlastics,0.009440116
+USA,Packaging,BioPlastics,0.009949728
+LAM,Packaging,Fibres,0
+OAS,Packaging,Fibres,0
+SSA,Packaging,Fibres,0
+EUR,Packaging,Fibres,0
+NEU,Packaging,Fibres,0
+MEA,Packaging,Fibres,0
+REF,Packaging,Fibres,0
+CAZ,Packaging,Fibres,0
+CHA,Packaging,Fibres,0
+IND,Packaging,Fibres,0
+JPN,Packaging,Fibres,0
+USA,Packaging,Fibres,0
+LAM,Packaging,Elastomers (tyres),0
+OAS,Packaging,Elastomers (tyres),0
+SSA,Packaging,Elastomers (tyres),0
+EUR,Packaging,Elastomers (tyres),0
+NEU,Packaging,Elastomers (tyres),0
+MEA,Packaging,Elastomers (tyres),0
+REF,Packaging,Elastomers (tyres),0
+CAZ,Packaging,Elastomers (tyres),0
+CHA,Packaging,Elastomers (tyres),0
+IND,Packaging,Elastomers (tyres),0
+JPN,Packaging,Elastomers (tyres),0
+USA,Packaging,Elastomers (tyres),0
+LAM,Packaging,Others,0.011158944
+OAS,Packaging,Others,0.011251351
+SSA,Packaging,Others,0.011727716
+EUR,Packaging,Others,0.011004355
+NEU,Packaging,Others,0.011416001
+MEA,Packaging,Others,0.01213917
+REF,Packaging,Others,0.011619295
+CAZ,Packaging,Others,0.011691326
+CHA,Packaging,Others,0.011110197
+IND,Packaging,Others,0.011355135
+JPN,Packaging,Others,0.011323023
+USA,Packaging,Others,0.011862629
+LAM,Packaging,HDPE,0.225775796
+OAS,Packaging,HDPE,0.224993965
+SSA,Packaging,HDPE,0.2133957
+EUR,Packaging,HDPE,0.243687452
+NEU,Packaging,HDPE,0.230608088
+MEA,Packaging,HDPE,0.210531739
+REF,Packaging,HDPE,0.220293806
+CAZ,Packaging,HDPE,0.225144183
+CHA,Packaging,HDPE,0.232115783
+IND,Packaging,HDPE,0.22681788
+JPN,Packaging,HDPE,0.235069984
+USA,Packaging,HDPE,0.21835606
+LAM,Packaging,PET,0.171373913
+OAS,Packaging,PET,0.17295808
+SSA,Packaging,PET,0.167261585
+EUR,Packaging,PET,0.183642918
+NEU,Packaging,PET,0.177083509
+MEA,Packaging,PET,0.167052257
+REF,Packaging,PET,0.169646243
+CAZ,Packaging,PET,0.171498834
+CHA,Packaging,PET,0.176729041
+IND,Packaging,PET,0.174211066
+JPN,Packaging,PET,0.182944486
+USA,Packaging,PET,0.172319721
+LAM,Packaging,PP,0.266703113
+OAS,Packaging,PP,0.263002356
+SSA,Packaging,PP,0.268446919
+EUR,Packaging,PP,0.237608043
+NEU,Packaging,PP,0.247447112
+MEA,Packaging,PP,0.262907082
+REF,Packaging,PP,0.262209776
+CAZ,Packaging,PP,0.251659121
+CHA,Packaging,PP,0.257840529
+IND,Packaging,PP,0.262724156
+JPN,Packaging,PP,0.239839987
+USA,Packaging,PP,0.254032228
+LAM,Packaging,PS,0.043749819
+OAS,Packaging,PS,0.043398644
+SSA,Packaging,PS,0.04626766
+EUR,Packaging,PS,0.043003209
+NEU,Packaging,PS,0.044730204
+MEA,Packaging,PS,0.045634815
+REF,Packaging,PS,0.044647304
+CAZ,Packaging,PS,0.045026681
+CHA,Packaging,PS,0.042180407
+IND,Packaging,PS,0.040591258
+JPN,Packaging,PS,0.043826211
+USA,Packaging,PS,0.046137835
+LAM,Packaging,PUR,0.002468049
+OAS,Packaging,PUR,0.002448152
+SSA,Packaging,PUR,0.002612558
+EUR,Packaging,PUR,0.002423406
+NEU,Packaging,PUR,0.002523034
+MEA,Packaging,PUR,0.002576869
+REF,Packaging,PUR,0.002519585
+CAZ,Packaging,PUR,0.002540392
+CHA,Packaging,PUR,0.002378084
+IND,Packaging,PUR,0.002288613
+JPN,Packaging,PUR,0.002470884
+USA,Packaging,PUR,0.002604345
+LAM,Packaging,LDPE,0.242710883
+OAS,Packaging,LDPE,0.246178254
+SSA,Packaging,LDPE,0.252116291
+EUR,Packaging,LDPE,0.243223372
+NEU,Packaging,LDPE,0.24932943
+MEA,Packaging,LDPE,0.261508834
+REF,Packaging,LDPE,0.252250513
+CAZ,Packaging,LDPE,0.255323335
+CHA,Packaging,LDPE,0.242900996
+IND,Packaging,LDPE,0.248573595
+JPN,Packaging,LDPE,0.24842372
+USA,Packaging,LDPE,0.256636389
+LAM,Packaging,PVC,0.026630445
+OAS,Packaging,PVC,0.026416076
+SSA,Packaging,PVC,0.028190255
+EUR,Packaging,PVC,0.026148734
+NEU,Packaging,PVC,0.02722356
+MEA,Packaging,PVC,0.027804519
+REF,Packaging,PVC,0.027187255
+CAZ,Packaging,PVC,0.027410694
+CHA,Packaging,PVC,0.025659669
+IND,Packaging,PVC,0.024694635
+JPN,Packaging,PVC,0.026661588
+USA,Packaging,PVC,0.028101064
+LAM,Plastic Waste,ABS_ASA_SAN,0.010021028
+OAS,Plastic Waste,ABS_ASA_SAN,0.010819728
+SSA,Plastic Waste,ABS_ASA_SAN,0.011057695
+EUR,Plastic Waste,ABS_ASA_SAN,0.009864977
+NEU,Plastic Waste,ABS_ASA_SAN,0.01029442
+MEA,Plastic Waste,ABS_ASA_SAN,0.011359445
+REF,Plastic Waste,ABS_ASA_SAN,0.011142198
+CAZ,Plastic Waste,ABS_ASA_SAN,0.010505324
+CHA,Plastic Waste,ABS_ASA_SAN,0.010100864
+IND,Plastic Waste,ABS_ASA_SAN,0.010482114
+JPN,Plastic Waste,ABS_ASA_SAN,0.010645203
+USA,Plastic Waste,ABS_ASA_SAN,0.010536992
+LAM,Plastic Waste,BioPlastics,0.003350773
+OAS,Plastic Waste,BioPlastics,0.003773746
+SSA,Plastic Waste,BioPlastics,0.003782512
+EUR,Plastic Waste,BioPlastics,0.00351116
+NEU,Plastic Waste,BioPlastics,0.003629764
+MEA,Plastic Waste,BioPlastics,0.003782631
+REF,Plastic Waste,BioPlastics,0.003739427
+CAZ,Plastic Waste,BioPlastics,0.003579649
+CHA,Plastic Waste,BioPlastics,0.003525276
+IND,Plastic Waste,BioPlastics,0.003779949
+JPN,Plastic Waste,BioPlastics,0.003768508
+USA,Plastic Waste,BioPlastics,0.003708075
+LAM,Plastic Waste,Fibres,0.147453062
+OAS,Plastic Waste,Fibres,0.16148651
+SSA,Plastic Waste,Fibres,0.164337468
+EUR,Plastic Waste,Fibres,0.145892483
+NEU,Plastic Waste,Fibres,0.151485908
+MEA,Plastic Waste,Fibres,0.167435527
+REF,Plastic Waste,Fibres,0.161173994
+CAZ,Plastic Waste,Fibres,0.157102053
+CHA,Plastic Waste,Fibres,0.148587918
+IND,Plastic Waste,Fibres,0.155542085
+JPN,Plastic Waste,Fibres,0.155763278
+USA,Plastic Waste,Fibres,0.154722741
+LAM,Plastic Waste,Elastomers (tyres),0
+OAS,Plastic Waste,Elastomers (tyres),0
+SSA,Plastic Waste,Elastomers (tyres),0
+EUR,Plastic Waste,Elastomers (tyres),0
+NEU,Plastic Waste,Elastomers (tyres),0
+MEA,Plastic Waste,Elastomers (tyres),0
+REF,Plastic Waste,Elastomers (tyres),0
+CAZ,Plastic Waste,Elastomers (tyres),0
+CHA,Plastic Waste,Elastomers (tyres),0
+IND,Plastic Waste,Elastomers (tyres),0
+JPN,Plastic Waste,Elastomers (tyres),0
+USA,Plastic Waste,Elastomers (tyres),0
+LAM,Plastic Waste,Others,0.445586546
+OAS,Plastic Waste,Others,0.485875938
+SSA,Plastic Waste,Others,0.492754649
+EUR,Plastic Waste,Others,0.451273456
+NEU,Plastic Waste,Others,0.462738615
+MEA,Plastic Waste,Others,0.493597691
+REF,Plastic Waste,Others,0.490984125
+CAZ,Plastic Waste,Others,0.463337623
+CHA,Plastic Waste,Others,0.456620576
+IND,Plastic Waste,Others,0.486145374
+JPN,Plastic Waste,Others,0.481531324
+USA,Plastic Waste,Others,0.469871014
+LAM,Plastic Waste,HDPE,0.074245869
+OAS,Plastic Waste,HDPE,0.060385392
+SSA,Plastic Waste,HDPE,0.055428225
+EUR,Plastic Waste,HDPE,0.073851603
+NEU,Plastic Waste,HDPE,0.065100579
+MEA,Plastic Waste,HDPE,0.052772352
+REF,Plastic Waste,HDPE,0.057300787
+CAZ,Plastic Waste,HDPE,0.066021199
+CHA,Plastic Waste,HDPE,0.070118697
+IND,Plastic Waste,HDPE,0.061166069
+JPN,Plastic Waste,HDPE,0.062817558
+USA,Plastic Waste,HDPE,0.061495982
+LAM,Plastic Waste,PET,0
+OAS,Plastic Waste,PET,0
+SSA,Plastic Waste,PET,0
+EUR,Plastic Waste,PET,0
+NEU,Plastic Waste,PET,0
+MEA,Plastic Waste,PET,0
+REF,Plastic Waste,PET,0
+CAZ,Plastic Waste,PET,0
+CHA,Plastic Waste,PET,0
+IND,Plastic Waste,PET,0
+JPN,Plastic Waste,PET,0
+USA,Plastic Waste,PET,0
+LAM,Plastic Waste,PP,0.024211457
+OAS,Plastic Waste,PP,0.000271175
+SSA,Plastic Waste,PP,7.05E-05
+EUR,Plastic Waste,PP,0.016868415
+NEU,Plastic Waste,PP,0.015701367
+MEA,Plastic Waste,PP,0.000113368
+REF,Plastic Waste,PP,0.000181628
+CAZ,Plastic Waste,PP,0.012743044
+CHA,Plastic Waste,PP,0.014056026
+IND,Plastic Waste,PP,0.000136791
+JPN,Plastic Waste,PP,0.000310256
+USA,Plastic Waste,PP,0.01277299
+LAM,Plastic Waste,PS,0.025336434
+OAS,Plastic Waste,PS,0.028477754
+SSA,Plastic Waste,PS,0.028304666
+EUR,Plastic Waste,PS,0.026776247
+NEU,Plastic Waste,PS,0.027533104
+MEA,Plastic Waste,PS,0.027944895
+REF,Plastic Waste,PS,0.027424514
+CAZ,Plastic Waste,PS,0.027183378
+CHA,Plastic Waste,PS,0.026829779
+IND,Plastic Waste,PS,0.028760428
+JPN,Plastic Waste,PS,0.028688954
+USA,Plastic Waste,PS,0.027780508
+LAM,Plastic Waste,PUR,0.091864931
+OAS,Plastic Waste,PUR,0.077084179
+SSA,Plastic Waste,PUR,0.078529551
+EUR,Plastic Waste,PUR,0.084842311
+NEU,Plastic Waste,PUR,0.087968566
+MEA,Plastic Waste,PUR,0.080204886
+REF,Plastic Waste,PUR,0.081167943
+CAZ,Plastic Waste,PUR,0.085934097
+CHA,Plastic Waste,PUR,0.085873227
+IND,Plastic Waste,PUR,0.077986356
+JPN,Plastic Waste,PUR,0.078074629
+USA,Plastic Waste,PUR,0.08800226
+LAM,Plastic Waste,LDPE,0.091408391
+OAS,Plastic Waste,LDPE,0.075730108
+SSA,Plastic Waste,LDPE,0.07299951
+EUR,Plastic Waste,LDPE,0.091427784
+NEU,Plastic Waste,LDPE,0.083879318
+MEA,Plastic Waste,LDPE,0.071601954
+REF,Plastic Waste,LDPE,0.075142114
+CAZ,Plastic Waste,LDPE,0.08295047
+CHA,Plastic Waste,LDPE,0.090386893
+IND,Plastic Waste,LDPE,0.077730387
+JPN,Plastic Waste,LDPE,0.079831882
+USA,Plastic Waste,LDPE,0.07959905
+LAM,Plastic Waste,PVC,0.086521508
+OAS,Plastic Waste,PVC,0.096095472
+SSA,Plastic Waste,PVC,0.092735185
+EUR,Plastic Waste,PVC,0.095691565
+NEU,Plastic Waste,PVC,0.091668359
+MEA,Plastic Waste,PVC,0.091187252
+REF,Plastic Waste,PVC,0.091743269
+CAZ,Plastic Waste,PVC,0.090643162
+CHA,Plastic Waste,PVC,0.093900743
+IND,Plastic Waste,PVC,0.098270447
+JPN,Plastic Waste,PVC,0.098568408
+USA,Plastic Waste,PVC,0.091510387
