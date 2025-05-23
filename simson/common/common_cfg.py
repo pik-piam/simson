@@ -53,6 +53,7 @@ class VisualizationCfg(SimsonBaseModel):
     use_stock: dict = {"do_visualize": False}
     production: dict = {"do_visualize": False}
     sankey: dict = {"do_visualize": False}
+    extrapolation: dict = {"do_visualize": False}
     do_show_figs: bool = True
     do_save_figs: bool = False
     plotting_engine: str = "plotly"
@@ -65,7 +66,6 @@ class CementVisualizationCfg(VisualizationCfg):
     cement_production: dict = {}
     concrete_production: dict = {}
     eol_stock: dict = {}
-    extrapolation: dict = {}
 
 
 class SteelVisualizationCfg(VisualizationCfg):

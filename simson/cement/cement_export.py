@@ -160,49 +160,66 @@ class CementDataExporter(CommonDataExporter):
         self.plot_and_save_figure(ap_stock, "use_stocks_global_by_type.png")
 
     def visualize_extrapolation(self, model: "CementModel"):
-        """This needs to be reworked"""
-        historic_mfa = model.historic_mfa
-        historic_stock = historic_mfa.stocks["historic_in_use"].stock.sum_over("s")
-        historic_stock_pc = historic_stock
-        historic_stock_pc.values = (
-            historic_stock.values / model.parameters["population"].values[:124]
-        )
-        gdppc = model.parameters["gdppc"]
-        historic_gdppc = fd.FlodymArray(
-            dims=model.dims[
-                "h",
-                "r",
-            ]
-        )
-        historic_gdppc.values = gdppc.values[:124]
+        mfa = model.future_mfa
+        per_capita = True  # TODO see where this shold go
+        subplot_dim = "Region"
+        stock = mfa.stocks["in_use"].stock
+        population = mfa.parameters["population"]
+        x_array = None
 
-        fit = model.stock_handler.extrapolation_class.func(
-            historic_gdppc.values, model.stock_handler.fit_prms.T
+        pc_str = "pC" if per_capita else ""
+        x_label = "Year"
+        y_label = f"Stock{pc_str} [t]"
+        title = f"Stock Extrapolation: Historic and Projected vs Pure Prediction"
+        if self.cfg.use_stock["over_gdp"]:
+            title = title + f" over GDP{pc_str}"
+            x_label = f"GDP/PPP{pc_str} [2005 USD]"
+            x_array = mfa.parameters["gdppc"]
+            if not per_capita:
+                x_array = x_array * population
+
+        if subplot_dim is None:
+            dimlist = ["t"]
+        else:
+            subplot_dimletter = next(
+                dimlist.letter for dimlist in mfa.dims.dim_list if dimlist.name == subplot_dim
+            )
+            dimlist = ["t", subplot_dimletter]
+
+        other_dimletters = tuple(letter for letter in stock.dims.letters if letter not in dimlist)
+        stock = stock.sum_over(other_dimletters)
+
+        if per_capita:
+            stock = stock / population
+
+        fig, ap_final_stock = self.plot_history_and_future(
+            mfa=mfa,
+            data_to_plot=stock,
+            subplot_dim=subplot_dim,
+            x_array=x_array,
+            x_label=x_label,
+            y_label=y_label,
+            title=title,
+            line_label="Historic + Modelled Future",
         )
-        fd_fit = fd.FlodymArray(dims=historic_gdppc.dims, values=fit)
 
-        ap_fit = self.plotter_class(
-            array=fd_fit,
-            intra_line_dim="Historic Time",
-            subplot_dim="Region",
-            line_label=f"Fit",
-            display_names=self._display_names,
-            title=f"Regional Stock",
-        )
-
-        ap_fit.plot(do_show=False)
-        fig = ap_fit.fig
-
-        ap_stock = self.plotter_class(
-            array=historic_stock_pc,
-            intra_line_dim="Historic Time",
-            subplot_dim="Region",
-            line_label=f"DSM",
-            display_names=self._display_names,
-            xlabel="Time",
-            ylabel="Stock pc [t]",
-            title=f"Regional Stock: Extrapolation Fit",
+        # extrapolation
+        color = ["red"]
+        ap_pure_prediction = self.plotter_class(
+            array=model.stock_handler.pure_prediction,
+            intra_line_dim="Time",
+            subplot_dim=subplot_dim,
+            x_array=x_array,
+            title=title,
             fig=fig,
+            # color_map=color,
+            line_type="dot",
+            line_label="Pure Extrapolation",
         )
+        fig = ap_pure_prediction.plot()
 
-        self.plot_and_save_figure(ap_stock, f"Stock_regional.png")
+        self.plot_and_save_figure(
+            ap_pure_prediction,
+            f"stocks_extrapolation.png",
+            do_plot=False,
+        )

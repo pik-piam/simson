@@ -81,7 +81,7 @@ class Extrapolation(SimsonBaseModel):
         # extract dimensions that are regressed independently
         target_shape = tuple([self.target_range.shape[i] for i in sorted(self.independent_dims)])
         regression = np.zeros_like(self.target_range)
-        self.fit_prms = np.zeros(self.target_range.shape[1:] + (self.n_prms,))
+        self.fit_prms = np.zeros(target_shape + (self.n_prms,))
         bounds_array = self.bound_list.to_np_array(self.prm_names)
 
         # loop over dimensions that are regressed independently

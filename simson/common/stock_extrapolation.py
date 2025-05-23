@@ -1,6 +1,6 @@
 import flodym as fd
 import numpy as np
-from typing import Tuple, Optional, Union, Type
+from typing import Tuple, Union, Type
 from copy import deepcopy
 
 from simson.common.data_extrapolations import Extrapolation
@@ -30,11 +30,11 @@ class StockExtrapolation:
             dims (fd.DimensionSet): Dimension set for the data.
             parameters (dict[str, fd.Parameter]): Parameters for the extrapolation.
             stock_extrapolation_class (Extrapolation): Class used for stock extrapolation.
-            target_dim_letters (Union[Tuple[str, ...], str], optional): Sets the dimensions of the stock extrapolation output. If "all", the output will have the same shape as historic_stocks, except for the time dimension. Defaults to "all".
-            indep_fit_dim_letters (Optional[Tuple[str, ...]], optional): Sets the dimensions across which an individual fit is performed, must be subset of target_dim_letters. If "all", all dimensions given in target_dim_letters are regressed individually. If empty (), all dimensions are regressed aggregately. Defaults to ().
-            bounds (list[Bound], optional): List of bounds for the extrapolation. Defaults to [].
-            do_gdppc_accumulation (bool, optional): Flag to perform GDP per capita accumulation. Defaults to True.
-            stock_correction (str, optional): Method for stock correction. Possible values are "gaussian_first_order", "shift_zeroth_order", "none". Defaults to "gaussian_first_order".
+            target_dim_letters (Union[Tuple[str, ...], str]): Sets the dimensions of the stock extrapolation output. If "all", the output will have the same shape as historic_stocks, except for the time dimension. Defaults to "all".
+            indep_fit_dim_letters (Union[Tuple[str, ...]], str): Sets the dimensions across which an individual fit is performed, must be subset of target_dim_letters. If "all", all dimensions given in target_dim_letters are regressed individually. If empty (), all dimensions are regressed aggregately. Defaults to ().
+            bound_list (BoundList): List of bounds for the extrapolation. Defaults to an empty BoundList.
+            do_gdppc_accumulation (bool): Flag to perform GDP per capita accumulation. Defaults to True.
+            stock_correction (str): Method for stock correction. Possible values are "gaussian_first_order", "shift_zeroth_order", "none". Defaults to "gaussian_first_order".
         """
         self.historic_stocks = historic_stocks
         self.dims = dims
@@ -150,6 +150,15 @@ class StockExtrapolation:
             prediction_out[...] = pure_prediction - (
                 pure_prediction[n_historic - 1, :] - historic_in[n_historic - 1, :]
             )
+
+        # save extrapolation data for later analysis
+        self.pure_prediction = fd.FlodymArray(dims=self.stocks_pc.dims, values=pure_prediction)
+        parameter_dims: fd.DimensionSet = self.dims[self.indep_fit_dim_letters]
+        parameter_names = fd.Dimension(
+            name="Parameter Names", letter="p", items=extrapolation.prm_names
+        )
+        parameter_dims = parameter_dims.expand_by([parameter_names])
+        self.pure_parameters = fd.FlodymArray(dims=parameter_dims, values=extrapolation.fit_prms)
 
         prediction_out[:n_historic, ...] = historic_in
         self.stocks_pc.set_values(prediction_out)

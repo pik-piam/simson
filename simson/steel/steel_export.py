@@ -61,6 +61,8 @@ class SteelDataExporter(CommonDataExporter):
             self.visualize_sector_splits(model.future_mfa, regional=False)
         if self.cfg.sankey["do_visualize"]:
             self.visualize_sankey(model.future_mfa)
+        if self.cfg.extrapolation["do_visualize"]:
+            self.visualize_extrapolation(model=model)
         self.stop_and_show()
 
     def visualize_trade(self, mfa: fd.MFASystem):
@@ -331,3 +333,70 @@ class SteelDataExporter(CommonDataExporter):
             summing_func = lambda l: l.sum_over("r")
             name_str = "global"
         return subplot_dim, summing_func, name_str
+
+    def visualize_extrapolation(self, model: "SteelModel"):
+        mfa = model.future_mfa
+        per_capita = True  # TODO see where this shold go
+        subplot_dim = "Region"
+        stock = mfa.stocks["in_use"].stock
+        population = mfa.parameters["population"]
+        x_array = None
+
+        pc_str = "pC" if per_capita else ""
+        x_label = "Year"
+        y_label = f"Stock{pc_str} [t]"
+        title = f"Stock Extrapolation: Historic and Projected vs Pure Prediction"
+        if self.cfg.use_stock["over_gdp"]:
+            title = title + f" over GDP{pc_str}"
+            x_label = f"GDP/PPP{pc_str} [2005 USD]"
+            x_array = mfa.parameters["gdppc"]
+            if not per_capita:
+                x_array = x_array * population
+
+        if subplot_dim is None:
+            dimlist = ["t"]
+        else:
+            subplot_dimletter = next(
+                dimlist.letter for dimlist in mfa.dims.dim_list if dimlist.name == subplot_dim
+            )
+            dimlist = ["t", subplot_dimletter]
+
+        other_dimletters = tuple(letter for letter in stock.dims.letters if letter not in dimlist)
+        stock = stock.sum_over(other_dimletters)
+
+        if per_capita:
+            stock = stock / population
+
+        fig, ap_final_stock = self.plot_history_and_future(
+            mfa=mfa,
+            data_to_plot=stock,
+            subplot_dim=subplot_dim,
+            x_array=x_array,
+            x_label=x_label,
+            y_label=y_label,
+            title=title,
+            line_label="Historic + Modelled Future",
+        )
+
+        pure_stock = model.stock_handler.pure_prediction.sum_over(other_dimletters)
+
+        # extrapolation
+        color = ["red"]
+        ap_pure_prediction = self.plotter_class(
+            array=pure_stock,
+            intra_line_dim="Time",
+            subplot_dim=subplot_dim,
+            x_array=x_array,
+            title=title,
+            fig=fig,
+            # color_map=color,
+            line_type="dot",
+            line_label="Pure Extrapolation",
+        )
+        fig = ap_pure_prediction.plot()
+
+        self.plot_and_save_figure(
+            ap_pure_prediction,
+            f"stocks_extrapolation.png",
+            do_plot=False,
+        )

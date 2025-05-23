@@ -210,7 +210,7 @@ class SteelModel:
         )
 
         # extrapolate in use stock to future
-        stock_handler = StockExtrapolation(
+        self.stock_handler = StockExtrapolation(
             historic_stocks,
             dims=self.dims,
             parameters=self.parameters,
@@ -221,7 +221,7 @@ class SteelModel:
             indep_fit_dim_letters=indep_fit_dim_letters,
             bound_list=bound_list,
         )
-        total_in_use_stock = stock_handler.stocks
+        total_in_use_stock = self.stock_handler.stocks
 
         # scale back stocks and gdp
         total_in_use_stock = total_in_use_stock * self.parameters["saturation_level_factor"]
@@ -245,7 +245,7 @@ class SteelModel:
             independent_dims=(),
         )
         multi_dim_extrapolation.regress()
-        saturation_level = multi_dim_extrapolation.fit_prms[0, 0]
+        saturation_level = multi_dim_extrapolation.fit_prms[0]
 
         if self.cfg.customization.do_stock_extrapolation_by_category:
             high_stock_sector_split = self.get_high_stock_sector_split()
