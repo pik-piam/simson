@@ -33,11 +33,11 @@ visualization:
     do_visualize: False
     slice_dict:
       t: 2020
-      # r: 'USA'
-    exclude_processes:
-      - "sysenv"
-      - "imports"
-      - "exports"
+      r: 'USA'
+    exclude_processes: [ ]
+      # - "sysenv"
+      # - "imports"
+      # - "exports"
     exclude_flows: [ ]
   do_show_figs: True
   do_save_figs: False

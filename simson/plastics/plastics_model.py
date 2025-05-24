@@ -47,6 +47,7 @@ class PlasticsModel:
             definition=self.definition,
             dimension_files=dimension_files,
             parameter_files=parameter_files,
+            allow_missing_parameter_values=True,
         )
         self.mfa.cfg = self.cfg
 

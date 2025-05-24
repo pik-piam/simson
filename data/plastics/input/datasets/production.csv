@@ -1,265 +1,2521 @@
-Historic Time,Region,Good,value
-2015,World,Building and Construction,71628000.0
-2015,World,Other Uses,98679000.0
-2015,World,Packaging,169926000.0
-2015,World,Transportation,25908000.0
-2014,World,Building and Construction,68996000.0
-2014,World,Other Uses,95053000.0
-2014,World,Packaging,163682000.0
-2014,World,Transportation,24956000.0
-2013,World,Building and Construction,66176000.0
-2013,World,Other Uses,91168000.0
-2013,World,Packaging,156992000.0
-2013,World,Transportation,23936000.0
-2012,World,Building and Construction,63544000.0
-2012,World,Other Uses,87542000.0
-2012,World,Packaging,150748000.0
-2012,World,Transportation,22984000.0
-2011,World,Building and Construction,61100000.0
-2011,World,Other Uses,84175000.0
-2011,World,Packaging,144950000.0
-2011,World,Transportation,22100000.0
-2010,World,Building and Construction,58844000.0
-2010,World,Other Uses,81067000.0
-2010,World,Packaging,139598000.0
-2010,World,Transportation,21284000.0
-2009,World,Building and Construction,54144000.0
-2009,World,Other Uses,74592000.0
-2009,World,Packaging,128448000.0
-2009,World,Transportation,19584000.0
-2008,World,Building and Construction,52828000.0
-2008,World,Other Uses,72779000.0
-2008,World,Packaging,125326000.0
-2008,World,Transportation,19108000.0
-2007,World,Building and Construction,55460000.0
-2007,World,Other Uses,76405000.0
-2007,World,Packaging,131570000.0
-2007,World,Transportation,20060000.0
-2006,World,Building and Construction,52640000.0
-2006,World,Other Uses,72520000.0
-2006,World,Packaging,124880000.0
-2006,World,Transportation,19040000.0
-2005,World,Building and Construction,49444000.0
-2005,World,Other Uses,68117000.0
-2005,World,Packaging,117298000.0
-2005,World,Transportation,17884000.0
-2004,World,Building and Construction,48128000.0
-2004,World,Other Uses,66304000.0
-2004,World,Packaging,114176000.0
-2004,World,Transportation,17408000.0
-2003,World,Building and Construction,45308000.0
-2003,World,Other Uses,62419000.0
-2003,World,Packaging,107486000.0
-2003,World,Transportation,16388000.000000002
-2002,World,Building and Construction,43428000.0
-2002,World,Other Uses,59829000.0
-2002,World,Packaging,103026000.0
-2002,World,Transportation,15708000.000000002
-2001,World,Building and Construction,40984000.0
-2001,World,Other Uses,56462000.0
-2001,World,Packaging,97228000.0
-2001,World,Transportation,14824000.000000002
-2000,World,Building and Construction,40044000.0
-2000,World,Other Uses,55167000.0
-2000,World,Packaging,94998000.0
-2000,World,Transportation,14484000.000000002
-1999,World,Building and Construction,37976000.0
-1999,World,Other Uses,52318000.0
-1999,World,Packaging,90092000.0
-1999,World,Transportation,13736000.000000002
-1998,World,Building and Construction,35344000.0
-1998,World,Other Uses,48692000.0
-1998,World,Packaging,83848000.0
-1998,World,Transportation,12784000.0
-1997,World,Building and Construction,33840000.0
-1997,World,Other Uses,46620000.0
-1997,World,Packaging,80280000.0
-1997,World,Transportation,12240000.0
-1996,World,Building and Construction,31584000.0
-1996,World,Other Uses,43512000.0
-1996,World,Packaging,74928000.0
-1996,World,Transportation,11424000.0
-1995,World,Building and Construction,29328000.0
-1995,World,Other Uses,40404000.0
-1995,World,Packaging,69576000.0
-1995,World,Transportation,10608000.0
-1994,World,Building and Construction,28388000.0
-1994,World,Other Uses,39109000.0
-1994,World,Packaging,67346000.0
-1994,World,Transportation,10268000.0
-1993,World,Building and Construction,25756000.0
-1993,World,Other Uses,35483000.0
-1993,World,Packaging,61102000.0
-1993,World,Transportation,9316000.0
-1992,World,Building and Construction,24816000.0
-1992,World,Other Uses,34188000.0
-1992,World,Packaging,58872000.0
-1992,World,Transportation,8976000.0
-1991,World,Building and Construction,23312000.0
-1991,World,Other Uses,32116000.0
-1991,World,Packaging,55304000.0
-1991,World,Transportation,8432000.0
-1990,World,Building and Construction,22560000.0
-1990,World,Other Uses,31080000.0
-1990,World,Packaging,53520000.0
-1990,World,Transportation,8160000.000000001
-1989,World,Building and Construction,21432000.0
-1989,World,Other Uses,29526000.0
-1989,World,Packaging,50844000.0
-1989,World,Transportation,7752000.000000001
-1988,World,Building and Construction,20680000.0
-1988,World,Other Uses,28490000.0
-1988,World,Packaging,49060000.0
-1988,World,Transportation,7480000.000000001
-1987,World,Building and Construction,19552000.0
-1987,World,Other Uses,26936000.0
-1987,World,Packaging,46384000.0
-1987,World,Transportation,7072000.000000001
-1986,World,Building and Construction,18048000.0
-1986,World,Other Uses,24864000.0
-1986,World,Packaging,42816000.0
-1986,World,Transportation,6528000.000000001
-1985,World,Building and Construction,16920000.0
-1985,World,Other Uses,23310000.0
-1985,World,Packaging,40140000.0
-1985,World,Transportation,6120000.0
-1984,World,Building and Construction,16168000.0
-1984,World,Other Uses,22274000.0
-1984,World,Packaging,38356000.0
-1984,World,Transportation,5848000.0
-1983,World,Building and Construction,15040000.0
-1983,World,Other Uses,20720000.0
-1983,World,Packaging,35680000.0
-1983,World,Transportation,5440000.0
-1982,World,Building and Construction,13724000.0
-1982,World,Other Uses,18907000.0
-1982,World,Packaging,32558000.0
-1982,World,Transportation,4964000.0
-1981,World,Building and Construction,13536000.0
-1981,World,Other Uses,18648000.0
-1981,World,Packaging,32112000.0
-1981,World,Transportation,4896000.0
-1980,World,Building and Construction,13160000.0
-1980,World,Other Uses,18130000.0
-1980,World,Packaging,31220000.0
-1980,World,Transportation,4760000.0
-1979,World,Building and Construction,13348000.0
-1979,World,Other Uses,18389000.0
-1979,World,Packaging,31666000.0
-1979,World,Transportation,4828000.0
-1978,World,Building and Construction,12032000.0
-1978,World,Other Uses,16576000.0
-1978,World,Packaging,28544000.0
-1978,World,Transportation,4352000.0
-1977,World,Building and Construction,11092000.0
-1977,World,Other Uses,15281000.0
-1977,World,Packaging,26314000.0
-1977,World,Transportation,4012000.0000000005
-1976,World,Building and Construction,10152000.0
-1976,World,Other Uses,13986000.0
-1976,World,Packaging,24084000.0
-1976,World,Transportation,3672000.0000000005
-1975,World,Building and Construction,8648000.0
-1975,World,Other Uses,11914000.0
-1975,World,Packaging,20516000.0
-1975,World,Transportation,3128000.0
-1974,World,Building and Construction,9776000.0
-1974,World,Other Uses,13468000.0
-1974,World,Packaging,23192000.0
-1974,World,Transportation,3536000.0000000005
-1973,World,Building and Construction,9588000.0
-1973,World,Other Uses,13209000.0
-1973,World,Packaging,22746000.0
-1973,World,Transportation,3468000.0000000005
-1972,World,Building and Construction,8272000.0
-1972,World,Other Uses,11396000.0
-1972,World,Packaging,19624000.0
-1972,World,Transportation,2992000.0
-1971,World,Building and Construction,7144000.0
-1971,World,Other Uses,9842000.0
-1971,World,Packaging,16948000.0
-1971,World,Transportation,2584000.0
-1970,World,Building and Construction,6580000.0
-1970,World,Other Uses,9065000.0
-1970,World,Packaging,15610000.0
-1970,World,Transportation,2380000.0
-1969,World,Building and Construction,6016000.0
-1969,World,Other Uses,8288000.0
-1969,World,Packaging,14272000.0
-1969,World,Transportation,2176000.0
-1968,World,Building and Construction,5076000.0
-1968,World,Other Uses,6993000.0
-1968,World,Packaging,12042000.0
-1968,World,Transportation,1836000.0000000002
-1967,World,Building and Construction,4324000.0
-1967,World,Other Uses,5957000.0
-1967,World,Packaging,10258000.0
-1967,World,Transportation,1564000.0
-1966,World,Building and Construction,3760000.0
-1966,World,Other Uses,5180000.0
-1966,World,Packaging,8920000.0
-1966,World,Transportation,1360000.0
-1965,World,Building and Construction,3196000.0
-1965,World,Other Uses,4403000.0
-1965,World,Packaging,7582000.0
-1965,World,Transportation,1156000.0
-1964,World,Building and Construction,2820000.0
-1964,World,Other Uses,3885000.0
-1964,World,Packaging,6690000.0
-1964,World,Transportation,1020000.0000000001
-1963,World,Building and Construction,2444000.0
-1963,World,Other Uses,3367000.0
-1963,World,Packaging,5798000.0
-1963,World,Transportation,884000.0000000001
-1962,World,Building and Construction,2068000.0
-1962,World,Other Uses,2849000.0
-1962,World,Packaging,4906000.0
-1962,World,Transportation,748000.0
-1961,World,Building and Construction,1692000.0
-1961,World,Other Uses,2331000.0
-1961,World,Packaging,4014000.0
-1961,World,Transportation,612000.0
-1960,World,Building and Construction,1504000.0
-1960,World,Other Uses,2072000.0
-1960,World,Packaging,3568000.0
-1960,World,Transportation,544000.0
-1959,World,Building and Construction,1316000.0
-1959,World,Other Uses,1813000.0
-1959,World,Packaging,3122000.0
-1959,World,Transportation,476000.00000000006
-1958,World,Building and Construction,1128000.0
-1958,World,Other Uses,1554000.0
-1958,World,Packaging,2676000.0
-1958,World,Transportation,408000.00000000006
-1957,World,Building and Construction,940000.0
-1957,World,Other Uses,1295000.0
-1957,World,Packaging,2230000.0
-1957,World,Transportation,340000.0
-1956,World,Building and Construction,940000.0
-1956,World,Other Uses,1295000.0
-1956,World,Packaging,2230000.0
-1956,World,Transportation,340000.0
-1955,World,Building and Construction,752000.0
-1955,World,Other Uses,1036000.0
-1955,World,Packaging,1784000.0
-1955,World,Transportation,272000.0
-1954,World,Building and Construction,564000.0
-1954,World,Other Uses,777000.0
-1954,World,Packaging,1338000.0
-1954,World,Transportation,204000.00000000003
-1953,World,Building and Construction,564000.0
-1953,World,Other Uses,777000.0
-1953,World,Packaging,1338000.0
-1953,World,Transportation,204000.00000000003
-1952,World,Building and Construction,376000.0
-1952,World,Other Uses,518000.0
-1952,World,Packaging,892000.0
-1952,World,Transportation,136000.0
-1951,World,Building and Construction,376000.0
-1951,World,Other Uses,518000.0
-1951,World,Packaging,892000.0
-1951,World,Transportation,136000.0
-1950,World,Building and Construction,376000.0
-1950,World,Other Uses,518000.0
-1950,World,Packaging,892000.0
-1950,World,Transportation,136000.0
+Time,Region,Good,value
+1990,LAM,Transportation,0.74096685
+1990,OAS,Transportation,0.959998
+1990,SSA,Transportation,0.17945269
+1990,EUR,Transportation,3.17967199
+1990,NEU,Transportation,0.84098898
+1990,MEA,Transportation,0.73347664
+1990,REF,Transportation,1.37643848
+1990,CAZ,Transportation,0.68715588
+1990,CHA,Transportation,0.49788165
+1990,IND,Transportation,0.29384021
+1990,JPN,Transportation,0.25763833
+1990,USA,Transportation,4.35523442
+1991,LAM,Transportation,0.78027911
+1991,OAS,Transportation,1.06894113
+1991,SSA,Transportation,0.19380648
+1991,EUR,Transportation,3.24144543
+1991,NEU,Transportation,0.86465502
+1991,MEA,Transportation,0.76627468
+1991,REF,Transportation,1.44424044
+1991,CAZ,Transportation,0.70863052
+1991,CHA,Transportation,0.56529332
+1991,IND,Transportation,0.33266809
+1991,JPN,Transportation,0.26446847
+1991,USA,Transportation,4.44351346
+1992,LAM,Transportation,0.84217391
+1992,OAS,Transportation,1.21211828
+1992,SSA,Transportation,0.21413938
+1992,EUR,Transportation,3.38529971
+1992,NEU,Transportation,0.91464514
+1992,MEA,Transportation,0.82080359
+1992,REF,Transportation,1.54862317
+1992,CAZ,Transportation,0.74914168
+1992,CHA,Transportation,0.65306768
+1992,IND,Transportation,0.38337476
+1992,JPN,Transportation,0.27877675
+1992,USA,Transportation,4.64654178
+1993,LAM,Transportation,0.89010399
+1993,OAS,Transportation,1.34480291
+1993,SSA,Transportation,0.23147401
+1993,EUR,Transportation,3.46110878
+1993,NEU,Transportation,0.94800181
+1993,MEA,Transportation,0.86091982
+1993,REF,Transportation,1.62680275
+1993,CAZ,Transportation,0.77563782
+1993,CHA,Transportation,0.73425785
+1993,IND,Transportation,0.43012702
+1993,JPN,Transportation,0.28694201
+1993,USA,Transportation,4.75770223
+1994,LAM,Transportation,0.99109299
+1994,OAS,Transportation,1.56828708
+1994,SSA,Transportation,0.26400933
+1994,EUR,Transportation,3.7304399
+1994,NEU,Transportation,1.0335741
+1994,MEA,Transportation,0.95014235
+1994,REF,Transportation,1.79619353
+1994,CAZ,Transportation,0.84619732
+1994,CHA,Transportation,0.86517264
+1994,IND,Transportation,0.50585229
+1994,JPN,Transportation,0.31071068
+1994,USA,Transportation,5.13192613
+1995,LAM,Transportation,1.04379427
+1995,OAS,Transportation,1.72218763
+1995,SSA,Transportation,0.28404446
+1995,EUR,Transportation,3.79916923
+1995,NEU,Transportation,1.06835683
+1995,MEA,Transportation,0.99275752
+1995,REF,Transportation,1.87985961
+1995,CAZ,Transportation,0.87333932
+1995,CHA,Transportation,0.95987438
+1995,IND,Transportation,0.56027983
+1995,JPN,Transportation,0.31865778
+1995,USA,Transportation,5.23550439
+1996,LAM,Transportation,1.13496174
+1996,OAS,Transportation,1.94233856
+1996,SSA,Transportation,0.31543084
+1996,EUR,Transportation,3.99614976
+1996,NEU,Transportation,1.14017135
+1996,MEA,Transportation,1.0705954
+1996,REF,Transportation,2.02544928
+1996,CAZ,Transportation,0.93073955
+1996,CHA,Transportation,1.09516167
+1996,IND,Transportation,0.6382781
+1996,JPN,Transportation,0.33843398
+1996,USA,Transportation,5.51397079
+1997,LAM,Transportation,1.23604669
+1997,OAS,Transportation,2.1907559
+1997,SSA,Transportation,0.34778062
+1997,EUR,Transportation,4.21143275
+1997,NEU,Transportation,1.21307164
+1997,MEA,Transportation,1.16155363
+1997,REF,Transportation,2.19379502
+1997,CAZ,Transportation,0.99364569
+1997,CHA,Transportation,1.24716365
+1997,IND,Transportation,0.72586659
+1997,JPN,Transportation,0.35966889
+1997,USA,Transportation,5.81585795
+1998,LAM,Transportation,1.30999596
+1998,OAS,Transportation,2.37334223
+1998,SSA,Transportation,0.37537875
+1998,EUR,Transportation,4.31842485
+1998,NEU,Transportation,1.25807288
+1998,MEA,Transportation,1.22197697
+1998,REF,Transportation,2.30745558
+1998,CAZ,Transportation,1.03244534
+1998,CHA,Transportation,1.37790048
+1998,IND,Transportation,0.80093798
+1998,JPN,Transportation,0.37768004
+1998,USA,Transportation,5.96888119
+1999,LAM,Transportation,1.42765364
+1999,OAS,Transportation,2.68910927
+1999,SSA,Transportation,0.41652639
+1999,EUR,Transportation,4.5509646
+1999,NEU,Transportation,1.33539091
+1999,MEA,Transportation,1.32163229
+1999,REF,Transportation,2.51553921
+1999,CAZ,Transportation,1.10331162
+1999,CHA,Transportation,1.56116466
+1999,IND,Transportation,0.90641469
+1999,JPN,Transportation,0.39741567
+1999,USA,Transportation,6.29848326
+2000,LAM,Transportation,1.52252817
+2000,OAS,Transportation,2.95753604
+2000,SSA,Transportation,0.45121898
+2000,EUR,Transportation,4.69119833
+2000,NEU,Transportation,1.39067342
+2000,MEA,Transportation,1.40022754
+2000,REF,Transportation,2.67725583
+2000,CAZ,Transportation,1.15391425
+2000,CHA,Transportation,1.72665279
+2000,IND,Transportation,1.00141379
+2000,JPN,Transportation,0.41270182
+2000,USA,Transportation,6.50282887
+2001,LAM,Transportation,1.57997449
+2001,OAS,Transportation,3.15433858
+2001,SSA,Transportation,0.47545047
+2001,EUR,Transportation,4.71029181
+2001,NEU,Transportation,1.40230408
+2001,MEA,Transportation,1.4434318
+2001,REF,Transportation,2.77236889
+2001,CAZ,Transportation,1.17448468
+2001,CHA,Transportation,1.85418014
+2001,IND,Transportation,1.07429002
+2001,JPN,Transportation,0.41819469
+2001,USA,Transportation,6.5319233
+2002,LAM,Transportation,1.70281332
+2002,OAS,Transportation,3.50186778
+2002,SSA,Transportation,0.52071652
+2002,EUR,Transportation,4.90615869
+2002,NEU,Transportation,1.47444564
+2002,MEA,Transportation,1.54412754
+2002,REF,Transportation,2.97974736
+2002,CAZ,Transportation,1.24168574
+2002,CHA,Transportation,2.06378107
+2002,IND,Transportation,1.19460353
+2002,JPN,Transportation,0.43728411
+2002,USA,Transportation,6.81289981
+2003,LAM,Transportation,1.79618758
+2003,OAS,Transportation,3.77407746
+2003,SSA,Transportation,0.55693445
+2003,EUR,Transportation,5.00209075
+2003,NEU,Transportation,1.51295646
+2003,MEA,Transportation,1.61850133
+2003,REF,Transportation,3.13931085
+2003,CAZ,Transportation,1.28497408
+2003,CHA,Transportation,2.24419803
+2003,IND,Transportation,1.29788507
+2003,JPN,Transportation,0.45285526
+2003,USA,Transportation,6.95353846
+2004,LAM,Transportation,1.93451756
+2004,OAS,Transportation,4.15501085
+2004,SSA,Transportation,0.60932188
+2004,EUR,Transportation,5.20064688
+2004,NEU,Transportation,1.59230953
+2004,MEA,Transportation,1.7295416
+2004,REF,Transportation,3.37310313
+2004,CAZ,Transportation,1.35790709
+2004,CHA,Transportation,2.48759694
+2004,IND,Transportation,1.43744127
+2004,JPN,Transportation,0.47753014
+2004,USA,Transportation,7.24471099
+2005,LAM,Transportation,2.0140754
+2005,OAS,Transportation,4.41517102
+2005,SSA,Transportation,0.64357769
+2005,EUR,Transportation,5.22701678
+2005,NEU,Transportation,1.61714507
+2005,MEA,Transportation,1.78762145
+2005,REF,Transportation,3.50461383
+2005,CAZ,Transportation,1.38730957
+2005,CHA,Transportation,2.66150597
+2005,IND,Transportation,1.53670614
+2005,JPN,Transportation,0.48728224
+2005,USA,Transportation,7.29484054
+2006,LAM,Transportation,2.16748656
+2006,OAS,Transportation,4.85218712
+2006,SSA,Transportation,0.7018238
+2006,EUR,Transportation,5.19397324
+2006,NEU,Transportation,1.69527678
+2006,MEA,Transportation,1.91080004
+2006,REF,Transportation,3.76648349
+2006,CAZ,Transportation,1.4652318
+2006,CHA,Transportation,3.2419213
+2006,IND,Transportation,1.69584753
+2006,JPN,Transportation,0.51244619
+2006,USA,Transportation,7.68526953
+2007,LAM,Transportation,2.31655392
+2007,OAS,Transportation,5.29334163
+2007,SSA,Transportation,0.76014017
+2007,EUR,Transportation,5.59788372
+2007,NEU,Transportation,1.76330036
+2007,MEA,Transportation,2.02781706
+2007,REF,Transportation,4.01903274
+2007,CAZ,Transportation,1.53705072
+2007,CHA,Transportation,3.88430387
+2007,IND,Transportation,1.85631225
+2007,JPN,Transportation,0.53465136
+2007,USA,Transportation,7.95200016
+2008,LAM,Transportation,2.23379493
+2008,OAS,Transportation,5.20573312
+2008,SSA,Transportation,0.7429196
+2008,EUR,Transportation,5.12653101
+2008,NEU,Transportation,1.66920289
+2008,MEA,Transportation,1.94085034
+2008,REF,Transportation,3.85530617
+2008,CAZ,Transportation,1.454882
+2008,CHA,Transportation,4.2175431
+2008,IND,Transportation,1.83120023
+2008,JPN,Transportation,0.50315191
+2008,USA,Transportation,7.55155629
+2009,LAM,Transportation,2.31798441
+2009,OAS,Transportation,5.51931226
+2009,SSA,Transportation,0.78341272
+2009,EUR,Transportation,4.7312613
+2009,NEU,Transportation,1.71138607
+2009,MEA,Transportation,1.99464222
+2009,REF,Transportation,3.97999166
+2009,CAZ,Transportation,1.48210473
+2009,CHA,Transportation,4.87401099
+2009,IND,Transportation,1.94187682
+2009,JPN,Transportation,0.5063249
+2009,USA,Transportation,7.62163644
+2010,LAM,Transportation,2.51925588
+2010,OAS,Transportation,6.18647673
+2010,SSA,Transportation,0.86113893
+2010,EUR,Transportation,4.86401098
+2010,NEU,Transportation,1.83723959
+2010,MEA,Transportation,2.17456479
+2010,REF,Transportation,4.33324179
+2010,CAZ,Transportation,1.59349832
+2010,CHA,Transportation,5.50282767
+2010,IND,Transportation,2.28868113
+2010,JPN,Transportation,0.54213177
+2010,USA,Transportation,7.41116126
+2011,LAM,Transportation,2.62447528
+2011,OAS,Transportation,6.64639358
+2011,SSA,Transportation,0.910498
+2011,EUR,Transportation,5.11627587
+2011,NEU,Transportation,1.88632949
+2011,MEA,Transportation,2.26608495
+2011,REF,Transportation,4.5210099
+2011,CAZ,Transportation,1.64213109
+2011,CHA,Transportation,5.91489448
+2011,IND,Transportation,2.56885218
+2011,JPN,Transportation,0.55480858
+2011,USA,Transportation,7.53396518
+2012,LAM,Transportation,2.72722622
+2012,OAS,Transportation,7.09657054
+2012,SSA,Transportation,0.9673809
+2012,EUR,Transportation,5.04371356
+2012,NEU,Transportation,1.92680874
+2012,MEA,Transportation,2.34167458
+2012,REF,Transportation,4.70785097
+2012,CAZ,Transportation,1.68787367
+2012,CHA,Transportation,6.36880109
+2012,IND,Transportation,2.86015472
+2012,JPN,Transportation,0.57016578
+2012,USA,Transportation,7.75196635
+2013,LAM,Transportation,2.84746575
+2013,OAS,Transportation,7.60740263
+2013,SSA,Transportation,1.02118047
+2013,EUR,Transportation,4.88223148
+2013,NEU,Transportation,1.98582345
+2013,MEA,Transportation,2.45159862
+2013,REF,Transportation,4.91655112
+2013,CAZ,Transportation,1.74302956
+2013,CHA,Transportation,6.86390541
+2013,IND,Transportation,3.18430684
+2013,JPN,Transportation,0.58851363
+2013,USA,Transportation,7.86141101
+2014,LAM,Transportation,2.9017022
+2014,OAS,Transportation,7.96553286
+2014,SSA,Transportation,1.05056429
+2014,EUR,Transportation,5.17614165
+2014,NEU,Transportation,1.99431316
+2014,MEA,Transportation,2.50753167
+2014,REF,Transportation,5.01181277
+2014,CAZ,Transportation,1.75668936
+2014,CHA,Transportation,7.75528896
+2014,IND,Transportation,3.44562441
+2014,JPN,Transportation,0.59005057
+2014,USA,Transportation,8.13168057
+2015,LAM,Transportation,3.05868959
+2015,OAS,Transportation,8.3275873
+2015,SSA,Transportation,1.11845832
+2015,EUR,Transportation,5.07157823
+2015,NEU,Transportation,2.0424666
+2015,MEA,Transportation,2.57791206
+2015,REF,Transportation,5.21705262
+2015,CAZ,Transportation,1.79282487
+2015,CHA,Transportation,8.60982096
+2015,IND,Transportation,3.44867584
+2015,JPN,Transportation,0.60577306
+2015,USA,Transportation,8.07104884
+2016,LAM,Transportation,2.94480003
+2016,OAS,Transportation,8.63939296
+2016,SSA,Transportation,1.10034026
+2016,EUR,Transportation,5.28856434
+2016,NEU,Transportation,2.09522024
+2016,MEA,Transportation,2.67484805
+2016,REF,Transportation,5.03043501
+2016,CAZ,Transportation,1.77454721
+2016,CHA,Transportation,10.54197991
+2016,IND,Transportation,3.75878515
+2016,JPN,Transportation,0.61339457
+2016,USA,Transportation,8.86169854
+2017,LAM,Transportation,2.96214906
+2017,OAS,Transportation,9.02761821
+2017,SSA,Transportation,1.1110142
+2017,EUR,Transportation,5.56982698
+2017,NEU,Transportation,2.17452913
+2017,MEA,Transportation,2.64520205
+2017,REF,Transportation,5.008082
+2017,CAZ,Transportation,1.83005833
+2017,CHA,Transportation,10.16008521
+2017,IND,Transportation,4.04214775
+2017,JPN,Transportation,0.62600873
+2017,USA,Transportation,8.41647332
+2018,LAM,Transportation,3.03557499
+2018,OAS,Transportation,9.37912869
+2018,SSA,Transportation,1.14156571
+2018,EUR,Transportation,5.3184
+2018,NEU,Transportation,2.23203346
+2018,MEA,Transportation,2.69139708
+2018,REF,Transportation,5.12862742
+2018,CAZ,Transportation,1.87899788
+2018,CHA,Transportation,10.76765055
+2018,IND,Transportation,4.28249453
+2018,JPN,Transportation,0.62760207
+2018,USA,Transportation,9.56210129
+2019,LAM,Transportation,3.13891905
+2019,OAS,Transportation,9.73822282
+2019,SSA,Transportation,1.17008242
+2019,EUR,Transportation,5.21278496
+2019,NEU,Transportation,2.28078649
+2019,MEA,Transportation,2.79307329
+2019,REF,Transportation,5.15197569
+2019,CAZ,Transportation,1.92525714
+2019,CHA,Transportation,11.37909588
+2019,IND,Transportation,4.56677567
+2019,JPN,Transportation,0.63157374
+2019,USA,Transportation,10.44185453
+1990,LAM,Textile sector,0.56883675
+1990,OAS,Textile sector,0.52612194
+1990,SSA,Textile sector,0.17813215
+1990,EUR,Textile sector,1.61518314
+1990,NEU,Textile sector,0.50938771
+1990,MEA,Textile sector,0.49952003
+1990,REF,Textile sector,0.40163999
+1990,CAZ,Textile sector,0.46113725
+1990,CHA,Textile sector,0.38520587
+1990,IND,Textile sector,0.37835429
+1990,JPN,Textile sector,0.39071736
+1990,USA,Textile sector,3.12546277
+1991,LAM,Textile sector,0.59901659
+1991,OAS,Textile sector,0.58582766
+1991,SSA,Textile sector,0.19238032
+1991,EUR,Textile sector,1.64656229
+1991,NEU,Textile sector,0.52372225
+1991,MEA,Textile sector,0.5218565
+1991,REF,Textile sector,0.42142437
+1991,CAZ,Textile sector,0.47554847
+1991,CHA,Textile sector,0.43736159
+1991,IND,Textile sector,0.42834982
+1991,JPN,Textile sector,0.40107551
+1991,USA,Textile sector,3.18881478
+1992,LAM,Textile sector,0.64653293
+1992,OAS,Textile sector,0.66429516
+1992,SSA,Textile sector,0.21256359
+1992,EUR,Textile sector,1.71963618
+1992,NEU,Textile sector,0.55400131
+1992,MEA,Textile sector,0.55899235
+1992,REF,Textile sector,0.45188289
+1992,CAZ,Textile sector,0.50273474
+1992,CHA,Textile sector,0.5052717
+1992,IND,Textile sector,0.4936407
+1992,JPN,Textile sector,0.4227745
+1992,USA,Textile sector,3.33451474
+1993,LAM,Textile sector,0.68332863
+1993,OAS,Textile sector,0.73701229
+1993,SSA,Textile sector,0.22977067
+1993,EUR,Textile sector,1.75814504
+1993,NEU,Textile sector,0.57420547
+1993,MEA,Textile sector,0.58631273
+1993,REF,Textile sector,0.47469542
+1993,CAZ,Textile sector,0.5205158
+1993,CHA,Textile sector,0.56808769
+1993,IND,Textile sector,0.5538398
+1993,JPN,Textile sector,0.4351574
+1993,USA,Textile sector,3.41428721
+1994,LAM,Textile sector,0.76085741
+1994,OAS,Textile sector,0.85949164
+1994,SSA,Textile sector,0.26206657
+1994,EUR,Textile sector,1.89495761
+1994,NEU,Textile sector,0.62603668
+1994,MEA,Textile sector,0.647076
+1994,REF,Textile sector,0.52412307
+1994,CAZ,Textile sector,0.56786694
+1994,CHA,Textile sector,0.66937511
+1994,IND,Textile sector,0.65134512
+1994,JPN,Textile sector,0.4712034
+1994,USA,Textile sector,3.68284288
+1995,LAM,Textile sector,0.80131594
+1995,OAS,Textile sector,0.94383604
+1995,SSA,Textile sector,0.28195427
+1995,EUR,Textile sector,1.92987016
+1995,NEU,Textile sector,0.6471046
+1995,MEA,Textile sector,0.67609824
+1995,REF,Textile sector,0.54853654
+1995,CAZ,Textile sector,0.58608142
+1995,CHA,Textile sector,0.74264486
+1995,IND,Textile sector,0.72142706
+1995,JPN,Textile sector,0.48325544
+1995,USA,Textile sector,3.75717412
+1996,LAM,Textile sector,0.87130478
+1996,OAS,Textile sector,1.06448862
+1996,SSA,Textile sector,0.31310968
+1996,EUR,Textile sector,2.02993068
+1996,NEU,Textile sector,0.69060272
+1996,MEA,Textile sector,0.72910822
+1996,REF,Textile sector,0.5910191
+1996,CAZ,Textile sector,0.62460162
+1996,CHA,Textile sector,0.84731524
+1996,IND,Textile sector,0.82185914
+1996,JPN,Textile sector,0.51324674
+1996,USA,Textile sector,3.95701098
+1997,LAM,Textile sector,0.94890721
+1997,OAS,Textile sector,1.20063246
+1997,SSA,Textile sector,0.34522142
+1997,EUR,Textile sector,2.13928833
+1997,NEU,Textile sector,0.73475848
+1997,MEA,Textile sector,0.79105355
+1997,REF,Textile sector,0.64014181
+1997,CAZ,Textile sector,0.66681674
+1997,CHA,Textile sector,0.9649176
+1997,IND,Textile sector,0.93463975
+1997,JPN,Textile sector,0.5454502
+1997,USA,Textile sector,4.17365537
+1998,LAM,Textile sector,1.00567772
+1998,OAS,Textile sector,1.30069795
+1998,SSA,Textile sector,0.37261645
+1998,EUR,Textile sector,2.19363728
+1998,NEU,Textile sector,0.76201577
+1998,MEA,Textile sector,0.83220369
+1998,REF,Textile sector,0.67330757
+1998,CAZ,Textile sector,0.69285444
+1998,CHA,Textile sector,1.06606733
+1998,IND,Textile sector,1.03130312
+1998,JPN,Textile sector,0.57276473
+1998,USA,Textile sector,4.28346999
+1999,LAM,Textile sector,1.09600296
+1999,OAS,Textile sector,1.47375245
+1999,SSA,Textile sector,0.4134613
+1999,EUR,Textile sector,2.31176087
+1999,NEU,Textile sector,0.80884737
+1999,MEA,Textile sector,0.90007201
+1999,REF,Textile sector,0.73402565
+1999,CAZ,Textile sector,0.74041146
+1999,CHA,Textile sector,1.20785692
+1999,IND,Textile sector,1.16711695
+1999,JPN,Textile sector,0.60269449
+1999,USA,Textile sector,4.52000353
+2000,LAM,Textile sector,1.16883769
+2000,OAS,Textile sector,1.62086236
+2000,SSA,Textile sector,0.44789861
+2000,EUR,Textile sector,2.38299562
+2000,NEU,Textile sector,0.84233203
+2000,MEA,Textile sector,0.95359779
+2000,REF,Textile sector,0.781214
+2000,CAZ,Textile sector,0.77436992
+2000,CHA,Textile sector,1.33589337
+2000,IND,Textile sector,1.28943961
+2000,JPN,Textile sector,0.62587646
+2000,USA,Textile sector,4.66664881
+2001,LAM,Textile sector,1.21293896
+2001,OAS,Textile sector,1.72871897
+2001,SSA,Textile sector,0.47195178
+2001,EUR,Textile sector,2.39269457
+2001,NEU,Textile sector,0.84937673
+2001,MEA,Textile sector,0.98302121
+2001,REF,Textile sector,0.80896767
+2001,CAZ,Textile sector,0.78817435
+2001,CHA,Textile sector,1.43455997
+2001,IND,Textile sector,1.38327645
+2001,JPN,Textile sector,0.6342066
+2001,USA,Textile sector,4.68752796
+2002,LAM,Textile sector,1.30724175
+2002,OAS,Textile sector,1.91918055
+2002,SSA,Textile sector,0.51688474
+2002,EUR,Textile sector,2.49218939
+2002,NEU,Textile sector,0.89307293
+2002,MEA,Textile sector,1.05159808
+2002,REF,Textile sector,0.86947999
+2002,CAZ,Textile sector,0.8332717
+2002,CHA,Textile sector,1.59672604
+2002,IND,Textile sector,1.53819443
+2002,JPN,Textile sector,0.66315635
+2002,USA,Textile sector,4.88916616
+2003,LAM,Textile sector,1.37892473
+2003,OAS,Textile sector,2.06836367
+2003,SSA,Textile sector,0.55283615
+2003,EUR,Textile sector,2.54092015
+2003,NEU,Textile sector,0.91639896
+2003,MEA,Textile sector,1.10224891
+2003,REF,Textile sector,0.91604006
+2003,CAZ,Textile sector,0.86232168
+2003,CHA,Textile sector,1.73631276
+2003,IND,Textile sector,1.67118174
+2003,JPN,Textile sector,0.68677053
+2003,USA,Textile sector,4.99009319
+2004,LAM,Textile sector,1.48512
+2004,OAS,Textile sector,2.27713224
+2004,SSA,Textile sector,0.60483808
+2004,EUR,Textile sector,2.64178103
+2004,NEU,Textile sector,0.96446318
+2004,MEA,Textile sector,1.17787073
+2004,REF,Textile sector,0.98425984
+2004,CAZ,Textile sector,0.91126564
+2004,CHA,Textile sector,1.92462799
+2004,IND,Textile sector,1.85087697
+2004,JPN,Textile sector,0.72419084
+2004,USA,Textile sector,5.19904839
+2005,LAM,Textile sector,1.54619618
+2005,OAS,Textile sector,2.41971168
+2005,SSA,Textile sector,0.63884181
+2005,EUR,Textile sector,2.65517619
+2005,NEU,Textile sector,0.97950609
+2005,MEA,Textile sector,1.21742489
+2005,REF,Textile sector,1.02263421
+2005,CAZ,Textile sector,0.93099709
+2005,CHA,Textile sector,2.0591796
+2005,IND,Textile sector,1.97869233
+2005,JPN,Textile sector,0.73898023
+2005,USA,Textile sector,5.23502304
+2006,LAM,Textile sector,1.6639692
+2006,OAS,Textile sector,2.65921609
+2006,SSA,Textile sector,0.6966593
+2006,EUR,Textile sector,2.63839101
+2006,NEU,Textile sector,1.02683053
+2006,MEA,Textile sector,1.30131327
+2006,REF,Textile sector,1.09904687
+2006,CAZ,Textile sector,0.98328922
+2006,CHA,Textile sector,2.50824093
+2006,IND,Textile sector,2.18360584
+2006,JPN,Textile sector,0.77714222
+2006,USA,Textile sector,5.51520802
+2007,LAM,Textile sector,1.77840751
+2007,OAS,Textile sector,2.90098855
+2007,SSA,Textile sector,0.75454654
+2007,EUR,Textile sector,2.84356607
+2007,NEU,Textile sector,1.06803247
+2007,MEA,Textile sector,1.38100545
+2007,REF,Textile sector,1.17273987
+2007,CAZ,Textile sector,1.03148552
+2007,CHA,Textile sector,3.00524566
+2007,IND,Textile sector,2.39022328
+2007,JPN,Textile sector,0.81081713
+2007,USA,Textile sector,5.7066229
+2008,LAM,Textile sector,1.71487383
+2008,OAS,Textile sector,2.85297516
+2008,SSA,Textile sector,0.73745269
+2008,EUR,Textile sector,2.60413227
+2008,NEU,Textile sector,1.01103756
+2008,MEA,Textile sector,1.32177845
+2008,REF,Textile sector,1.12496502
+2008,CAZ,Textile sector,0.97634366
+2008,CHA,Textile sector,3.2630694
+2008,IND,Textile sector,2.35788857
+2008,JPN,Textile sector,0.76304713
+2008,USA,Textile sector,5.4192509
+2009,LAM,Textile sector,1.77950569
+2009,OAS,Textile sector,3.02483059
+2009,SSA,Textile sector,0.77764784
+2009,EUR,Textile sector,2.40334648
+2009,NEU,Textile sector,1.03658794
+2009,MEA,Textile sector,1.35841236
+2009,REF,Textile sector,1.16134782
+2009,CAZ,Textile sector,0.99461231
+2009,CHA,Textile sector,3.77097181
+2009,IND,Textile sector,2.50039787
+2009,JPN,Textile sector,0.76785908
+2009,USA,Textile sector,5.46954278
+2010,LAM,Textile sector,1.93402085
+2010,OAS,Textile sector,3.39046662
+2010,SSA,Textile sector,0.85480208
+2010,EUR,Textile sector,2.47077955
+2010,NEU,Textile sector,1.11281752
+2010,MEA,Textile sector,1.48094514
+2010,REF,Textile sector,1.26442499
+2010,CAZ,Textile sector,1.06936644
+2010,CHA,Textile sector,4.25748077
+2010,IND,Textile sector,2.94694976
+2010,JPN,Textile sector,0.82216142
+2010,USA,Textile sector,5.3184987
+2011,LAM,Textile sector,2.01479729
+2011,OAS,Textile sector,3.64252168
+2011,SSA,Textile sector,0.90379794
+2011,EUR,Textile sector,2.59892295
+2011,NEU,Textile sector,1.14255131
+2011,MEA,Textile sector,1.54327316
+2011,REF,Textile sector,1.31921507
+2011,CAZ,Textile sector,1.10200297
+2011,CHA,Textile sector,4.57629259
+2011,IND,Textile sector,3.30770338
+2011,JPN,Textile sector,0.84138624
+2011,USA,Textile sector,5.40662693
+2012,LAM,Textile sector,2.0936787
+2012,OAS,Textile sector,3.88923884
+2012,SSA,Textile sector,0.96026225
+2012,EUR,Textile sector,2.56206336
+2012,NEU,Textile sector,1.16706963
+2012,MEA,Textile sector,1.59475201
+2012,REF,Textile sector,1.37373465
+2012,CAZ,Textile sector,1.13269994
+2012,CHA,Textile sector,4.92747542
+2012,IND,Textile sector,3.68279012
+2012,JPN,Textile sector,0.86467596
+2012,USA,Textile sector,5.56307191
+2013,LAM,Textile sector,2.18598602
+2013,OAS,Textile sector,4.16919773
+2013,SSA,Textile sector,1.01366592
+2013,EUR,Textile sector,2.48003505
+2013,NEU,Textile sector,1.20281489
+2013,MEA,Textile sector,1.66961365
+2013,REF,Textile sector,1.43463263
+2013,CAZ,Textile sector,1.16971401
+2013,CHA,Textile sector,5.31053251
+2013,IND,Textile sector,4.10017461
+2013,JPN,Textile sector,0.89250111
+2013,USA,Textile sector,5.64161308
+2014,LAM,Textile sector,2.22762309
+2014,OAS,Textile sector,4.36546915
+2014,SSA,Textile sector,1.04283352
+2014,EUR,Textile sector,2.62933307
+2014,NEU,Textile sector,1.20795711
+2014,MEA,Textile sector,1.70770577
+2014,REF,Textile sector,1.46242966
+2014,CAZ,Textile sector,1.17888085
+2014,CHA,Textile sector,6.00018673
+2014,IND,Textile sector,4.43665213
+2014,JPN,Textile sector,0.89483193
+2014,USA,Textile sector,5.83556761
+2015,LAM,Textile sector,2.34814156
+2015,OAS,Textile sector,4.56389122
+2015,SSA,Textile sector,1.11022794
+2015,EUR,Textile sector,2.57621782
+2015,NEU,Textile sector,1.23712369
+2015,MEA,Textile sector,1.75563696
+2015,REF,Textile sector,1.52231793
+2015,CAZ,Textile sector,1.2031307
+2015,CHA,Textile sector,6.66132929
+2015,IND,Textile sector,4.44058121
+2015,JPN,Textile sector,0.91867563
+2015,USA,Textile sector,5.79205623
+2016,LAM,Textile sector,2.26070908
+2016,OAS,Textile sector,4.7347747
+2016,SSA,Textile sector,1.09224321
+2016,EUR,Textile sector,2.68644061
+2016,NEU,Textile sector,1.26907661
+2016,MEA,Textile sector,1.82165334
+2016,REF,Textile sector,1.46786356
+2016,CAZ,Textile sector,1.19086491
+2016,CHA,Textile sector,8.15622065
+2016,IND,Textile sector,4.83988391
+2016,JPN,Textile sector,0.93023391
+2016,USA,Textile sector,6.35945307
+2017,LAM,Textile sector,2.27402785
+2017,OAS,Textile sector,4.94753954
+2017,SSA,Textile sector,1.1028386
+2017,EUR,Textile sector,2.82931405
+2017,NEU,Textile sector,1.31711407
+2017,MEA,Textile sector,1.8014635
+2017,REF,Textile sector,1.46134103
+2017,CAZ,Textile sector,1.22811736
+2017,CHA,Textile sector,7.86075267
+2017,IND,Textile sector,5.20474703
+2017,JPN,Textile sector,0.9493637
+2017,USA,Textile sector,6.03994447
+2018,LAM,Textile sector,2.33039659
+2018,OAS,Textile sector,5.14018305
+2018,SSA,Textile sector,1.13316529
+2018,EUR,Textile sector,2.70159628
+2018,NEU,Textile sector,1.35194449
+2018,MEA,Textile sector,1.83292373
+2018,REF,Textile sector,1.49651577
+2018,CAZ,Textile sector,1.26095977
+2018,CHA,Textile sector,8.33081969
+2018,IND,Textile sector,5.51422216
+2018,JPN,Textile sector,0.95178007
+2018,USA,Textile sector,6.86208565
+2019,LAM,Textile sector,2.40973334
+2019,OAS,Textile sector,5.33698273
+2019,SSA,Textile sector,1.16147216
+2019,EUR,Textile sector,2.64794683
+2019,NEU,Textile sector,1.38147424
+2019,MEA,Textile sector,1.90216835
+2019,REF,Textile sector,1.50332871
+2019,CAZ,Textile sector,1.29200348
+2019,CHA,Textile sector,8.8038886
+2019,IND,Textile sector,5.88026801
+2019,JPN,Textile sector,0.95780324
+2019,USA,Textile sector,7.49342618
+1990,LAM,Household & Leisure & Sports,1.10617413
+1990,OAS,Household & Leisure & Sports,0.3300737
+1990,SSA,Household & Leisure & Sports,0.37004913
+1990,EUR,Household & Leisure & Sports,1.35798491
+1990,NEU,Household & Leisure & Sports,0.77373652
+1990,MEA,Household & Leisure & Sports,0.5873486
+1990,REF,Household & Leisure & Sports,0.45707786
+1990,CAZ,Household & Leisure & Sports,0.33786261
+1990,CHA,Household & Leisure & Sports,0.39894833
+1990,IND,Household & Leisure & Sports,0.18051032
+1990,JPN,Household & Leisure & Sports,0.48495802
+1990,USA,Household & Leisure & Sports,3.3677278
+1991,LAM,Household & Leisure & Sports,1.1648626
+1991,OAS,Household & Leisure & Sports,0.36753134
+1991,SSA,Household & Leisure & Sports,0.39964807
+1991,EUR,Household & Leisure & Sports,1.38436732
+1991,NEU,Household & Leisure & Sports,0.79551002
+1991,MEA,Household & Leisure & Sports,0.6136124
+1991,REF,Household & Leisure & Sports,0.47959305
+1991,CAZ,Household & Leisure & Sports,0.34842131
+1991,CHA,Household & Leisure & Sports,0.45296473
+1991,IND,Household & Leisure & Sports,0.20436286
+1991,JPN,Household & Leisure & Sports,0.49781454
+1991,USA,Household & Leisure & Sports,3.43599044
+1992,LAM,Household & Leisure & Sports,1.25726406
+1992,OAS,Household & Leisure & Sports,0.41675958
+1992,SSA,Household & Leisure & Sports,0.4415765
+1992,EUR,Household & Leisure & Sports,1.44580508
+1992,NEU,Household & Leisure & Sports,0.84150252
+1992,MEA,Household & Leisure & Sports,0.6572777
+1992,REF,Household & Leisure & Sports,0.51425572
+1992,CAZ,Household & Leisure & Sports,0.36833994
+1992,CHA,Household & Leisure & Sports,0.52329758
+1992,IND,Household & Leisure & Sports,0.2355127
+1992,JPN,Household & Leisure & Sports,0.5247473
+1992,USA,Household & Leisure & Sports,3.59298409
+1993,LAM,Household & Leisure & Sports,1.3288179
+1993,OAS,Household & Leisure & Sports,0.4623802
+1993,SSA,Household & Leisure & Sports,0.47732222
+1993,EUR,Household & Leisure & Sports,1.47818187
+1993,NEU,Household & Leisure & Sports,0.87219171
+1993,MEA,Household & Leisure & Sports,0.68940171
+1993,REF,Household & Leisure & Sports,0.54021704
+1993,CAZ,Household & Leisure & Sports,0.38136764
+1993,CHA,Household & Leisure & Sports,0.58835458
+1993,IND,Household & Leisure & Sports,0.2642333
+1993,JPN,Household & Leisure & Sports,0.54011695
+1993,USA,Household & Leisure & Sports,3.67893999
+1994,LAM,Household & Leisure & Sports,1.47958229
+1994,OAS,Household & Leisure & Sports,0.5392202
+1994,SSA,Household & Leisure & Sports,0.54441327
+1994,EUR,Household & Leisure & Sports,1.59320871
+1994,NEU,Household & Leisure & Sports,0.95092093
+1994,MEA,Household & Leisure & Sports,0.76084874
+1994,REF,Household & Leisure & Sports,0.59646712
+1994,CAZ,Household & Leisure & Sports,0.41606052
+1994,CHA,Household & Leisure & Sports,0.69325548
+1994,IND,Household & Leisure & Sports,0.31075243
+1994,JPN,Household & Leisure & Sports,0.58485721
+1994,USA,Household & Leisure & Sports,3.96831231
+1995,LAM,Household & Leisure & Sports,1.55825896
+1995,OAS,Household & Leisure & Sports,0.59213544
+1995,SSA,Household & Leisure & Sports,0.58572767
+1995,EUR,Household & Leisure & Sports,1.62256186
+1995,NEU,Household & Leisure & Sports,0.98292214
+1995,MEA,Household & Leisure & Sports,0.79497383
+1995,REF,Household & Leisure & Sports,0.62425035
+1995,CAZ,Household & Leisure & Sports,0.42940576
+1995,CHA,Household & Leisure & Sports,0.76913918
+1995,IND,Household & Leisure & Sports,0.34418807
+1995,JPN,Household & Leisure & Sports,0.5998162
+1995,USA,Household & Leisure & Sports,4.04840521
+1996,LAM,Household & Leisure & Sports,1.694361
+1996,OAS,Household & Leisure & Sports,0.66782938
+1996,SSA,Household & Leisure & Sports,0.65044948
+1996,EUR,Household & Leisure & Sports,1.70668896
+1996,NEU,Household & Leisure & Sports,1.04899378
+1996,MEA,Household & Leisure & Sports,0.85730434
+1996,REF,Household & Leisure & Sports,0.67259673
+1996,CAZ,Household & Leisure & Sports,0.45762846
+1996,CHA,Household & Leisure & Sports,0.87754374
+1996,IND,Household & Leisure & Sports,0.39210354
+1996,JPN,Household & Leisure & Sports,0.63704137
+1996,USA,Household & Leisure & Sports,4.26373209
+1997,LAM,Household & Leisure & Sports,1.84526862
+1997,OAS,Household & Leisure & Sports,0.75324209
+1997,SSA,Household & Leisure & Sports,0.71715793
+1997,EUR,Household & Leisure & Sports,1.79863274
+1997,NEU,Household & Leisure & Sports,1.11606436
+1997,MEA,Household & Leisure & Sports,0.93014127
+1997,REF,Household & Leisure & Sports,0.72849978
+1997,CAZ,Household & Leisure & Sports,0.48855832
+1997,CHA,Household & Leisure & Sports,0.99934164
+1997,IND,Household & Leisure & Sports,0.44591042
+1997,JPN,Household & Leisure & Sports,0.67701227
+1997,USA,Household & Leisure & Sports,4.4971693
+1998,LAM,Household & Leisure & Sports,1.95566597
+1998,OAS,Household & Leisure & Sports,0.81602029
+1998,SSA,Household & Leisure & Sports,0.77406798
+1998,EUR,Household & Leisure & Sports,1.84432728
+1998,NEU,Household & Leisure & Sports,1.15746693
+1998,MEA,Household & Leisure & Sports,0.97852667
+1998,REF,Household & Leisure & Sports,0.76624337
+1998,CAZ,Household & Leisure & Sports,0.50763543
+1998,CHA,Household & Leisure & Sports,1.10409995
+1998,IND,Household & Leisure & Sports,0.49202788
+1998,JPN,Household & Leisure & Sports,0.71091504
+1998,USA,Household & Leisure & Sports,4.61549602
+1999,LAM,Household & Leisure & Sports,2.13131469
+1999,OAS,Household & Leisure & Sports,0.92458967
+1999,SSA,Household & Leisure & Sports,0.85891846
+1999,EUR,Household & Leisure & Sports,1.94364113
+1999,NEU,Household & Leisure & Sports,1.22860196
+1999,MEA,Household & Leisure & Sports,1.058328
+1999,REF,Household & Leisure & Sports,0.83534229
+1999,CAZ,Household & Leisure & Sports,0.54247915
+1999,CHA,Household & Leisure & Sports,1.25094797
+1999,IND,Household & Leisure & Sports,0.55682376
+1999,JPN,Household & Leisure & Sports,0.74806382
+1999,USA,Household & Leisure & Sports,4.87036406
+2000,LAM,Household & Leisure & Sports,2.27295092
+2000,OAS,Household & Leisure & Sports,1.01688217
+2000,SSA,Household & Leisure & Sports,0.93045802
+2000,EUR,Household & Leisure & Sports,2.00353262
+2000,NEU,Household & Leisure & Sports,1.27946362
+2000,MEA,Household & Leisure & Sports,1.12126499
+2000,REF,Household & Leisure & Sports,0.88904399
+2000,CAZ,Household & Leisure & Sports,0.56735958
+2000,CHA,Household & Leisure & Sports,1.3835522
+2000,IND,Household & Leisure & Sports,0.61518309
+2000,JPN,Household & Leisure & Sports,0.77683727
+2000,USA,Household & Leisure & Sports,5.02837631
+2001,LAM,Household & Leisure & Sports,2.35871135
+2001,OAS,Household & Leisure & Sports,1.08454829
+2001,SSA,Household & Leisure & Sports,0.98042573
+2001,EUR,Household & Leisure & Sports,2.01168713
+2001,NEU,Household & Leisure & Sports,1.2901642
+2001,MEA,Household & Leisure & Sports,1.15586182
+2001,REF,Household & Leisure & Sports,0.92062846
+2001,CAZ,Household & Leisure & Sports,0.57747371
+2001,CHA,Household & Leisure & Sports,1.48573879
+2001,IND,Household & Leisure & Sports,0.65995202
+2001,JPN,Household & Leisure & Sports,0.78717662
+2001,USA,Household & Leisure & Sports,5.05087387
+2002,LAM,Household & Leisure & Sports,2.54209491
+2002,OAS,Household & Leisure & Sports,1.20403838
+2002,SSA,Household & Leisure & Sports,1.0737688
+2002,EUR,Household & Leisure & Sports,2.09533861
+2002,NEU,Household & Leisure & Sports,1.35653673
+2002,MEA,Household & Leisure & Sports,1.23649629
+2002,REF,Household & Leisure & Sports,0.98949322
+2002,CAZ,Household & Leisure & Sports,0.6105153
+2002,CHA,Household & Leisure & Sports,1.65369023
+2002,IND,Household & Leisure & Sports,0.73386236
+2002,JPN,Household & Leisure & Sports,0.82310902
+2002,USA,Household & Leisure & Sports,5.26814172
+2003,LAM,Household & Leisure & Sports,2.68149142
+2003,OAS,Household & Leisure & Sports,1.29763156
+2003,SSA,Household & Leisure & Sports,1.14845373
+2003,EUR,Household & Leisure & Sports,2.13630959
+2003,NEU,Household & Leisure & Sports,1.3919679
+2003,MEA,Household & Leisure & Sports,1.29605284
+2003,REF,Household & Leisure & Sports,1.04247992
+2003,CAZ,Household & Leisure & Sports,0.63179942
+2003,CHA,Household & Leisure & Sports,1.7982568
+2003,IND,Household & Leisure & Sports,0.79730972
+2003,JPN,Household & Leisure & Sports,0.85241893
+2003,USA,Household & Leisure & Sports,5.37689194
+2004,LAM,Household & Leisure & Sports,2.88800139
+2004,OAS,Household & Leisure & Sports,1.42860693
+2004,SSA,Household & Leisure & Sports,1.25648178
+2004,EUR,Household & Leisure & Sports,2.2211096
+2004,NEU,Household & Leisure & Sports,1.46497524
+2004,MEA,Household & Leisure & Sports,1.38497094
+2004,REF,Household & Leisure & Sports,1.12011599
+2004,CAZ,Household & Leisure & Sports,0.66765932
+2004,CHA,Household & Leisure & Sports,1.99329029
+2004,IND,Household & Leisure & Sports,0.88304113
+2004,JPN,Household & Leisure & Sports,0.89886498
+2004,USA,Household & Leisure & Sports,5.60204395
+2005,LAM,Household & Leisure & Sports,3.00677165
+2005,OAS,Household & Leisure & Sports,1.51805714
+2005,SSA,Household & Leisure & Sports,1.32712063
+2005,EUR,Household & Leisure & Sports,2.23237175
+2005,NEU,Household & Leisure & Sports,1.48782473
+2005,MEA,Household & Leisure & Sports,1.43147974
+2005,REF,Household & Leisure & Sports,1.16378713
+2005,CAZ,Household & Leisure & Sports,0.68211601
+2005,CHA,Household & Leisure & Sports,2.13264212
+2005,IND,Household & Leisure & Sports,0.94402098
+2005,JPN,Household & Leisure & Sports,0.91722156
+2005,USA,Household & Leisure & Sports,5.64080712
+2006,LAM,Household & Leisure & Sports,3.23579601
+2006,OAS,Household & Leisure & Sports,1.66831528
+2006,SSA,Household & Leisure & Sports,1.44722984
+2006,EUR,Household & Leisure & Sports,2.2182594
+2006,NEU,Household & Leisure & Sports,1.55970837
+2006,MEA,Household & Leisure & Sports,1.53011788
+2006,REF,Household & Leisure & Sports,1.25074693
+2006,CAZ,Household & Leisure & Sports,0.72042901
+2006,CHA,Household & Leisure & Sports,2.59772398
+2006,IND,Household & Leisure & Sports,1.04178386
+2006,JPN,Household & Leisure & Sports,0.96458819
+2006,USA,Household & Leisure & Sports,5.94271017
+2007,LAM,Household & Leisure & Sports,3.45833561
+2007,OAS,Household & Leisure & Sports,1.81999633
+2007,SSA,Household & Leisure & Sports,1.56748395
+2007,EUR,Household & Leisure & Sports,2.39076284
+2007,NEU,Household & Leisure & Sports,1.62229222
+2007,MEA,Household & Leisure & Sports,1.623822
+2007,REF,Household & Leisure & Sports,1.33461169
+2007,CAZ,Household & Leisure & Sports,0.75574113
+2007,CHA,Household & Leisure & Sports,3.11245968
+2007,IND,Household & Leisure & Sports,1.14035968
+2007,JPN,Household & Leisure & Sports,1.00638545
+2007,USA,Household & Leisure & Sports,6.14896226
+2008,LAM,Household & Leisure & Sports,3.33478642
+2008,OAS,Household & Leisure & Sports,1.78987412
+2008,SSA,Household & Leisure & Sports,1.53197344
+2008,EUR,Household & Leisure & Sports,2.18945595
+2008,NEU,Household & Leisure & Sports,1.53571957
+2008,MEA,Household & Leisure & Sports,1.55418136
+2008,REF,Household & Leisure & Sports,1.28024253
+2008,CAZ,Household & Leisure & Sports,0.7153402
+2008,CHA,Household & Leisure & Sports,3.37948144
+2008,IND,Household & Leisure & Sports,1.124933
+2008,JPN,Household & Leisure & Sports,0.94709337
+2008,USA,Household & Leisure & Sports,5.8393151
+2009,LAM,Household & Leisure & Sports,3.46047115
+2009,OAS,Household & Leisure & Sports,1.89769125
+2009,SSA,Household & Leisure & Sports,1.61547425
+2009,EUR,Household & Leisure & Sports,2.02064284
+2009,NEU,Household & Leisure & Sports,1.57452943
+2009,MEA,Household & Leisure & Sports,1.59725647
+2009,REF,Household & Leisure & Sports,1.3216472
+2009,CAZ,Household & Leisure & Sports,0.72872514
+2009,CHA,Household & Leisure & Sports,3.90550358
+2009,IND,Household & Leisure & Sports,1.19292324
+2009,JPN,Household & Leisure & Sports,0.95306596
+2009,USA,Household & Leisure & Sports,5.89350526
+2010,LAM,Household & Leisure & Sports,3.76094518
+2010,OAS,Household & Leisure & Sports,2.12708072
+2010,SSA,Household & Leisure & Sports,1.77575335
+2010,EUR,Household & Leisure & Sports,2.07733802
+2010,NEU,Household & Leisure & Sports,1.69031865
+2010,MEA,Household & Leisure & Sports,1.74133368
+2010,REF,Household & Leisure & Sports,1.43895198
+2010,CAZ,Household & Leisure & Sports,0.78349543
+2010,CHA,Household & Leisure & Sports,4.40936905
+2010,IND,Household & Leisure & Sports,1.40597018
+2010,JPN,Household & Leisure & Sports,1.02046597
+2010,USA,Household & Leisure & Sports,5.73075326
+2011,LAM,Household & Leisure & Sports,3.91802506
+2011,OAS,Household & Leisure & Sports,2.28521278
+2011,SSA,Household & Leisure & Sports,1.87753662
+2011,EUR,Household & Leisure & Sports,2.18507615
+2011,NEU,Household & Leisure & Sports,1.73548292
+2011,MEA,Household & Leisure & Sports,1.81462059
+2011,REF,Household & Leisure & Sports,1.50130468
+2011,CAZ,Household & Leisure & Sports,0.80740732
+2011,CHA,Household & Leisure & Sports,4.73955468
+2011,IND,Household & Leisure & Sports,1.57808334
+2011,JPN,Household & Leisure & Sports,1.0443278
+2011,USA,Household & Leisure & Sports,5.8257126
+2012,LAM,Household & Leisure & Sports,4.07141982
+2012,OAS,Household & Leisure & Sports,2.43999599
+2012,SSA,Household & Leisure & Sports,1.99483476
+2012,EUR,Household & Leisure & Sports,2.154086
+2012,NEU,Household & Leisure & Sports,1.77272512
+2012,MEA,Household & Leisure & Sports,1.87515075
+2012,REF,Household & Leisure & Sports,1.56334952
+2012,CAZ,Household & Leisure & Sports,0.82989815
+2012,CHA,Household & Leisure & Sports,5.10326618
+2012,IND,Household & Leisure & Sports,1.75703474
+2012,JPN,Household & Leisure & Sports,1.07323498
+2012,USA,Household & Leisure & Sports,5.99428415
+2013,LAM,Household & Leisure & Sports,4.25092294
+2013,OAS,Household & Leisure & Sports,2.6156341
+2013,SSA,Household & Leisure & Sports,2.10577477
+2013,EUR,Household & Leisure & Sports,2.0851197
+2013,NEU,Household & Leisure & Sports,1.82702052
+2013,MEA,Household & Leisure & Sports,1.963175
+2013,REF,Household & Leisure & Sports,1.63265318
+2013,CAZ,Household & Leisure & Sports,0.85701734
+2013,CHA,Household & Leisure & Sports,5.49998907
+2013,IND,Household & Leisure & Sports,1.95616611
+2013,JPN,Household & Leisure & Sports,1.10777153
+2013,USA,Household & Leisure & Sports,6.07891331
+2014,LAM,Household & Leisure & Sports,4.33189141
+2014,OAS,Household & Leisure & Sports,2.73876912
+2014,SSA,Household & Leisure & Sports,2.16636712
+2014,EUR,Household & Leisure & Sports,2.21064383
+2014,NEU,Household & Leisure & Sports,1.83483132
+2014,MEA,Household & Leisure & Sports,2.0079647
+2014,REF,Household & Leisure & Sports,1.66428699
+2014,CAZ,Household & Leisure & Sports,0.86373363
+2014,CHA,Household & Leisure & Sports,6.21424714
+2014,IND,Household & Leisure & Sports,2.11669731
+2014,JPN,Household & Leisure & Sports,1.11066454
+2014,USA,Household & Leisure & Sports,6.2879019
+2015,LAM,Household & Leisure & Sports,4.56625464
+2015,OAS,Household & Leisure & Sports,2.86325338
+2015,SSA,Household & Leisure & Sports,2.3063713
+2015,EUR,Household & Leisure & Sports,2.16598654
+2015,NEU,Household & Leisure & Sports,1.87913401
+2015,MEA,Household & Leisure & Sports,2.06432345
+2015,REF,Household & Leisure & Sports,1.73244157
+2015,CAZ,Household & Leisure & Sports,0.88150083
+2015,CHA,Household & Leisure & Sports,6.89897636
+2015,IND,Household & Leisure & Sports,2.11857184
+2015,JPN,Household & Leisure & Sports,1.14025932
+2015,USA,Household & Leisure & Sports,6.24101781
+2016,LAM,Household & Leisure & Sports,4.39623126
+2016,OAS,Household & Leisure & Sports,2.97046074
+2016,SSA,Household & Leisure & Sports,2.26901007
+2016,EUR,Household & Leisure & Sports,2.25865769
+2016,NEU,Household & Leisure & Sports,1.92766904
+2016,MEA,Household & Leisure & Sports,2.14194722
+2016,REF,Household & Leisure & Sports,1.67047093
+2016,CAZ,Household & Leisure & Sports,0.87251403
+2016,CHA,Household & Leisure & Sports,8.44719891
+2016,IND,Household & Leisure & Sports,2.30907652
+2016,JPN,Household & Leisure & Sports,1.15460544
+2016,USA,Household & Leisure & Sports,6.85239546
+2017,LAM,Household & Leisure & Sports,4.42213128
+2017,OAS,Household & Leisure & Sports,3.10394325
+2017,SSA,Household & Leisure & Sports,2.29102079
+2017,EUR,Household & Leisure & Sports,2.37878027
+2017,NEU,Household & Leisure & Sports,2.00063572
+2017,MEA,Household & Leisure & Sports,2.11820748
+2017,REF,Household & Leisure & Sports,1.6630481
+2017,CAZ,Household & Leisure & Sports,0.89980788
+2017,CHA,Household & Leisure & Sports,8.14118993
+2017,IND,Household & Leisure & Sports,2.48315029
+2017,JPN,Household & Leisure & Sports,1.17834933
+2017,USA,Household & Leisure & Sports,6.50812069
+2018,LAM,Household & Leisure & Sports,4.53174733
+2018,OAS,Household & Leisure & Sports,3.22480221
+2018,SSA,Household & Leisure & Sports,2.35402101
+2018,EUR,Household & Leisure & Sports,2.2714
+2018,NEU,Household & Leisure & Sports,2.05354153
+2018,MEA,Household & Leisure & Sports,2.15519924
+2018,REF,Household & Leisure & Sports,1.70307796
+2018,CAZ,Household & Leisure & Sports,0.9238706
+2018,CHA,Household & Leisure & Sports,8.62802688
+2018,IND,Household & Leisure & Sports,2.63079882
+2018,JPN,Household & Leisure & Sports,1.18134851
+2018,USA,Household & Leisure & Sports,7.39398877
+2019,LAM,Household & Leisure & Sports,4.68602756
+2019,OAS,Household & Leisure & Sports,3.34826864
+2019,SSA,Household & Leisure & Sports,2.41282528
+2019,EUR,Household & Leisure & Sports,2.22629358
+2019,NEU,Household & Leisure & Sports,2.09839586
+2019,MEA,Household & Leisure & Sports,2.23661885
+2019,REF,Household & Leisure & Sports,1.71083129
+2019,CAZ,Household & Leisure & Sports,0.94661548
+2019,CHA,Household & Leisure & Sports,9.11797282
+2019,IND,Household & Leisure & Sports,2.80543687
+2019,JPN,Household & Leisure & Sports,1.18882447
+2019,USA,Household & Leisure & Sports,8.07426661
+1990,LAM,Electrical/Electronics,0.34117373
+1990,OAS,Electrical/Electronics,0.16738671
+1990,SSA,Electrical/Electronics,0.10770031
+1990,EUR,Electrical/Electronics,2.05353816
+1990,NEU,Electrical/Electronics,0.29642621
+1990,MEA,Electrical/Electronics,0.15586985
+1990,REF,Electrical/Electronics,0.1056456
+1990,CAZ,Electrical/Electronics,0.11414146
+1990,CHA,Electrical/Electronics,0.15090702
+1990,IND,Electrical/Electronics,0.0755267
+1990,JPN,Electrical/Electronics,0.24716775
+1990,USA,Electrical/Electronics,1.2652017
+1991,LAM,Electrical/Electronics,0.35927483
+1991,OAS,Electrical/Electronics,0.1863822
+1991,SSA,Electrical/Electronics,0.11631489
+1991,EUR,Electrical/Electronics,2.09343351
+1991,NEU,Electrical/Electronics,0.30476786
+1991,MEA,Electrical/Electronics,0.1628397
+1991,REF,Electrical/Electronics,0.1108496
+1991,CAZ,Electrical/Electronics,0.11770855
+1991,CHA,Electrical/Electronics,0.17133938
+1991,IND,Electrical/Electronics,0.08550676
+1991,JPN,Electrical/Electronics,0.25372031
+1991,USA,Electrical/Electronics,1.29084689
+1992,LAM,Electrical/Electronics,0.38777391
+1992,OAS,Electrical/Electronics,0.21134679
+1992,SSA,Electrical/Electronics,0.12851788
+1992,EUR,Electrical/Electronics,2.18633939
+1992,NEU,Electrical/Electronics,0.32238805
+1992,MEA,Electrical/Electronics,0.17442755
+1992,REF,Electrical/Electronics,0.11886127
+1992,CAZ,Electrical/Electronics,0.12443774
+1992,CHA,Electrical/Electronics,0.19794363
+1992,IND,Electrical/Electronics,0.09854006
+1992,JPN,Electrical/Electronics,0.26744709
+1992,USA,Electrical/Electronics,1.3498269
+1993,LAM,Electrical/Electronics,0.40984303
+1993,OAS,Electrical/Electronics,0.23448188
+1993,SSA,Electrical/Electronics,0.13892143
+1993,EUR,Electrical/Electronics,2.23529942
+1993,NEU,Electrical/Electronics,0.33414539
+1993,MEA,Electrical/Electronics,0.18295258
+1993,REF,Electrical/Electronics,0.12486178
+1993,CAZ,Electrical/Electronics,0.12883894
+1993,CHA,Electrical/Electronics,0.22255222
+1993,IND,Electrical/Electronics,0.11055695
+1993,JPN,Electrical/Electronics,0.27528051
+1993,USA,Electrical/Electronics,1.38211916
+1994,LAM,Electrical/Electronics,0.45634281
+1994,OAS,Electrical/Electronics,0.27344892
+1994,SSA,Electrical/Electronics,0.15844783
+1994,EUR,Electrical/Electronics,2.40924244
+1994,NEU,Electrical/Electronics,0.36430734
+1994,MEA,Electrical/Electronics,0.2019131
+1994,REF,Electrical/Electronics,0.13786301
+1994,CAZ,Electrical/Electronics,0.14055937
+1994,CHA,Electrical/Electronics,0.26223225
+1994,IND,Electrical/Electronics,0.13002086
+1994,JPN,Electrical/Electronics,0.29808321
+1994,USA,Electrical/Electronics,1.49083173
+1995,LAM,Electrical/Electronics,0.4806088
+1995,OAS,Electrical/Electronics,0.30028326
+1995,SSA,Electrical/Electronics,0.17047211
+1995,EUR,Electrical/Electronics,2.45363013
+1995,NEU,Electrical/Electronics,0.37656732
+1995,MEA,Electrical/Electronics,0.21096918
+1995,REF,Electrical/Electronics,0.14428462
+1995,CAZ,Electrical/Electronics,0.14506785
+1995,CHA,Electrical/Electronics,0.29093618
+1995,IND,Electrical/Electronics,0.14401055
+1995,JPN,Electrical/Electronics,0.30570733
+1995,USA,Electrical/Electronics,1.52092136
+1996,LAM,Electrical/Electronics,0.52258631
+1996,OAS,Electrical/Electronics,0.33866911
+1996,SSA,Electrical/Electronics,0.18930895
+1996,EUR,Electrical/Electronics,2.58084672
+1996,NEU,Electrical/Electronics,0.40188003
+1996,MEA,Electrical/Electronics,0.22751037
+1996,REF,Electrical/Electronics,0.15545904
+1996,CAZ,Electrical/Electronics,0.15460243
+1996,CHA,Electrical/Electronics,0.33194151
+1996,IND,Electrical/Electronics,0.1640587
+1996,JPN,Electrical/Electronics,0.32467982
+1996,USA,Electrical/Electronics,1.60181624
+1997,LAM,Electrical/Electronics,0.56913027
+1997,OAS,Electrical/Electronics,0.38198353
+1997,SSA,Electrical/Electronics,0.208724
+1997,EUR,Electrical/Electronics,2.71988365
+1997,NEU,Electrical/Electronics,0.42757544
+1997,MEA,Electrical/Electronics,0.24683975
+1997,REF,Electrical/Electronics,0.16838006
+1997,CAZ,Electrical/Electronics,0.16505159
+1997,CHA,Electrical/Electronics,0.37801304
+1997,IND,Electrical/Electronics,0.18657185
+1997,JPN,Electrical/Electronics,0.34505173
+1997,USA,Electrical/Electronics,1.68951488
+1998,LAM,Electrical/Electronics,0.60317976
+1998,OAS,Electrical/Electronics,0.41381956
+1998,SSA,Electrical/Electronics,0.22528729
+1998,EUR,Electrical/Electronics,2.78898272
+1998,NEU,Electrical/Electronics,0.44343718
+1998,MEA,Electrical/Electronics,0.25968021
+1998,REF,Electrical/Electronics,0.17710384
+1998,CAZ,Electrical/Electronics,0.17149649
+1998,CHA,Electrical/Electronics,0.41763913
+1998,IND,Electrical/Electronics,0.20586769
+1998,JPN,Electrical/Electronics,0.36233089
+1998,USA,Electrical/Electronics,1.73396835
+1999,LAM,Electrical/Electronics,0.65735453
+1999,OAS,Electrical/Electronics,0.46887718
+1999,SSA,Electrical/Electronics,0.24998245
+1999,EUR,Electrical/Electronics,2.93916464
+1999,NEU,Electrical/Electronics,0.47068972
+1999,MEA,Electrical/Electronics,0.28085779
+1999,REF,Electrical/Electronics,0.19307485
+1999,CAZ,Electrical/Electronics,0.18326788
+1999,CHA,Electrical/Electronics,0.47318617
+1999,IND,Electrical/Electronics,0.23297871
+1999,JPN,Electrical/Electronics,0.38126445
+1999,USA,Electrical/Electronics,1.82971821
+2000,LAM,Electrical/Electronics,0.70103894
+2000,OAS,Electrical/Electronics,0.51568048
+2000,SSA,Electrical/Electronics,0.27080356
+2000,EUR,Electrical/Electronics,3.02973225
+2000,NEU,Electrical/Electronics,0.49017534
+2000,MEA,Electrical/Electronics,0.29755993
+2000,REF,Electrical/Electronics,0.20548707
+2000,CAZ,Electrical/Electronics,0.19167333
+2000,CHA,Electrical/Electronics,0.52334532
+2000,IND,Electrical/Electronics,0.25739664
+2000,JPN,Electrical/Electronics,0.39592937
+2000,USA,Electrical/Electronics,1.8890809
+2001,LAM,Electrical/Electronics,0.72748975
+2001,OAS,Electrical/Electronics,0.54999527
+2001,SSA,Electrical/Electronics,0.28534632
+2001,EUR,Electrical/Electronics,3.04206346
+2001,NEU,Electrical/Electronics,0.49427484
+2001,MEA,Electrical/Electronics,0.30674119
+2001,REF,Electrical/Electronics,0.21278727
+2001,CAZ,Electrical/Electronics,0.19509023
+2001,CHA,Electrical/Electronics,0.56199863
+2001,IND,Electrical/Electronics,0.27612826
+2001,JPN,Electrical/Electronics,0.40119901
+2001,USA,Electrical/Electronics,1.89753287
+2002,LAM,Electrical/Electronics,0.78405016
+2002,OAS,Electrical/Electronics,0.61059099
+2002,SSA,Electrical/Electronics,0.3125132
+2002,EUR,Electrical/Electronics,3.16856082
+2002,NEU,Electrical/Electronics,0.51970281
+2002,MEA,Electrical/Electronics,0.32813987
+2002,REF,Electrical/Electronics,0.22870416
+2002,CAZ,Electrical/Electronics,0.2062528
+2002,CHA,Electrical/Electronics,0.62552829
+2002,IND,Electrical/Electronics,0.30705283
+2002,JPN,Electrical/Electronics,0.41951262
+2002,USA,Electrical/Electronics,1.97915694
+2003,LAM,Electrical/Electronics,0.82704377
+2003,OAS,Electrical/Electronics,0.65805389
+2003,SSA,Electrical/Electronics,0.33424975
+2003,EUR,Electrical/Electronics,3.23051694
+2003,NEU,Electrical/Electronics,0.53327685
+2003,MEA,Electrical/Electronics,0.34394491
+2003,REF,Electrical/Electronics,0.24095112
+2003,CAZ,Electrical/Electronics,0.2134433
+2003,CHA,Electrical/Electronics,0.68021234
+2003,IND,Electrical/Electronics,0.33359962
+2003,JPN,Electrical/Electronics,0.43445095
+2003,USA,Electrical/Electronics,2.02001267
+2004,LAM,Electrical/Electronics,0.89073698
+2004,OAS,Electrical/Electronics,0.72447402
+2004,SSA,Electrical/Electronics,0.36569058
+2004,EUR,Electrical/Electronics,3.35875111
+2004,NEU,Electrical/Electronics,0.5612467
+2004,MEA,Electrical/Electronics,0.36754189
+2004,REF,Electrical/Electronics,0.25889534
+2004,CAZ,Electrical/Electronics,0.22555799
+2004,CHA,Electrical/Electronics,0.75398611
+2004,IND,Electrical/Electronics,0.3694702
+2004,JPN,Electrical/Electronics,0.45812303
+2004,USA,Electrical/Electronics,2.10459869
+2005,LAM,Electrical/Electronics,0.92736891
+2005,OAS,Electrical/Electronics,0.76983594
+2005,SSA,Electrical/Electronics,0.38624955
+2005,EUR,Electrical/Electronics,3.37578167
+2005,NEU,Electrical/Electronics,0.57000056
+2005,MEA,Electrical/Electronics,0.37988434
+2005,REF,Electrical/Electronics,0.26898917
+2005,CAZ,Electrical/Electronics,0.23044195
+2005,CHA,Electrical/Electronics,0.80669762
+2005,IND,Electrical/Electronics,0.39498458
+2005,JPN,Electrical/Electronics,0.4674788
+2005,USA,Electrical/Electronics,2.1191614
+2006,LAM,Electrical/Electronics,0.99800616
+2006,OAS,Electrical/Electronics,0.84603473
+2006,SSA,Electrical/Electronics,0.42120653
+2006,EUR,Electrical/Electronics,3.35444105
+2006,NEU,Electrical/Electronics,0.59753991
+2006,MEA,Electrical/Electronics,0.4060608
+2006,REF,Electrical/Electronics,0.28908842
+2006,CAZ,Electrical/Electronics,0.24338538
+2006,CHA,Electrical/Electronics,0.98262045
+2006,IND,Electrical/Electronics,0.43588921
+2006,JPN,Electrical/Electronics,0.49162007
+2006,USA,Electrical/Electronics,2.23258157
+2007,LAM,Electrical/Electronics,1.06664333
+2007,OAS,Electrical/Electronics,0.9229551
+2007,SSA,Electrical/Electronics,0.45620568
+2007,EUR,Electrical/Electronics,3.6152999
+2007,NEU,Electrical/Electronics,0.62151641
+2007,MEA,Electrical/Electronics,0.43092789
+2007,REF,Electrical/Electronics,0.3084723
+2007,CAZ,Electrical/Electronics,0.25531501
+2007,CHA,Electrical/Electronics,1.17732544
+2007,IND,Electrical/Electronics,0.47713397
+2007,JPN,Electrical/Electronics,0.51292281
+2007,USA,Electrical/Electronics,2.31006719
+2008,LAM,Electrical/Electronics,1.02853745
+2008,OAS,Electrical/Electronics,0.90767955
+2008,SSA,Electrical/Electronics,0.44587058
+2008,EUR,Electrical/Electronics,3.31088461
+2008,NEU,Electrical/Electronics,0.58834956
+2008,MEA,Electrical/Electronics,0.41244674
+2008,REF,Electrical/Electronics,0.29590581
+2008,CAZ,Electrical/Electronics,0.24166621
+2008,CHA,Electrical/Electronics,1.27832965
+2008,IND,Electrical/Electronics,0.47067935
+2008,JPN,Electrical/Electronics,0.48270351
+2008,USA,Electrical/Electronics,2.19373768
+2009,LAM,Electrical/Electronics,1.06730199
+2009,OAS,Electrical/Electronics,0.96235568
+2009,SSA,Electrical/Electronics,0.47017293
+2009,EUR,Electrical/Electronics,3.05560625
+2009,NEU,Electrical/Electronics,0.603218
+2009,MEA,Electrical/Electronics,0.42387796
+2009,REF,Electrical/Electronics,0.30547578
+2009,CAZ,Electrical/Electronics,0.2461881
+2009,CHA,Electrical/Electronics,1.47730387
+2009,IND,Electrical/Electronics,0.49912691
+2009,JPN,Electrical/Electronics,0.48574755
+2009,USA,Electrical/Electronics,2.21409606
+2010,LAM,Electrical/Electronics,1.15997622
+2010,OAS,Electrical/Electronics,1.0786835
+2010,SSA,Electrical/Electronics,0.51682109
+2010,EUR,Electrical/Electronics,3.14134042
+2010,NEU,Electrical/Electronics,0.64757802
+2010,MEA,Electrical/Electronics,0.46211299
+2010,REF,Electrical/Electronics,0.33258874
+2010,CAZ,Electrical/Electronics,0.26469136
+2010,CHA,Electrical/Electronics,1.66789706
+2010,IND,Electrical/Electronics,0.58826715
+2010,JPN,Electrical/Electronics,0.52009921
+2010,USA,Electrical/Electronics,2.15295273
+2011,LAM,Electrical/Electronics,1.20842387
+2011,OAS,Electrical/Electronics,1.1588753
+2011,SSA,Electrical/Electronics,0.54644443
+2011,EUR,Electrical/Electronics,3.3042615
+2011,NEU,Electrical/Electronics,0.6648809
+2011,MEA,Electrical/Electronics,0.48156178
+2011,REF,Electrical/Electronics,0.34700048
+2011,CAZ,Electrical/Electronics,0.27276961
+2011,CHA,Electrical/Electronics,1.79279376
+2011,IND,Electrical/Electronics,0.66028043
+2011,JPN,Electrical/Electronics,0.53226083
+2011,USA,Electrical/Electronics,2.18862744
+2012,LAM,Electrical/Electronics,1.25573492
+2012,OAS,Electrical/Electronics,1.23736884
+2012,SSA,Electrical/Electronics,0.58058326
+2012,EUR,Electrical/Electronics,3.25739834
+2012,NEU,Electrical/Electronics,0.67914876
+2012,MEA,Electrical/Electronics,0.4976252
+2012,REF,Electrical/Electronics,0.36134107
+2012,CAZ,Electrical/Electronics,0.28036777
+2012,CHA,Electrical/Electronics,1.93037203
+2012,IND,Electrical/Electronics,0.73515487
+2012,JPN,Electrical/Electronics,0.5469939
+2012,USA,Electrical/Electronics,2.25195709
+2013,LAM,Electrical/Electronics,1.31109849
+2013,OAS,Electrical/Electronics,1.3264383
+2013,SSA,Electrical/Electronics,0.61287161
+2013,EUR,Electrical/Electronics,3.15310783
+2013,NEU,Electrical/Electronics,0.69994987
+2013,MEA,Electrical/Electronics,0.52098497
+2013,REF,Electrical/Electronics,0.37735941
+2013,CAZ,Electrical/Electronics,0.28952956
+2013,CHA,Electrical/Electronics,2.08043725
+2013,IND,Electrical/Electronics,0.81847274
+2013,JPN,Electrical/Electronics,0.56459608
+2013,USA,Electrical/Electronics,2.28375091
+2014,LAM,Electrical/Electronics,1.33607133
+2014,OAS,Electrical/Electronics,1.38888243
+2014,SSA,Electrical/Electronics,0.6305066
+2014,EUR,Electrical/Electronics,3.34292481
+2014,NEU,Electrical/Electronics,0.70294227
+2014,MEA,Electrical/Electronics,0.53287121
+2014,REF,Electrical/Electronics,0.38467101
+2014,CAZ,Electrical/Electronics,0.29179855
+2014,CHA,Electrical/Electronics,2.35061398
+2014,IND,Electrical/Electronics,0.88564005
+2014,JPN,Electrical/Electronics,0.56607056
+2014,USA,Electrical/Electronics,2.3622646
+2015,LAM,Electrical/Electronics,1.40835523
+2015,OAS,Electrical/Electronics,1.45201079
+2015,SSA,Electrical/Electronics,0.67125388
+2015,EUR,Electrical/Electronics,3.27539427
+2015,NEU,Electrical/Electronics,0.71991507
+2015,MEA,Electrical/Electronics,0.54782762
+2015,REF,Electrical/Electronics,0.40042376
+2015,CAZ,Electrical/Electronics,0.29780091
+2015,CHA,Electrical/Electronics,2.60962108
+2015,IND,Electrical/Electronics,0.88642437
+2015,JPN,Electrical/Electronics,0.58115408
+2015,USA,Electrical/Electronics,2.344651
+2016,LAM,Electrical/Electronics,1.35591547
+2016,OAS,Electrical/Electronics,1.5063777
+2016,SSA,Electrical/Electronics,0.66038014
+2016,EUR,Electrical/Electronics,3.41553113
+2016,NEU,Electrical/Electronics,0.73850933
+2016,MEA,Electrical/Electronics,0.56842732
+2016,REF,Electrical/Electronics,0.38610032
+2016,CAZ,Electrical/Electronics,0.29476486
+2016,CHA,Electrical/Electronics,3.19525494
+2016,IND,Electrical/Electronics,0.96613277
+2016,JPN,Electrical/Electronics,0.58846585
+2016,USA,Electrical/Electronics,2.57433584
+2017,LAM,Electrical/Electronics,1.36390373
+2017,OAS,Electrical/Electronics,1.57406925
+2017,SSA,Electrical/Electronics,0.66678622
+2017,EUR,Electrical/Electronics,3.59717993
+2017,NEU,Electrical/Electronics,0.76646359
+2017,MEA,Electrical/Electronics,0.5621273
+2017,REF,Electrical/Electronics,0.38438466
+2017,CAZ,Electrical/Electronics,0.30398565
+2017,CHA,Electrical/Electronics,3.07950335
+2017,IND,Electrical/Electronics,1.03896638
+2017,JPN,Electrical/Electronics,0.60056735
+2017,USA,Electrical/Electronics,2.44499729
+2018,LAM,Electrical/Electronics,1.39771225
+2018,OAS,Electrical/Electronics,1.63535915
+2018,SSA,Electrical/Electronics,0.68512201
+2018,EUR,Electrical/Electronics,3.4348
+2018,NEU,Electrical/Electronics,0.78673234
+2018,MEA,Electrical/Electronics,0.57194413
+2018,REF,Electrical/Electronics,0.39363687
+2018,CAZ,Electrical/Electronics,0.31211486
+2018,CHA,Electrical/Electronics,3.26365531
+2018,IND,Electrical/Electronics,1.10074349
+2018,JPN,Electrical/Electronics,0.60209595
+2018,USA,Electrical/Electronics,2.77780382
+2019,LAM,Electrical/Electronics,1.44529641
+2019,OAS,Electrical/Electronics,1.69797135
+2019,SSA,Electrical/Electronics,0.7022366
+2019,EUR,Electrical/Electronics,3.36659029
+2019,NEU,Electrical/Electronics,0.80391648
+2019,MEA,Electrical/Electronics,0.59355116
+2019,REF,Electrical/Electronics,0.39542892
+2019,CAZ,Electrical/Electronics,0.31979885
+2019,CHA,Electrical/Electronics,3.44898327
+2019,IND,Electrical/Electronics,1.1738132
+2019,JPN,Electrical/Electronics,0.6059062
+2019,USA,Electrical/Electronics,3.03337337
+1990,LAM,Others,1.62201511
+1990,OAS,Others,0.49437796
+1990,SSA,Others,0.55448062
+1990,EUR,Others,5.04225509
+1990,NEU,Others,1.22909764
+1990,MEA,Others,0.83848792
+1990,REF,Others,0.57933895
+1990,CAZ,Others,0.50721293
+1990,CHA,Others,0.60804819
+1990,IND,Others,0.21919507
+1990,JPN,Others,0.66407162
+1990,USA,Others,5.28364109
+1991,LAM,Others,1.70807171
+1991,OAS,Others,0.55048129
+1991,SSA,Others,0.59883159
+1991,EUR,Others,5.14021407
+1991,NEU,Others,1.26368534
+1991,MEA,Others,0.87598163
+1991,REF,Others,0.6078766
+1991,CAZ,Others,0.52306408
+1991,CHA,Others,0.69037608
+1991,IND,Others,0.24815939
+1991,JPN,Others,0.68167654
+1991,USA,Others,5.39073861
+1992,LAM,Others,1.84356265
+1992,OAS,Others,0.62421439
+1992,SSA,Others,0.66165705
+1992,EUR,Others,5.36833508
+1992,NEU,Others,1.33674543
+1992,MEA,Others,0.9383174
+1992,REF,Others,0.65181098
+1992,CAZ,Others,0.55296674
+1992,CHA,Others,0.79757232
+1992,IND,Others,0.28598488
+1992,JPN,Others,0.71855661
+1992,USA,Others,5.63704654
+1993,LAM,Others,1.94848411
+1993,OAS,Others,0.69254407
+1993,SSA,Others,0.71521834
+1993,EUR,Others,5.48855146
+1993,NEU,Others,1.3854959
+1993,MEA,Others,0.98417704
+1993,REF,Others,0.68471654
+1993,CAZ,Others,0.57252443
+1993,CHA,Others,0.89672749
+1993,IND,Others,0.32086052
+1993,JPN,Others,0.73960285
+1993,USA,Others,5.77190309
+1994,LAM,Others,2.16955429
+1994,OAS,Others,0.80763352
+1994,SSA,Others,0.81574738
+1994,EUR,Others,5.91565094
+1994,NEU,Others,1.51055902
+1994,MEA,Others,1.08617349
+1994,REF,Others,0.75601263
+1994,CAZ,Others,0.62460678
+1994,CHA,Others,1.05660986
+1994,IND,Others,0.37734906
+1994,JPN,Others,0.80086741
+1994,USA,Others,6.22590042
+1995,LAM,Others,2.28492016
+1995,OAS,Others,0.88688894
+1995,SSA,Others,0.87765277
+1995,EUR,Others,6.02464042
+1995,NEU,Others,1.56139366
+1995,MEA,Others,1.13488984
+1995,REF,Others,0.79122743
+1995,CAZ,Others,0.6446412
+1995,CHA,Others,1.1722663
+1995,IND,Others,0.41795021
+1995,JPN,Others,0.82135133
+1995,USA,Others,6.35155849
+1996,LAM,Others,2.48449051
+1996,OAS,Others,1.00026185
+1996,SSA,Others,0.97463175
+1996,EUR,Others,6.33700789
+1996,NEU,Others,1.66634992
+1996,MEA,Others,1.22387171
+1996,REF,Others,0.8525057
+1996,CAZ,Others,0.68701025
+1996,CHA,Others,1.33748869
+1996,IND,Others,0.47613434
+1996,JPN,Others,0.87232518
+1996,USA,Others,6.68938566
+1997,LAM,Others,2.70577073
+1997,OAS,Others,1.12819134
+1997,SSA,Others,1.07458751
+1997,EUR,Others,6.678399
+1997,NEU,Others,1.77289302
+1997,MEA,Others,1.32785235
+1997,REF,Others,0.92336194
+1997,CAZ,Others,0.73344339
+1997,CHA,Others,1.52312423
+1997,IND,Others,0.54147245
+1997,JPN,Others,0.92705887
+1997,USA,Others,7.0556262
+1998,LAM,Others,2.86764955
+1998,OAS,Others,1.22221931
+1998,SSA,Others,1.15986138
+1998,EUR,Others,6.84806476
+1998,NEU,Others,1.83866192
+1998,MEA,Others,1.39692646
+1998,REF,Others,0.97120133
+1998,CAZ,Others,0.76208272
+1998,CHA,Others,1.68278927
+1998,IND,Others,0.59747322
+1998,JPN,Others,0.97348323
+1998,USA,Others,7.24126944
+1999,LAM,Others,3.12520835
+1999,OAS,Others,1.38483242
+1999,SSA,Others,1.28700112
+1999,EUR,Others,7.21682126
+1999,NEU,Others,1.9516615
+1999,MEA,Others,1.51084935
+1999,REF,Others,1.05878313
+1999,CAZ,Others,0.81439152
+1999,CHA,Others,1.90660441
+1999,IND,Others,0.67615535
+1999,JPN,Others,1.02435249
+1999,USA,Others,7.64113289
+2000,LAM,Others,3.33289364
+2000,OAS,Others,1.52306633
+2000,SSA,Others,1.3941958
+2000,EUR,Others,7.43920087
+2000,NEU,Others,2.03245638
+2000,MEA,Others,1.60069703
+2000,REF,Others,1.12684918
+2000,CAZ,Others,0.85174302
+2000,CHA,Others,2.10871019
+2000,IND,Others,0.74702154
+2000,JPN,Others,1.06375307
+2000,USA,Others,7.88903891
+2001,LAM,Others,3.45864664
+2001,OAS,Others,1.62441533
+2001,SSA,Others,1.46906728
+2001,EUR,Others,7.46947891
+2001,NEU,Others,2.04945449
+2001,MEA,Others,1.6500868
+2001,REF,Others,1.166882
+2001,CAZ,Others,0.86692675
+2001,CHA,Others,2.26445559
+2001,IND,Others,0.80138479
+2001,JPN,Others,1.07791114
+2001,USA,Others,7.92433542
+2002,LAM,Others,3.72754726
+2002,OAS,Others,1.80338527
+2002,SSA,Others,1.60893228
+2002,EUR,Others,7.78008038
+2002,NEU,Others,2.15488871
+2002,MEA,Others,1.76519907
+2002,REF,Others,1.25416699
+2002,CAZ,Others,0.91653012
+2002,CHA,Others,2.52043503
+2002,IND,Others,0.89113469
+2002,JPN,Others,1.12711476
+2002,USA,Others,8.26520777
+2003,LAM,Others,3.9319484
+2003,OAS,Others,1.9435673
+2003,SSA,Others,1.72083999
+2003,EUR,Others,7.93220735
+2003,NEU,Others,2.21117191
+2003,MEA,Others,1.8502209
+2003,REF,Others,1.3213268
+2003,CAZ,Others,0.9484827
+2003,CHA,Others,2.74077294
+2003,IND,Others,0.9681793
+2003,JPN,Others,1.16724993
+2003,USA,Others,8.43582641
+2004,LAM,Others,4.23475994
+2004,OAS,Others,2.13973966
+2004,SSA,Others,1.88270893
+2004,EUR,Others,8.24707337
+2004,NEU,Others,2.3271457
+2004,MEA,Others,1.97715872
+2004,REF,Others,1.41972929
+2004,CAZ,Others,1.00231702
+2004,CHA,Others,3.03802887
+2004,IND,Others,1.07228361
+2004,JPN,Others,1.23085029
+2004,USA,Others,8.78906828
+2005,LAM,Others,4.4089162
+2005,OAS,Others,2.27371645
+2005,SSA,Others,1.98855399
+2005,EUR,Others,8.28889018
+2005,NEU,Others,2.36344262
+2005,MEA,Others,2.04355382
+2005,REF,Others,1.47508176
+2005,CAZ,Others,1.02401998
+2005,CHA,Others,3.25041885
+2005,IND,Others,1.14633191
+2005,JPN,Others,1.25598667
+2005,USA,Others,8.84988396
+2006,LAM,Others,4.74474124
+2006,OAS,Others,2.49877017
+2006,SSA,Others,2.16852531
+2006,EUR,Others,8.23649046
+2006,NEU,Others,2.47763138
+2006,MEA,Others,2.18436779
+2006,REF,Others,1.58530193
+2006,CAZ,Others,1.08153701
+2006,CHA,Others,3.95926299
+2006,IND,Others,1.26504612
+2006,JPN,Others,1.3208476
+2006,USA,Others,9.32354082
+2007,LAM,Others,5.07105748
+2007,OAS,Others,2.72595509
+2007,SSA,Others,2.34871374
+2007,EUR,Others,8.87700296
+2007,NEU,Others,2.57704722
+2007,MEA,Others,2.31813805
+2007,REF,Others,1.69159918
+2007,CAZ,Others,1.13454897
+2007,CHA,Others,4.74378589
+2007,IND,Others,1.38474749
+2007,JPN,Others,1.37808219
+2007,USA,Others,9.6471305
+2008,LAM,Others,4.88989373
+2008,OAS,Others,2.68083863
+2008,SSA,Others,2.29550489
+2008,EUR,Others,8.12954203
+2008,NEU,Others,2.43952464
+2008,MEA,Others,2.21872037
+2008,REF,Others,1.62268714
+2008,CAZ,Others,1.07389747
+2008,CHA,Others,5.15076115
+2008,IND,Others,1.36601476
+2008,JPN,Others,1.29689128
+2008,USA,Others,9.16132389
+2009,LAM,Others,5.0741889
+2009,OAS,Others,2.84232502
+2009,SSA,Others,2.42062228
+2009,EUR,Others,7.50273186
+2009,NEU,Others,2.50117497
+2009,MEA,Others,2.28021359
+2009,REF,Others,1.6751669
+2009,CAZ,Others,1.09399148
+2009,CHA,Others,5.95248605
+2009,IND,Others,1.44857583
+2009,JPN,Others,1.30506978
+2009,USA,Others,9.24634304
+2010,LAM,Others,5.51478265
+2010,OAS,Others,3.18590012
+2010,SSA,Others,2.66078406
+2010,EUR,Others,7.71324344
+2010,NEU,Others,2.68510872
+2010,MEA,Others,2.48589553
+2010,REF,Others,1.82384885
+2010,CAZ,Others,1.17621485
+2010,CHA,Others,6.72044134
+2010,IND,Others,1.70728037
+2010,JPN,Others,1.3973632
+2010,USA,Others,8.99100081
+2011,LAM,Others,5.74511342
+2011,OAS,Others,3.42274724
+2011,SSA,Others,2.81329583
+2011,EUR,Others,8.11327964
+2011,NEU,Others,2.75685316
+2011,MEA,Others,2.59051856
+2011,REF,Others,1.9028799
+2011,CAZ,Others,1.21211234
+2011,CHA,Others,7.2236864
+2011,IND,Others,1.9162787
+2011,JPN,Others,1.43003811
+2011,USA,Others,9.13998288
+2012,LAM,Others,5.97004058
+2012,OAS,Others,3.65457852
+2012,SSA,Others,2.98905505
+2012,EUR,Others,7.99821191
+2012,NEU,Others,2.81601321
+2012,MEA,Others,2.6769303
+2012,REF,Others,1.98152076
+2012,CAZ,Others,1.24587648
+2012,CHA,Others,7.77802916
+2012,IND,Others,2.13358075
+2012,JPN,Others,1.46962182
+2012,USA,Others,9.40445542
+2013,LAM,Others,6.2332512
+2013,OAS,Others,3.91764586
+2013,SSA,Others,3.15528727
+2013,EUR,Others,7.74213712
+2013,NEU,Others,2.90226266
+2013,MEA,Others,2.80259208
+2013,REF,Others,2.06936205
+2013,CAZ,Others,1.2865889
+2013,CHA,Others,8.38268549
+2013,IND,Others,2.3753875
+2013,JPN,Others,1.51691404
+2013,USA,Others,9.53723044
+2014,LAM,Others,6.35197761
+2014,OAS,Others,4.10207509
+2014,SSA,Others,3.24607868
+2014,EUR,Others,8.20821351
+2014,NEU,Others,2.9146703
+2014,MEA,Others,2.86653302
+2014,REF,Others,2.1094574
+2014,CAZ,Others,1.29667166
+2014,CHA,Others,9.47130597
+2014,IND,Others,2.57032176
+2014,JPN,Others,1.52087555
+2014,USA,Others,9.86511345
+2015,LAM,Others,6.69563119
+2015,OAS,Others,4.28852521
+2015,SSA,Others,3.45586056
+2015,EUR,Others,8.0423991
+2015,NEU,Others,2.9850461
+2015,MEA,Others,2.94698972
+2015,REF,Others,2.19584226
+2015,CAZ,Others,1.3233445
+2015,CHA,Others,10.51492072
+2015,IND,Others,2.57259802
+2015,JPN,Others,1.56140082
+2015,USA,Others,9.79155682
+2016,LAM,Others,6.446321
+2016,OAS,Others,4.4490983
+2016,SSA,Others,3.3998786
+2016,EUR,Others,8.38649098
+2016,NEU,Others,3.06214507
+2016,MEA,Others,3.05780396
+2016,REF,Others,2.11729545
+2016,CAZ,Others,1.30985314
+2016,CHA,Others,12.87460953
+2016,IND,Others,2.8039293
+2016,JPN,Others,1.58104552
+2016,USA,Others,10.75074957
+2017,LAM,Others,6.48429894
+2017,OAS,Others,4.6490258
+2017,SSA,Others,3.43285941
+2017,EUR,Others,8.83251119
+2017,NEU,Others,3.17805427
+2017,MEA,Others,3.02391356
+2017,REF,Others,2.10788713
+2017,CAZ,Others,1.35082777
+2017,CHA,Others,12.40821278
+2017,IND,Others,3.01530842
+2017,JPN,Others,1.61355893
+2017,USA,Others,10.21061555
+2018,LAM,Others,6.64503212
+2018,OAS,Others,4.83004601
+2018,SSA,Others,3.52725876
+2018,EUR,Others,8.43380372
+2018,NEU,Others,3.26209633
+2018,MEA,Others,3.0767223
+2018,REF,Others,2.15862435
+2018,CAZ,Others,1.3869517
+2018,CHA,Others,13.15021444
+2018,IND,Others,3.19459916
+2018,JPN,Others,1.61766583
+2018,USA,Others,11.60045739
+2019,LAM,Others,6.87125768
+2019,OAS,Others,5.01497163
+2019,SSA,Others,3.61537093
+2019,EUR,Others,8.26632167
+2019,NEU,Others,3.33334843
+2019,MEA,Others,3.19295542
+2019,REF,Others,2.16845157
+2019,CAZ,Others,1.42109722
+2019,CHA,Others,13.89695461
+2019,IND,Others,3.40666348
+2019,JPN,Others,1.62790294
+2019,USA,Others,12.66774791
+1990,LAM,Buildings & Construction,0.78917678
+1990,OAS,Buildings & Construction,0.71132152
+1990,SSA,Buildings & Construction,0.0657274
+1990,EUR,Buildings & Construction,6.75680298
+1990,NEU,Buildings & Construction,1.75274158
+1990,MEA,Buildings & Construction,1.01967498
+1990,REF,Buildings & Construction,1.03839772
+1990,CAZ,Buildings & Construction,1.08879875
+1990,CHA,Buildings & Construction,0.68254936
+1990,IND,Buildings & Construction,0.26287117
+1990,JPN,Buildings & Construction,1.77193618
+1990,USA,Buildings & Construction,3.75491425
+1991,LAM,Buildings & Construction,0.83104684
+1991,OAS,Buildings & Construction,0.79204418
+1991,SSA,Buildings & Construction,0.07098471
+1991,EUR,Buildings & Construction,6.88807154
+1991,NEU,Buildings & Construction,1.802065
+1991,MEA,Buildings & Construction,1.06527062
+1991,REF,Buildings & Construction,1.08954814
+1991,CAZ,Buildings & Construction,1.12282531
+1991,CHA,Buildings & Construction,0.77496448
+1991,IND,Buildings & Construction,0.29760682
+1991,JPN,Buildings & Construction,1.81891123
+1991,USA,Buildings & Construction,3.83102502
+1992,LAM,Buildings & Construction,0.89696872
+1992,OAS,Buildings & Construction,0.89813293
+1992,SSA,Buildings & Construction,0.07843196
+1992,EUR,Buildings & Construction,7.19376188
+1992,NEU,Buildings & Construction,1.90625157
+1992,MEA,Buildings & Construction,1.14107639
+1992,REF,Buildings & Construction,1.16829542
+1992,CAZ,Buildings & Construction,1.18701527
+1992,CHA,Buildings & Construction,0.89529496
+1992,IND,Buildings & Construction,0.3429693
+1992,JPN,Buildings & Construction,1.91731798
+1992,USA,Buildings & Construction,4.00606817
+1993,LAM,Buildings & Construction,0.94801731
+1993,OAS,Buildings & Construction,0.99644713
+1993,SSA,Buildings & Construction,0.08478104
+1993,EUR,Buildings & Construction,7.35485615
+1993,NEU,Buildings & Construction,1.97577165
+1993,MEA,Buildings & Construction,1.19684575
+1993,REF,Buildings & Construction,1.22727481
+1993,CAZ,Buildings & Construction,1.22899842
+1993,CHA,Buildings & Construction,1.00659912
+1993,IND,Buildings & Construction,0.38479414
+1993,JPN,Buildings & Construction,1.97347548
+1993,USA,Buildings & Construction,4.10190639
+1994,LAM,Buildings & Construction,1.05557701
+1994,OAS,Buildings & Construction,1.16204029
+1994,SSA,Buildings & Construction,0.09669762
+1994,EUR,Buildings & Construction,7.92718479
+1994,NEU,Buildings & Construction,2.15411657
+1994,MEA,Buildings & Construction,1.32088238
+1994,REF,Buildings & Construction,1.35506475
+1994,CAZ,Buildings & Construction,1.34079997
+1994,CHA,Buildings & Construction,1.18607109
+1994,IND,Buildings & Construction,0.45253841
+1994,JPN,Buildings & Construction,2.13694713
+1994,USA,Buildings & Construction,4.42454773
+1995,LAM,Buildings & Construction,1.11170723
+1995,OAS,Buildings & Construction,1.27607467
+1995,SSA,Buildings & Construction,0.1040358
+1995,EUR,Buildings & Construction,8.07323461
+1995,NEU,Buildings & Construction,2.22660877
+1995,MEA,Buildings & Construction,1.38012575
+1995,REF,Buildings & Construction,1.4181832
+1995,CAZ,Buildings & Construction,1.38380647
+1995,CHA,Buildings & Construction,1.31589835
+1995,IND,Buildings & Construction,0.5012296
+1995,JPN,Buildings & Construction,2.19160418
+1995,USA,Buildings & Construction,4.51384889
+1996,LAM,Buildings & Construction,1.20880638
+1996,OAS,Buildings & Construction,1.43919803
+1996,SSA,Buildings & Construction,0.11553157
+1996,EUR,Buildings & Construction,8.49181824
+1996,NEU,Buildings & Construction,2.37628052
+1996,MEA,Buildings & Construction,1.48833552
+1996,REF,Buildings & Construction,1.52801738
+1996,CAZ,Buildings & Construction,1.47475716
+1996,CHA,Buildings & Construction,1.50136463
+1996,IND,Buildings & Construction,0.57100732
+1996,JPN,Buildings & Construction,2.32761725
+1996,USA,Buildings & Construction,4.75393182
+1997,LAM,Buildings & Construction,1.31646827
+1997,OAS,Buildings & Construction,1.6232657
+1997,SSA,Buildings & Construction,0.12738019
+1997,EUR,Buildings & Construction,8.9492946
+1997,NEU,Buildings & Construction,2.52821518
+1997,MEA,Buildings & Construction,1.61478512
+1997,REF,Buildings & Construction,1.65501894
+1997,CAZ,Buildings & Construction,1.57443196
+1997,CHA,Buildings & Construction,1.70974519
+1997,IND,Buildings & Construction,0.64936449
+1997,JPN,Buildings & Construction,2.47366265
+1997,USA,Buildings & Construction,5.01420723
+1998,LAM,Buildings & Construction,1.39522894
+1998,OAS,Buildings & Construction,1.75855513
+1998,SSA,Buildings & Construction,0.13748844
+1998,EUR,Buildings & Construction,9.17665281
+1998,NEU,Buildings & Construction,2.62200421
+1998,MEA,Buildings & Construction,1.6987853
+1998,REF,Buildings & Construction,1.7407655
+1998,CAZ,Buildings & Construction,1.63591002
+1998,CHA,Buildings & Construction,1.88897321
+1998,IND,Buildings & Construction,0.71652379
+1998,JPN,Buildings & Construction,2.59753633
+1998,USA,Buildings & Construction,5.14613793
+1999,LAM,Buildings & Construction,1.52054184
+1999,OAS,Buildings & Construction,1.99252634
+1999,SSA,Buildings & Construction,0.15255942
+1999,EUR,Buildings & Construction,9.67079977
+1999,NEU,Buildings & Construction,2.78314607
+1999,MEA,Buildings & Construction,1.83732554
+1999,REF,Buildings & Construction,1.89774568
+1999,CAZ,Buildings & Construction,1.74819767
+1999,CHA,Buildings & Construction,2.14021131
+1999,IND,Buildings & Construction,0.81088387
+1999,JPN,Buildings & Construction,2.7332703
+1999,USA,Buildings & Construction,5.43030805
+2000,LAM,Buildings & Construction,1.62158924
+2000,OAS,Buildings & Construction,2.19142023
+2000,SSA,Buildings & Construction,0.16526613
+2000,EUR,Buildings & Construction,9.96879644
+2000,NEU,Buildings & Construction,2.89836274
+2000,MEA,Buildings & Construction,1.94658821
+2000,REF,Buildings & Construction,2.01974618
+2000,CAZ,Buildings & Construction,1.82837755
+2000,CHA,Buildings & Construction,2.36708013
+2000,IND,Buildings & Construction,0.89587062
+2000,JPN,Buildings & Construction,2.83840251
+2000,USA,Buildings & Construction,5.60648692
+2001,LAM,Buildings & Construction,1.68277323
+2001,OAS,Buildings & Construction,2.33724333
+2001,SSA,Buildings & Construction,0.1741413
+2001,EUR,Buildings & Construction,10.00937011
+2001,NEU,Buildings & Construction,2.92260271
+2001,MEA,Buildings & Construction,2.00665052
+2001,REF,Buildings & Construction,2.09150034
+2001,CAZ,Buildings & Construction,1.86097141
+2001,CHA,Buildings & Construction,2.54190825
+2001,IND,Buildings & Construction,0.96106612
+2001,JPN,Buildings & Construction,2.87618037
+2001,USA,Buildings & Construction,5.63157101
+2002,LAM,Buildings & Construction,1.81360439
+2002,OAS,Buildings & Construction,2.59474907
+2002,SSA,Buildings & Construction,0.19072071
+2002,EUR,Buildings & Construction,10.42558722
+2002,NEU,Buildings & Construction,3.07295606
+2002,MEA,Buildings & Construction,2.14663715
+2002,REF,Buildings & Construction,2.24794854
+2002,CAZ,Buildings & Construction,1.96745152
+2002,CHA,Buildings & Construction,2.8292516
+2002,IND,Buildings & Construction,1.06869929
+2002,JPN,Buildings & Construction,3.00746992
+2002,USA,Buildings & Construction,5.87381806
+2003,LAM,Buildings & Construction,1.91305391
+2003,OAS,Buildings & Construction,2.79644596
+2003,SSA,Buildings & Construction,0.20398611
+2003,EUR,Buildings & Construction,10.62944284
+2003,NEU,Buildings & Construction,3.15321812
+2003,MEA,Buildings & Construction,2.25003116
+2003,REF,Buildings & Construction,2.36832469
+2003,CAZ,Buildings & Construction,2.0360419
+2003,CHA,Buildings & Construction,3.07658644
+2003,IND,Buildings & Construction,1.16109557
+2003,JPN,Buildings & Construction,3.11456223
+2003,USA,Buildings & Construction,5.99507125
+2004,LAM,Buildings & Construction,2.06038413
+2004,OAS,Buildings & Construction,3.07870292
+2004,SSA,Buildings & Construction,0.22317384
+2004,EUR,Buildings & Construction,11.05137462
+2004,NEU,Buildings & Construction,3.3186013
+2004,MEA,Buildings & Construction,2.40439871
+2004,REF,Buildings & Construction,2.54469972
+2004,CAZ,Buildings & Construction,2.15160429
+2004,CHA,Buildings & Construction,3.41026368
+2004,IND,Buildings & Construction,1.28594335
+2004,JPN,Buildings & Construction,3.2842665
+2004,USA,Buildings & Construction,6.24610891
+2005,LAM,Buildings & Construction,2.14511828
+2005,OAS,Buildings & Construction,3.27147158
+2005,SSA,Buildings & Construction,0.23572057
+2005,EUR,Buildings & Construction,11.10741065
+2005,NEU,Buildings & Construction,3.37036213
+2005,MEA,Buildings & Construction,2.48514097
+2005,REF,Buildings & Construction,2.64391258
+2005,CAZ,Buildings & Construction,2.19819253
+2005,CHA,Buildings & Construction,3.64867676
+2005,IND,Buildings & Construction,1.37474629
+2005,JPN,Buildings & Construction,3.35133765
+2005,USA,Buildings & Construction,6.28932867
+2006,LAM,Buildings & Construction,2.30851092
+2006,OAS,Buildings & Construction,3.59528367
+2006,SSA,Buildings & Construction,0.25705414
+2006,EUR,Buildings & Construction,11.03719313
+2006,NEU,Buildings & Construction,3.5331998
+2006,MEA,Buildings & Construction,2.65638313
+2006,REF,Buildings & Construction,2.84146944
+2006,CAZ,Buildings & Construction,2.32166034
+2006,CHA,Buildings & Construction,4.4443721
+2006,IND,Buildings & Construction,1.5171151
+2006,JPN,Buildings & Construction,3.52440549
+2006,USA,Buildings & Construction,6.62594141
+2007,LAM,Buildings & Construction,2.46727713
+2007,OAS,Buildings & Construction,3.92216217
+2007,SSA,Buildings & Construction,0.27841344
+2007,EUR,Buildings & Construction,11.8955029
+2007,NEU,Buildings & Construction,3.6749707
+2007,MEA,Buildings & Construction,2.81905952
+2007,REF,Buildings & Construction,3.0319949
+2007,CAZ,Buildings & Construction,2.43545743
+2007,CHA,Buildings & Construction,5.32501876
+2007,IND,Buildings & Construction,1.66066778
+2007,JPN,Buildings & Construction,3.67712402
+2007,USA,Buildings & Construction,6.85590622
+2008,LAM,Buildings & Construction,2.37913355
+2008,OAS,Buildings & Construction,3.85724763
+2008,SSA,Buildings & Construction,0.27210613
+2008,EUR,Buildings & Construction,10.89387839
+2008,NEU,Buildings & Construction,3.47885809
+2008,MEA,Buildings & Construction,2.69815889
+2008,REF,Buildings & Construction,2.90847808
+2008,CAZ,Buildings & Construction,2.30526107
+2008,CHA,Buildings & Construction,5.78185871
+2008,IND,Buildings & Construction,1.63820242
+2008,JPN,Buildings & Construction,3.46048305
+2008,USA,Buildings & Construction,6.51065904
+2009,LAM,Buildings & Construction,2.46880069
+2009,OAS,Buildings & Construction,4.08959769
+2009,SSA,Buildings & Construction,0.28693738
+2009,EUR,Buildings & Construction,10.05393025
+2009,NEU,Buildings & Construction,3.56677388
+2009,MEA,Buildings & Construction,2.77294005
+2009,REF,Buildings & Construction,3.00254195
+2009,CAZ,Buildings & Construction,2.34839549
+2009,CHA,Buildings & Construction,6.68181503
+2009,IND,Buildings & Construction,1.73721434
+2009,JPN,Buildings & Construction,3.48230566
+2009,USA,Buildings & Construction,6.57107943
+2010,LAM,Buildings & Construction,2.6831676
+2010,OAS,Buildings & Construction,4.58394085
+2010,SSA,Buildings & Construction,0.31540584
+2010,EUR,Buildings & Construction,10.33602333
+2010,NEU,Buildings & Construction,3.82907064
+2010,MEA,Buildings & Construction,3.02306736
+2010,REF,Buildings & Construction,3.26903706
+2010,CAZ,Buildings & Construction,2.52489868
+2010,CHA,Buildings & Construction,7.54386413
+2010,IND,Buildings & Construction,2.0474675
+2010,JPN,Buildings & Construction,3.72857134
+2010,USA,Buildings & Construction,6.38961589
+2011,LAM,Buildings & Construction,2.79523295
+2011,OAS,Buildings & Construction,4.92472152
+2011,SSA,Buildings & Construction,0.33348439
+2011,EUR,Buildings & Construction,10.87208621
+2011,NEU,Buildings & Construction,3.93138104
+2011,MEA,Buildings & Construction,3.15029816
+2011,REF,Buildings & Construction,3.41069104
+2011,CAZ,Buildings & Construction,2.60195732
+2011,CHA,Buildings & Construction,8.10876934
+2011,IND,Buildings & Construction,2.29811016
+2011,JPN,Buildings & Construction,3.81575752
+2011,USA,Buildings & Construction,6.49549267
+2012,LAM,Buildings & Construction,2.90466923
+2012,OAS,Buildings & Construction,5.2582853
+2012,SSA,Buildings & Construction,0.35431865
+2012,EUR,Buildings & Construction,10.71789132
+2012,NEU,Buildings & Construction,4.0157456
+2012,MEA,Buildings & Construction,3.25538242
+2012,REF,Buildings & Construction,3.55164564
+2012,CAZ,Buildings & Construction,2.67443645
+2012,CHA,Buildings & Construction,8.73103301
+2012,IND,Buildings & Construction,2.55871111
+2012,JPN,Buildings & Construction,3.92137836
+2012,USA,Buildings & Construction,6.68344482
+2013,LAM,Buildings & Construction,3.03273197
+2013,OAS,Buildings & Construction,5.63679219
+2013,SSA,Buildings & Construction,0.3740236
+2013,EUR,Buildings & Construction,10.3747419
+2013,NEU,Buildings & Construction,4.13874071
+2013,MEA,Buildings & Construction,3.40819818
+2013,REF,Buildings & Construction,3.70909093
+2013,CAZ,Buildings & Construction,2.76183099
+2013,CHA,Buildings & Construction,9.40977492
+2013,IND,Buildings & Construction,2.84869949
+2013,JPN,Buildings & Construction,4.04756777
+2013,USA,Buildings & Construction,6.77780376
+2014,LAM,Buildings & Construction,3.09049723
+2014,OAS,Buildings & Construction,5.90215289
+2014,SSA,Buildings & Construction,0.38478589
+2014,EUR,Buildings & Construction,10.999301
+2014,NEU,Buildings & Construction,4.15643449
+2014,MEA,Buildings & Construction,3.48595599
+2014,REF,Buildings & Construction,3.78095719
+2014,CAZ,Buildings & Construction,2.78347495
+2014,CHA,Buildings & Construction,10.63177873
+2014,IND,Buildings & Construction,3.08247572
+2014,JPN,Buildings & Construction,4.05813822
+2014,USA,Buildings & Construction,7.0108197
+2015,LAM,Buildings & Construction,3.25769877
+2015,OAS,Buildings & Construction,6.17042128
+2015,SSA,Buildings & Construction,0.40965316
+2015,EUR,Buildings & Construction,10.77710374
+2015,NEU,Buildings & Construction,4.25679315
+2015,MEA,Buildings & Construction,3.5837984
+2015,REF,Buildings & Construction,3.935792
+2015,CAZ,Buildings & Construction,2.84073167
+2015,CHA,Buildings & Construction,11.8032625
+2015,IND,Buildings & Construction,3.08520554
+2015,JPN,Buildings & Construction,4.16627141
+2015,USA,Buildings & Construction,6.95854537
+2016,LAM,Buildings & Construction,3.13639915
+2016,OAS,Buildings & Construction,6.40145726
+2016,SSA,Buildings & Construction,0.40301714
+2016,EUR,Buildings & Construction,11.23819922
+2016,NEU,Buildings & Construction,4.36673931
+2016,MEA,Buildings & Construction,3.71855825
+2016,REF,Buildings & Construction,3.79500598
+2016,CAZ,Buildings & Construction,2.81177072
+2016,CHA,Buildings & Construction,14.45207243
+2016,IND,Buildings & Construction,3.36263114
+2016,JPN,Buildings & Construction,4.21868918
+2016,USA,Buildings & Construction,7.64021289
+2017,LAM,Buildings & Construction,3.15487698
+2017,OAS,Buildings & Construction,6.6891172
+2017,SSA,Buildings & Construction,0.40692664
+2017,EUR,Buildings & Construction,11.83588233
+2017,NEU,Buildings & Construction,4.53203039
+2017,MEA,Buildings & Construction,3.67734455
+2017,REF,Buildings & Construction,3.77814266
+2017,CAZ,Buildings & Construction,2.8997281
+2017,CHA,Buildings & Construction,13.92853037
+2017,IND,Buildings & Construction,3.61612898
+2017,JPN,Buildings & Construction,4.30544442
+2017,USA,Buildings & Construction,7.25635697
+2018,LAM,Buildings & Construction,3.23308025
+2018,OAS,Buildings & Construction,6.94957293
+2018,SSA,Buildings & Construction,0.41811661
+2018,EUR,Buildings & Construction,11.3016
+2018,NEU,Buildings & Construction,4.65187767
+2018,MEA,Buildings & Construction,3.74156462
+2018,REF,Buildings & Construction,3.86908322
+2018,CAZ,Buildings & Construction,2.97727284
+2018,CHA,Buildings & Construction,14.76144586
+2018,IND,Buildings & Construction,3.83114461
+2018,JPN,Buildings & Construction,4.31640283
+2018,USA,Buildings & Construction,8.24407298
+2019,LAM,Buildings & Construction,3.34314825
+2019,OAS,Buildings & Construction,7.21564784
+2019,SSA,Buildings & Construction,0.42856131
+2019,EUR,Buildings & Construction,11.07716804
+2019,NEU,Buildings & Construction,4.75348597
+2019,MEA,Buildings & Construction,3.8829143
+2019,REF,Buildings & Construction,3.88669737
+2019,CAZ,Buildings & Construction,3.05057065
+2019,CHA,Buildings & Construction,15.59968045
+2019,IND,Buildings & Construction,4.08546418
+2019,JPN,Buildings & Construction,4.34371843
+2019,USA,Buildings & Construction,9.00256212
+1990,LAM,Packaging,3.32655664
+1990,OAS,Packaging,1.05191189
+1990,SSA,Packaging,1.16928739
+1990,EUR,Packaging,13.11614696
+1990,NEU,Packaging,2.36418309
+1990,MEA,Packaging,1.9185923
+1990,REF,Packaging,1.38008438
+1990,CAZ,Packaging,1.05949111
+1990,CHA,Packaging,1.25902043
+1990,IND,Packaging,0.47710223
+1990,JPN,Packaging,1.41531902
+1990,USA,Packaging,10.05498338
+1991,LAM,Packaging,3.50304831
+1991,OAS,Packaging,1.17128565
+1991,SSA,Packaging,1.26281462
+1991,EUR,Packaging,13.3709624
+1991,NEU,Packaging,2.43071291
+1991,MEA,Packaging,2.0043838
+1991,REF,Packaging,1.44806594
+1991,CAZ,Packaging,1.09260176
+1991,CHA,Packaging,1.429488
+1991,IND,Packaging,0.54014626
+1991,JPN,Packaging,1.45283995
+1991,USA,Packaging,10.2587943
+1992,LAM,Packaging,3.78092382
+1992,OAS,Packaging,1.32817113
+1992,SSA,Packaging,1.3953008
+1992,EUR,Packaging,13.96436129
+1992,NEU,Packaging,2.57124482
+1992,MEA,Packaging,2.14701785
+1992,REF,Packaging,1.55272516
+1992,CAZ,Packaging,1.15506389
+1992,CHA,Packaging,1.65144781
+1992,IND,Packaging,0.62247761
+1992,JPN,Packaging,1.53144151
+1992,USA,Packaging,10.72752828
+1993,LAM,Packaging,3.99610503
+1993,OAS,Packaging,1.4735595
+1993,SSA,Packaging,1.50825072
+1993,EUR,Packaging,14.2770737
+1993,NEU,Packaging,2.66501689
+1993,MEA,Packaging,2.25195193
+1993,REF,Packaging,1.63111182
+1993,CAZ,Packaging,1.19591696
+1993,CHA,Packaging,1.85675782
+1993,IND,Packaging,0.69838828
+1993,JPN,Packaging,1.57629683
+1993,USA,Packaging,10.98416577
+1994,LAM,Packaging,4.44949321
+1994,OAS,Packaging,1.7184409
+1994,SSA,Packaging,1.72024611
+1994,EUR,Packaging,15.3880646
+1994,NEU,Packaging,2.90557719
+1994,MEA,Packaging,2.48533584
+1994,REF,Packaging,1.80095128
+1994,CAZ,Packaging,1.3047091
+1994,CHA,Packaging,2.18780915
+1994,IND,Packaging,0.82134183
+1994,JPN,Packaging,1.70686843
+1994,USA,Packaging,11.84814112
+1995,LAM,Packaging,4.68609465
+1995,OAS,Packaging,1.88707649
+1995,SSA,Packaging,1.85079206
+1995,EUR,Packaging,15.67157307
+1995,NEU,Packaging,3.00335819
+1995,MEA,Packaging,2.59680652
+1995,REF,Packaging,1.88483897
+1995,CAZ,Packaging,1.34655798
+1995,CHA,Packaging,2.4272866
+1995,IND,Packaging,0.90971469
+1995,JPN,Packaging,1.75052528
+1995,USA,Packaging,12.08727352
+1996,LAM,Packaging,5.09538928
+1996,OAS,Packaging,2.12830551
+1996,SSA,Packaging,2.05530111
+1996,EUR,Packaging,16.48411777
+1996,NEU,Packaging,3.20524273
+1996,MEA,Packaging,2.80041105
+1996,REF,Packaging,2.03081428
+1996,CAZ,Packaging,1.43506051
+1996,CHA,Packaging,2.76939495
+1996,IND,Packaging,1.03635887
+1996,JPN,Packaging,1.85916458
+1996,USA,Packaging,12.73017233
+1997,LAM,Packaging,5.54920822
+1997,OAS,Packaging,2.40050728
+1997,SSA,Packaging,2.26608757
+1997,EUR,Packaging,17.37216011
+1997,NEU,Packaging,3.41017958
+1997,MEA,Packaging,3.03833511
+1997,REF,Packaging,2.19960593
+1997,CAZ,Packaging,1.53205232
+1997,CHA,Packaging,3.15377064
+1997,IND,Packaging,1.17857446
+1997,JPN,Packaging,1.9758171
+1997,USA,Packaging,13.42714293
+1998,LAM,Packaging,5.88120209
+1998,OAS,Packaging,2.60057512
+1998,SSA,Packaging,2.44591289
+1998,EUR,Packaging,17.81350251
+1998,NEU,Packaging,3.5366868
+1998,MEA,Packaging,3.19638753
+1998,REF,Packaging,2.31356755
+1998,CAZ,Packaging,1.59187555
+1998,CHA,Packaging,3.48437199
+1998,IND,Packaging,1.30046632
+1998,JPN,Packaging,2.07476016
+1998,USA,Packaging,13.78042956
+1999,LAM,Packaging,6.40942399
+1999,OAS,Packaging,2.94657491
+1999,SSA,Packaging,2.71402487
+1999,EUR,Packaging,18.77272897
+1999,NEU,Packaging,3.75404277
+1999,MEA,Packaging,3.45706103
+1999,REF,Packaging,2.52220236
+1999,CAZ,Packaging,1.70114071
+1999,CHA,Packaging,3.94780207
+1999,IND,Packaging,1.47172666
+1999,JPN,Packaging,2.18317652
+1999,USA,Packaging,14.54138593
+2000,LAM,Packaging,6.8353614
+2000,OAS,Packaging,3.24070189
+2000,SSA,Packaging,2.94007675
+2000,EUR,Packaging,19.35119309
+2000,NEU,Packaging,3.90945262
+2000,MEA,Packaging,3.66264666
+2000,REF,Packaging,2.68434733
+2000,CAZ,Packaging,1.77916235
+2000,CHA,Packaging,4.36628092
+2000,IND,Packaging,1.62597472
+2000,JPN,Packaging,2.26714998
+2000,USA,Packaging,15.01316115
+2001,LAM,Packaging,7.09326558
+2001,OAS,Packaging,3.45634706
+2001,SSA,Packaging,3.09796555
+2001,EUR,Packaging,19.42995374
+2001,NEU,Packaging,3.94214867
+2001,MEA,Packaging,3.77565824
+2001,REF,Packaging,2.77971233
+2001,CAZ,Packaging,1.81087887
+2001,CHA,Packaging,4.68876629
+2001,IND,Packaging,1.74430234
+2001,JPN,Packaging,2.29732473
+2001,USA,Packaging,15.08033183
+2002,LAM,Packaging,7.6447482
+2002,OAS,Packaging,3.83715003
+2002,SSA,Packaging,3.39291253
+2002,EUR,Packaging,20.23790461
+2002,NEU,Packaging,4.14495258
+2002,MEA,Packaging,4.03905322
+2002,REF,Packaging,2.9876401
+2002,CAZ,Packaging,1.91449281
+2002,CHA,Packaging,5.21879557
+2002,IND,Packaging,1.93965288
+2002,JPN,Packaging,2.40219115
+2002,USA,Packaging,15.72902576
+2003,LAM,Packaging,8.06395018
+2003,OAS,Packaging,4.13542212
+2003,SSA,Packaging,3.62890324
+2003,EUR,Packaging,20.63362433
+2003,NEU,Packaging,4.25321395
+2003,MEA,Packaging,4.23359654
+2003,REF,Packaging,3.14762624
+2003,CAZ,Packaging,1.98123692
+2003,CHA,Packaging,5.67502575
+2003,IND,Packaging,2.10734898
+2003,JPN,Packaging,2.48773022
+2003,USA,Packaging,16.05371995
+2004,LAM,Packaging,8.68497999
+2004,OAS,Packaging,4.55282754
+2004,SSA,Packaging,3.97025207
+2004,EUR,Packaging,21.45266837
+2004,NEU,Packaging,4.47629083
+2004,MEA,Packaging,4.52405025
+2004,REF,Packaging,3.38203779
+2004,CAZ,Packaging,2.09368866
+2004,CHA,Packaging,6.29052185
+2004,IND,Packaging,2.33394347
+2004,JPN,Packaging,2.62328007
+2004,USA,Packaging,16.72595355
+2005,LAM,Packaging,9.04215339
+2005,OAS,Packaging,4.83789644
+2005,SSA,Packaging,4.19345788
+2005,EUR,Packaging,21.5614442
+2005,NEU,Packaging,4.54610835
+2005,MEA,Packaging,4.67597268
+2005,REF,Packaging,3.51389683
+2005,CAZ,Packaging,2.13902287
+2005,CHA,Packaging,6.73029508
+2005,IND,Packaging,2.49511777
+2005,JPN,Packaging,2.67685258
+2005,USA,Packaging,16.84168827
+2006,LAM,Packaging,9.73088991
+2006,OAS,Packaging,5.31675413
+2006,SSA,Packaging,4.57298098
+2006,EUR,Packaging,21.42513961
+2006,NEU,Packaging,4.76575172
+2006,MEA,Packaging,4.9981772
+2006,REF,Packaging,3.77646013
+2006,CAZ,Packaging,2.25916724
+2006,CHA,Packaging,8.19802292
+2006,IND,Packaging,2.75351233
+2006,JPN,Packaging,2.81508905
+2006,USA,Packaging,17.74307648
+2007,LAM,Packaging,10.40012502
+2007,OAS,Packaging,5.80014647
+2007,SSA,Packaging,4.95296191
+2007,EUR,Packaging,23.09127034
+2007,NEU,Packaging,4.9569792
+2007,MEA,Packaging,5.3042646
+2007,REF,Packaging,4.02967834
+2007,CAZ,Packaging,2.36990121
+2007,CHA,Packaging,9.8224507
+2007,IND,Packaging,3.01405555
+2007,JPN,Packaging,2.93707169
+2007,USA,Packaging,18.35888078
+2008,LAM,Packaging,10.0285801
+2008,OAS,Packaging,5.70414999
+2008,SSA,Packaging,4.8407552
+2008,EUR,Packaging,21.14694041
+2008,NEU,Packaging,4.69245298
+2008,MEA,Packaging,5.07678131
+2008,REF,Packaging,3.86551808
+2008,CAZ,Packaging,2.2432094
+2008,CHA,Packaging,10.66513088
+2008,IND,Packaging,2.97328169
+2008,JPN,Packaging,2.76403155
+2008,USA,Packaging,17.43437109
+2009,LAM,Packaging,10.40654717
+2009,OAS,Packaging,6.0477524
+2009,SSA,Packaging,5.10460247
+2009,EUR,Packaging,19.51645284
+2009,NEU,Packaging,4.81103807
+2009,MEA,Packaging,5.21748747
+2009,REF,Packaging,3.99053384
+2009,CAZ,Packaging,2.28518275
+2009,CHA,Packaging,12.32517699
+2009,IND,Packaging,3.15298497
+2009,JPN,Packaging,2.78146217
+2009,USA,Packaging,17.59616599
+2010,LAM,Packaging,11.31015162
+2010,OAS,Packaging,6.77879375
+2010,SSA,Packaging,5.61105504
+2010,EUR,Packaging,20.06404528
+2010,NEU,Packaging,5.1648367
+2010,MEA,Packaging,5.68812012
+2010,REF,Packaging,4.34471966
+2010,CAZ,Packaging,2.45693493
+2010,CHA,Packaging,13.91529998
+2010,IND,Packaging,3.71608391
+2010,JPN,Packaging,2.9781648
+2010,USA,Packaging,17.11023935
+2011,LAM,Packaging,11.78253214
+2011,OAS,Packaging,7.2827448
+2011,SSA,Packaging,5.93267151
+2011,EUR,Packaging,21.10463795
+2011,NEU,Packaging,5.30283794
+2011,MEA,Packaging,5.92751408
+2011,REF,Packaging,4.53298513
+2011,CAZ,Packaging,2.53191936
+2011,CHA,Packaging,14.95731575
+2011,IND,Packaging,4.17099181
+2011,JPN,Packaging,3.04780402
+2011,USA,Packaging,17.39375828
+2012,LAM,Packaging,12.24383053
+2012,OAS,Packaging,7.77602343
+2012,SSA,Packaging,6.30331213
+2012,EUR,Packaging,20.80531845
+2012,NEU,Packaging,5.41663296
+2012,MEA,Packaging,6.12523772
+2012,REF,Packaging,4.7203211
+2012,CAZ,Packaging,2.60244754
+2012,CHA,Packaging,16.1051341
+2012,IND,Packaging,4.64397368
+2012,JPN,Packaging,3.13216777
+2012,USA,Packaging,17.89706026
+2013,LAM,Packaging,12.78364364
+2013,OAS,Packaging,8.33576454
+2013,SSA,Packaging,6.65386222
+2013,EUR,Packaging,20.13920487
+2013,NEU,Packaging,5.58253475
+2013,MEA,Packaging,6.41277165
+2013,REF,Packaging,4.92957405
+2013,CAZ,Packaging,2.68748964
+2013,CHA,Packaging,17.35713136
+2013,IND,Packaging,5.17029272
+2013,JPN,Packaging,3.23296049
+2013,USA,Packaging,18.1497365
+2014,LAM,Packaging,13.02713713
+2014,OAS,Packaging,8.72818354
+2014,SSA,Packaging,6.84532294
+2014,EUR,Packaging,21.3515843
+2014,NEU,Packaging,5.60640097
+2014,MEA,Packaging,6.55907858
+2014,REF,Packaging,5.02508804
+2014,CAZ,Packaging,2.708551
+2014,CHA,Packaging,19.61122149
+2014,IND,Packaging,5.59458863
+2014,JPN,Packaging,3.24140355
+2014,USA,Packaging,18.77371117
+2015,LAM,Packaging,13.73192903
+2015,OAS,Packaging,9.12490247
+2015,SSA,Packaging,7.28771046
+2015,EUR,Packaging,20.9202602
+2015,NEU,Packaging,5.74176962
+2015,MEA,Packaging,6.74317617
+2015,REF,Packaging,5.23087153
+2015,CAZ,Packaging,2.76426652
+2015,CHA,Packaging,21.77212309
+2015,IND,Packaging,5.59954317
+2015,JPN,Packaging,3.32777402
+2015,USA,Packaging,18.63372993
+2016,LAM,Packaging,13.22062401
+2016,OAS,Packaging,9.46656159
+2016,SSA,Packaging,7.16965585
+2016,EUR,Packaging,21.81532789
+2016,NEU,Packaging,5.89007035
+2016,MEA,Packaging,6.99673659
+2016,REF,Packaging,5.04375961
+2016,CAZ,Packaging,2.73608512
+2016,CHA,Packaging,26.65807863
+2016,IND,Packaging,6.1030612
+2016,JPN,Packaging,3.36964228
+2016,USA,Packaging,20.45911264
+2017,LAM,Packaging,13.29851217
+2017,OAS,Packaging,9.89195701
+2017,SSA,Packaging,7.23920568
+2017,EUR,Packaging,22.9755363
+2017,NEU,Packaging,6.11302299
+2017,MEA,Packaging,6.91919002
+2017,REF,Packaging,5.02134738
+2017,CAZ,Packaging,2.82167491
+2017,CHA,Packaging,25.6923607
+2017,IND,Packaging,6.56315115
+2017,JPN,Packaging,3.43893729
+2017,USA,Packaging,19.4312157
+2018,LAM,Packaging,13.62815647
+2018,OAS,Packaging,10.27712246
+2018,SSA,Packaging,7.43827481
+2018,EUR,Packaging,21.9384
+2018,NEU,Packaging,6.27467883
+2018,MEA,Packaging,7.04002473
+2018,REF,Packaging,5.1422121
+2018,CAZ,Packaging,2.89713235
+2018,CHA,Packaging,27.22874427
+2018,IND,Packaging,6.95339722
+2018,JPN,Packaging,3.44769023
+2018,USA,Packaging,22.0761411
+2019,LAM,Packaging,14.09211771
+2019,OAS,Packaging,10.67059764
+2019,SSA,Packaging,7.62408555
+2019,EUR,Packaging,21.50273795
+2019,NEU,Packaging,6.41173305
+2019,MEA,Packaging,7.30598439
+2019,REF,Packaging,5.16562221
+2019,CAZ,Packaging,2.96845718
+2019,CHA,Packaging,28.77493937
+2019,IND,Packaging,7.41497858
+2019,JPN,Packaging,3.46950833
+2019,USA,Packaging,24.10723827
